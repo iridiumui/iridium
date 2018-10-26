@@ -29,4 +29,15 @@ describe('Fixed', () => {
         expect(wrapper.attributes('style')).toBe('position: fixed; left: 0px;')
     })
 
+    test('it renders the default slot', () => {
+        wrapper = mount(Fixed, {
+            slots: {
+                default: '<div>default slot</div>'
+            }
+        })
+
+        expect(wrapper.is('div')).toBe(true)
+        expect(wrapper.text()).toBe('default slot')
+    })
+
 })
