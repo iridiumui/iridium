@@ -1,0 +1,23 @@
+{
+    "presets": [
+        ["@babel/preset-env", {
+            "targets": {
+                "browsers": ["last 2 versions", "safari >= 7"]
+            },
+            "modules": false
+        }]
+    ],
+    "env": {
+        "test": {
+            "presets": [
+               ["@babel/preset-env", { "targets": { "node": "current" }}]
+            ]
+        }
+    },
+    "plugins": [
+        "@babel/plugin-proposal-object-rest-spread",
+        ["@babel/plugin-transform-runtime", {
+            "regenerator": true,
+        }]
+    ]
+}
