@@ -3,7 +3,7 @@
         props: {
             mediaQuery: {
                 type: String,
-                required: false
+                required: true
             }
         },
 
