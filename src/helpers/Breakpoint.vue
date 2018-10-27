@@ -3,13 +3,22 @@
         props: {
             mediaQuery: {
                 type: String,
-                required: true
+                required: false
             }
         },
 
-        computed: {
-            matches() {
-                return window.matchMedia(this.mediaQuery).matches
+        data() {
+            return {
+                matches: false
+            }
+        },
+
+        mounted() {
+            this.mediaQueryList = window.matchMedia(this.mediaQuery)
+            this.matches = this.mediaQueryList.matches
+
+            this.mediaQueryList.onchange = (e) => {
+                this.matches = e.matches
             }
         },
 

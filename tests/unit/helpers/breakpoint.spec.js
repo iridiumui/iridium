@@ -16,7 +16,7 @@ describe('Breakpoint', () => {
         window.resizeTo(1000, 1000)
     })
 
-    test('it renders the default slot', () => {
+    test('it renders the default slot', async () => {
         const wrapper = mount(Breakpoint, {
             propsData: {
                 mediaQuery: '(min-width: 400px)'
@@ -26,10 +26,12 @@ describe('Breakpoint', () => {
             }
         })
 
+        await wrapper.vm.$nextTick()
+
         expect(wrapper.html()).toBe('<div>default slot</div>')
     })
 
-    test('it only renders if it matches the media query', () => {
+    test('it only renders if it matches the media query', async () => {
         window.resizeTo(399, 1000)
 
         let wrapper = mount(Breakpoint, {
@@ -41,16 +43,9 @@ describe('Breakpoint', () => {
             }
         })
 
+        await wrapper.vm.$nextTick()
+
         expect(wrapper.html()).toBe(undefined)
-    })
-
-            slots: {
-                default: '<div>component</div>'
-            }
-        })
-
-        expect(wrapper.is('div')).toBe(true)
-        expect(wrapper.text()).toBe('default slot')
     })
 
 })
