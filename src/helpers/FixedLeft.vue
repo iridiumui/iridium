@@ -1,6 +1,6 @@
 <template>
     <fixed edge="left">
-        <slot></slot>
+        <slot/>
     </fixed>
 </template>
 
