@@ -9,7 +9,6 @@ It's a Vue component that doesn't have a template. Instead it has a render funct
 If you wanna know more I recommend checking out this [article](https://adamwathan.me/renderless-components-in-vuejs/) by Adam Wathan. 
 
 ## Installation
-
 1. Run npm install
 
 If you want to install the entire library you can install Iridium as a Vue plugin. You should do that in your main javascript file. This will automatically register all components globally.
@@ -28,3 +27,13 @@ import { Modal } from 'iridium'
 Vue.component('modal', Modal)
 ```
 
+### Options
+When installing Iridium as a plugin you can optionally pass it an object of options.
+
+```sh
+import Iridium from 'iridium'
+
+Vue.use(Iridium, {
+    prefix: 'myprefix' // Defaults to 'iridium-'. You can pass in an empty string to remove the prefix.
+})
+```
