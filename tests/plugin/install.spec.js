@@ -10,7 +10,7 @@ describe('Install Plugin', () => {
 
         Vue.use(Iridium)
 
-        expect(Iridium.install.mock.calls.length).toBe(1)
+        expect(Iridium.install.mock.calls).toHaveLength(1)
         expect(Iridium.install.mock.calls[0][0]).toBe(Vue)
     })
 
