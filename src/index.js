@@ -6,6 +6,8 @@ import FixedRight from './helpers/FixedRight.vue'
 import FixedBottom from './helpers/FixedBottom.vue'
 import FixedLeft from './helpers/FixedLeft.vue'
 
+import Breakpoint from './helpers/Breakpoint.vue'
+
 const standardOptions = {
     prefix: 'iridium-'
 }
@@ -19,6 +21,8 @@ export default {
         Vue.component(`${prefix}fixed-right`, FixedRight)
         Vue.component(`${prefix}fixed-bottom`, FixedBottom)
         Vue.component(`${prefix}fixed-left`, FixedLeft)
+
+        Vue.component(`${prefix}breakpoint`, Breakpoint)
     }
 }
 
@@ -27,5 +31,6 @@ export {
     FixedTop,
     FixedRight,
     FixedBottom,
-    FixedLeft
+    FixedLeft,
+    Breakpoint
 }
