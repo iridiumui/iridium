@@ -3,6 +3,7 @@ import Breakpoint from '../../../src/helpers/Breakpoint.vue'
 import matchMediaMock from 'match-media-mock'
 
 window.matchMedia = matchMediaMock.create()
+/* eslint-disable-next-line no-unused-vars */
 window.resizeTo = (width, height) => {
     window.matchMedia.setConfig({
         type: 'screen',
