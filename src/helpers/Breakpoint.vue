@@ -23,8 +23,7 @@
         },
 
         render() {
-            if (!this.matches) return null
-            return this.$slots.default[0]
+            return this.matches ? this.$slots.default[0] : null
         }
     }
 </script>
