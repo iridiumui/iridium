@@ -6,9 +6,13 @@ import FixedRight from './helpers/FixedRight.vue'
 import FixedBottom from './helpers/FixedBottom.vue'
 import FixedLeft from './helpers/FixedLeft.vue'
 
+const standardOptions = {
+    prefix: 'iridium-'
+}
+
 export default {
-    install(Vue, options) {
-        const prefix = isUndefined(options.prefix) ? 'iridium-' : options.prefix
+    install(Vue, options = standardOptions) {
+        const prefix = isUndefined(options.prefix) ? standardOptions.prefix : options.prefix
 
         Vue.component(`${prefix}fixed`, Fixed)
         Vue.component(`${prefix}fixed-top`, FixedTop)
