@@ -7,6 +7,11 @@ import FixedBottom from './helpers/FixedBottom.vue'
 import FixedLeft from './helpers/FixedLeft.vue'
 
 import Breakpoint from './helpers/Breakpoint.vue'
+import ScreenXS from './helpers/ScreenXS.vue'
+import ScreenSM from './helpers/ScreenSM.vue'
+import ScreenMD from './helpers/ScreenMD.vue'
+import ScreenLG from './helpers/ScreenLG.vue'
+import ScreenXL from './helpers/ScreenXL.vue'
 
 const standardOptions = {
     prefix: 'iridium-'
@@ -23,6 +28,11 @@ export default {
         Vue.component(`${prefix}fixed-left`, FixedLeft)
 
         Vue.component(`${prefix}breakpoint`, Breakpoint)
+        Vue.component(`${prefix}screen-xs`, ScreenXS)
+        Vue.component(`${prefix}screen-sm`, ScreenSM)
+        Vue.component(`${prefix}screen-md`, ScreenMD)
+        Vue.component(`${prefix}screen-lg`, ScreenLG)
+        Vue.component(`${prefix}screen-xl`, ScreenXL)
     }
 }
 
@@ -32,5 +42,10 @@ export {
     FixedRight,
     FixedBottom,
     FixedLeft,
-    Breakpoint
+    Breakpoint,
+    ScreenXS,
+    ScreenSM,
+    ScreenMD,
+    ScreenLG,
+    ScreenXL,
 }
