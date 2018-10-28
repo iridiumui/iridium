@@ -12,16 +12,9 @@
             Breakpoint
         },
 
-        props: {
-            direction: {
-                type: String,
-                default: 'down'
-            }
-        },
-
         computed: {
             query() {
-                return this.direction === 'up' ? '(min-width: 0px)' : '(max-width: 575.98px)'
+                return '(max-width: 575.98px)'
             }
         }
     }
