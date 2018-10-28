@@ -58,4 +58,25 @@ describe('Hamburger Nav', () => {
 
         expect(wrapper.find('.content').isVisible()).toBe(true)
     })
+
+    test('it can toggle the open state', () => {
+        const wrapper = mount(HamburgerNav, {
+            scopedSlots: {
+                default: `
+                    <div>
+                        <button @click="props.toggle">Open</button>
+                        <div v-show="props.open" class="content">
+                        </div>
+                    </div>
+                `
+            }
+        })
+
+        expect(wrapper.find('.content').isVisible()).toBe(false)
+
+        wrapper.find('button').trigger('click')
+
+        expect(wrapper.find('.content').isVisible()).toBe(true)
+    })
+
 })
