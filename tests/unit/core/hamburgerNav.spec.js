@@ -24,4 +24,38 @@ describe('Hamburger Nav', () => {
         expect(wrapper.html()).toBe('<div><button>toggle</button><div>content</div></div>')
     })
 
+    test('its closed by default', () => {
+        const wrapper = mount(HamburgerNav, {
+            scopedSlots: {
+                default: `
+                    <div>
+                        <button>Open</button>
+                        <div v-show="props.open" class="content">
+                        </div>
+                    </div>
+                `
+            }
+        })
+
+        expect(wrapper.find('.content').isVisible()).toBe(false)
+    })
+
+    test('it accepts a default state', () => {
+        const wrapper = mount(HamburgerNav, {
+            propsData: {
+                defaultState: true
+            },
+            scopedSlots: {
+                default: `
+                    <div>
+                        <button>Open</button>
+                        <div v-show="props.open" class="content">
+                        </div>
+                    </div>
+                `
+            }
+        })
+
+        expect(wrapper.find('.content').isVisible()).toBe(true)
+    })
 })
