@@ -1,6 +1,6 @@
 <template>
     <breakpoint :media-query="query">
-        <slot></slot>
+        <slot/>
     </breakpoint>
 </template>
 
