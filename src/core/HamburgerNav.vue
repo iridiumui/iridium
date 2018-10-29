@@ -1,4 +1,7 @@
 <script>
+    import FocusTrap from '../helpers/FocusTrap.vue'
+    import HamburgerNavToggle from './HamburgerNavToggle.vue'
+
     export default {
         props: {
             defaultState: {
@@ -26,8 +29,12 @@
             }
 
             return this.$scopedSlots.hasOwnProperty('default') ? this.$scopedSlots.default(props) : createElement('div', [
-                this.$scopedSlots.toggle(props),
-                this.$scopedSlots.content(props)
+                createElement(HamburgerNavToggle, { props: { active: this.open } }, [
+                    this.$scopedSlots.toggle(props)
+                ]),
+                createElement(FocusTrap, { props: { active: this.open } }, [
+                    this.$scopedSlots.content(props)
+                ])
             ])
         }
     }
