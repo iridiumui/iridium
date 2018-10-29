@@ -16,6 +16,8 @@ import ScreenXL from './helpers/ScreenXL.vue'
 import VisuallyHidden from './helpers/VisuallyHidden.vue'
 import FocusTrap from './helpers/FocusTrap.vue'
 
+import HamburgerNav from './core/HamburgerNav.vue'
+
 const standardOptions = {
     prefix: 'iridium-'
 }
@@ -39,6 +41,8 @@ export default {
 
         Vue.component(`${prefix}visually-hidden`, VisuallyHidden)
         Vue.component(`${prefix}focus-trap`, FocusTrap)
+
+        Vue.component(`${prefix}hamburger-nav`, HamburgerNav)
     }
 }
 
@@ -56,4 +60,5 @@ export {
     ScreenXL,
     VisuallyHidden,
     FocusTrap,
+    HamburgerNav,
 }
