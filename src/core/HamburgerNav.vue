@@ -26,9 +26,9 @@
             }
 
             return this.$scopedSlots.hasOwnProperty('default') ? this.$scopedSlots.default(props) : createElement('div', [
-                    this.$scopedSlots.toggle(props),
-                    this.$scopedSlots.content(props)
-                ])
+                this.$scopedSlots.toggle(props),
+                this.$scopedSlots.content(props)
+            ])
         }
     }
 </script>
