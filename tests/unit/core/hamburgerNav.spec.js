@@ -21,7 +21,7 @@ describe('Hamburger Nav', () => {
             }
         })
 
-        expect(wrapper.html()).toBe('<div><button>toggle</button><div>content</div></div>')
+        expect(wrapper.html()).toBe('<div><button aria-expanded="false">toggle</button><div>content</div></div>')
     })
 
     test('its closed by default', () => {
