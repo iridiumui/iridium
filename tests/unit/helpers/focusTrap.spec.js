@@ -5,6 +5,9 @@ describe('FocusTrap', () => {
 
     test('it renders the default slot', () => {
         const wrapper = mount(FocusTrap, {
+            propsData: {
+                active: false
+            },
             slots: {
                 default: '<div>default slot</div>'
             }
@@ -43,6 +46,29 @@ describe('FocusTrap', () => {
 
         expect(wrapper.vm.focusTrap.deactivate.mock.calls.length).toBe(1)
 
+    })
+
+    test('it accepts options', () => {
+        const onActivateCallback = jest.fn(x => x)
+
+        const wrapper = mount(FocusTrap, {
+            propsData: {
+                active: true,
+                options: {
+                    onActivate: onActivateCallback
+                }
+            },
+            slots: {
+                default: `
+                    <div>
+                        <button>focusable</button>
+                        <input type="text">
+                    </div>
+                `
+            }
+        })
+
+        expect(onActivateCallback.mock.calls.length).toBe(1)
     })
 
 })

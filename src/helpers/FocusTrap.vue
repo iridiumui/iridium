@@ -8,6 +8,12 @@
                 required: true
             },
 
+            options: {
+                type: Object,
+                default: () => {
+                    return {}
+                }
+            }
         },
 
         mounted() {
@@ -18,7 +24,6 @@
             } else {
                 this.deactivateLock()
             }
-
         },
 
         methods: {
