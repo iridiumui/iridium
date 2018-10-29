@@ -14,6 +14,7 @@ import ScreenLG from './helpers/ScreenLG.vue'
 import ScreenXL from './helpers/ScreenXL.vue'
 
 import VisuallyHidden from './helpers/VisuallyHidden.vue'
+import FocusTrap from './helpers/FocusTrap.vue'
 
 const standardOptions = {
     prefix: 'iridium-'
@@ -37,6 +38,7 @@ export default {
         Vue.component(`${prefix}screen-xl`, ScreenXL)
 
         Vue.component(`${prefix}visually-hidden`, VisuallyHidden)
+        Vue.component(`${prefix}focus-trap`, FocusTrap)
     }
 }
 
@@ -53,4 +55,5 @@ export {
     ScreenLG,
     ScreenXL,
     VisuallyHidden,
+    FocusTrap,
 }
