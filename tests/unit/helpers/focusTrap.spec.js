@@ -16,7 +16,7 @@ describe('FocusTrap', () => {
         expect(wrapper.html()).toBe('<div>default slot</div>')
     })
 
-    test('it can be activated and deactivated', () => {
+    test('it can be activated and deactivated', async () => {
         const wrapper = mount(FocusTrap, {
             propsData: {
                 active: false
@@ -38,6 +38,8 @@ describe('FocusTrap', () => {
             active: true
         })
 
+        await wrapper.vm.$nextTick()
+
         expect(wrapper.vm.focusTrap.activate.mock.calls).toHaveLength(1)
 
         wrapper.setProps({
@@ -48,10 +50,10 @@ describe('FocusTrap', () => {
 
     })
 
-    test('it accepts options', () => {
+    test('it accepts options', async () => {
         const onActivateCallback = jest.fn(x => x)
 
-        mount(FocusTrap, {
+        const wrapper = mount(FocusTrap, {
             propsData: {
                 active: true,
                 options: {
@@ -67,6 +69,8 @@ describe('FocusTrap', () => {
                 `
             }
         })
+
+        await wrapper.vm.$nextTick()
 
         expect(onActivateCallback.mock.calls).toHaveLength(1)
     })
