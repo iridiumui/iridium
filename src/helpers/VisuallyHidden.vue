@@ -2,14 +2,14 @@
 
     let style = {
         border: 0,
-        clip: "rect(0 0 0 0)",
-        height: "1px",
-        width: "1px",
-        margin: "-1px",
+        clip: 'rect(0 0 0 0)',
+        height: '1px',
+        width: '1px',
+        margin: '-1px',
         padding: 0,
-        overflow: "hidden",
-        position: "absolute"
-    };
+        overflow: 'hidden',
+        position: 'absolute'
+    }
 
     export default {
         mounted() {
@@ -23,7 +23,7 @@
         methods: {
             convertObjectToCSS(styleObject) {
                 return Object.entries(styleObject).reduce((styleString, [propName, propValue]) => {
-                    return `${styleString}${propName}:${propValue};`;
+                    return `${styleString}${propName}:${propValue};`
                 }, '')
             }
         },
