@@ -29,7 +29,7 @@
 
             return this.$scopedSlots.hasOwnProperty('default') ? this.$scopedSlots.default(props) : createElement('div', [
                 this.$scopedSlots.toggle(props),
-                createElement(FocusTrap, { props: { active: false } }, [
+                createElement(FocusTrap, { props: { active: this.open } }, [
                     this.$scopedSlots.content(props)
                 ])
             ])

@@ -28,11 +28,15 @@
 
         methods: {
             activateLock() {
-                this.focusTrap.activate()
+                this.$nextTick(() => {
+                    this.focusTrap.activate()
+                })
             },
 
             deactivateLock() {
-                this.focusTrap.deactivate()
+                this.$nextTick(() => {
+                    this.focusTrap.deactivate()
+                })
             }
         },
 
