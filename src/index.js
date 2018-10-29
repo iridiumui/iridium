@@ -13,6 +13,8 @@ import ScreenMD from './helpers/ScreenMD.vue'
 import ScreenLG from './helpers/ScreenLG.vue'
 import ScreenXL from './helpers/ScreenXL.vue'
 
+import VisuallyHidden from './helpers/VisuallyHidden.vue'
+
 const standardOptions = {
     prefix: 'iridium-'
 }
@@ -33,6 +35,8 @@ export default {
         Vue.component(`${prefix}screen-md`, ScreenMD)
         Vue.component(`${prefix}screen-lg`, ScreenLG)
         Vue.component(`${prefix}screen-xl`, ScreenXL)
+
+        Vue.component(`${prefix}visually-hidden`, VisuallyHidden)
     }
 }
 
@@ -48,4 +52,5 @@ export {
     ScreenMD,
     ScreenLG,
     ScreenXL,
+    VisuallyHidden,
 }
