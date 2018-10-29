@@ -18,7 +18,7 @@
         },
 
         watch: {
-            active(value) {
+            active() {
                 this.updateAriaAttribute()
             }
         },
