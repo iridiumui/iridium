@@ -9,7 +9,18 @@ It's a Vue component that doesn't have a template. Instead it has a render funct
 If you wanna know more I recommend checking out this [article](https://adamwathan.me/renderless-components-in-vuejs/) by Adam Wathan. 
 
 ## Installation
-1. Run npm install
+
+Iridium is available on NPM. You can pull it down with either NPM or Yarn.
+
+```sh
+npm install --save iridium-vue
+```
+
+Or
+
+```sh
+yarn add iridium-vue
+```
 
 If you want to install the entire library you can install Iridium as a Vue plugin. You should do that in your main javascript file. This will automatically register all components globally.
 
