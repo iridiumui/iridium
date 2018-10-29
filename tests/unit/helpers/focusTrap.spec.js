@@ -38,20 +38,20 @@ describe('FocusTrap', () => {
             active: true
         })
 
-        expect(wrapper.vm.focusTrap.activate.mock.calls.length).toBe(1)
+        expect(wrapper.vm.focusTrap.activate.mock.calls).toHaveLength(1)
 
         wrapper.setProps({
             active: false
         })
 
-        expect(wrapper.vm.focusTrap.deactivate.mock.calls.length).toBe(1)
+        expect(wrapper.vm.focusTrap.deactivate.mock.calls).toHaveLength(1)
 
     })
 
     test('it accepts options', () => {
         const onActivateCallback = jest.fn(x => x)
 
-        const wrapper = mount(FocusTrap, {
+        mount(FocusTrap, {
             propsData: {
                 active: true,
                 options: {
@@ -68,7 +68,7 @@ describe('FocusTrap', () => {
             }
         })
 
-        expect(onActivateCallback.mock.calls.length).toBe(1)
+        expect(onActivateCallback.mock.calls).toHaveLength(1)
     })
 
 })
