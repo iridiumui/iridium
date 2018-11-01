@@ -42,6 +42,8 @@
                 this.$slots.content[0],
                 this.$scopedSlots.button({
                     copy: this.copy,
+                    copied: this.copied,
+                    error: this.error
                 })
             ])
         }

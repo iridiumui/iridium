@@ -58,4 +58,50 @@ describe('Code Block', () => {
 
         expect(copyStub.mock.calls).toHaveLength(1)
     })
+
+    test('the button has access to all the states', () => {
+        const wrapper = mount(CodeBlock, {
+            slots: {
+                content: content
+            },
+            scopedSlots: {
+                button: `
+                    <button>
+                        <span v-if="props.copied" class="success-message">Copied</span>
+                        <span v-else-if="props.error" class="error-message">Error</span>
+                        <span v-else class="default-message">Copy</span>
+                    </button>
+                `
+            }
+        })
+
+        wrapper.setData({
+            copied: false,
+            error: false
+        })
+
+        expect(wrapper.contains('.success-message')).toBe(false)
+        expect(wrapper.contains('.error-message')).toBe(false)
+        expect(wrapper.find('.default-message').isVisible()).toBe(true)
+
+
+        wrapper.setData({
+            copied: true,
+            error: false
+        })
+
+        expect(wrapper.find('.success-message').isVisible()).toBe(true)
+        expect(wrapper.contains('.error-message')).toBe(false)
+        expect(wrapper.contains('.default-message')).toBe(false)
+
+
+        wrapper.setData({
+            copied: false,
+            error: true
+        })
+
+        expect(wrapper.contains('.success-message')).toBe(false)
+        expect(wrapper.find('.error-message').isVisible()).toBe(true)
+        expect(wrapper.contains('.default-message')).toBe(false)
+    })
 })
