@@ -1,5 +1,5 @@
 <template>
-    <transition :name="name" v-on="hooks" :appear="$attrs.appear">
+    <transition :name="name" v-on="hooks" :appear="$attrs.appear" :mode="$attrs.mode">
         <slot></slot>
     </transition>
 </template>
@@ -35,7 +35,6 @@
 
         methods: {
             setDuration(el) {
-                console.log('setting up')
                 el.style.transition = 'all'
                 el.style.transitionDuration = `${this.duration}ms`
                 el.style.transitionTimingFunction = this.timingFunction
