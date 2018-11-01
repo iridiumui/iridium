@@ -129,6 +129,7 @@ describe('Code Block', () => {
         wrapper.find('button').trigger('click')
 
         expect(callback.mock.calls).toHaveLength(1)
+        expect(callback.mock.calls[0][0] instanceof Function).toBe(true)
     })
 
     test('a callback can be run when the copy failed', () => {
@@ -155,6 +156,7 @@ describe('Code Block', () => {
         wrapper.find('button').trigger('click')
 
         expect(callback.mock.calls).toHaveLength(1)
+        expect(callback.mock.calls[0][0] instanceof Function).toBe(true)
     })
 
 })

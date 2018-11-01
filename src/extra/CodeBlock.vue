@@ -47,7 +47,7 @@
                 if (!newValue) return
 
                 if (this.successCallback) {
-                    this.successCallback()
+                    this.successCallback(() => { this.copied = false })
                 } else {
                     setTimeout(() => {
                         this.copied = false
@@ -59,7 +59,7 @@
                 if (!newValue) return
 
                 if (this.errorCallback) {
-                    this.errorCallback()
+                    this.errorCallback(() => { this.error = false })
                 } else {
                     setTimeout(() => {
                         this.error = false
