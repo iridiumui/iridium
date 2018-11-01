@@ -18,6 +18,8 @@ import FocusTrap from './helpers/FocusTrap.vue'
 
 import HamburgerNav from './core/HamburgerNav.vue'
 
+import CodeBlock from './extra/CodeBlock.vue'
+
 const standardOptions = {
     prefix: 'iridium-'
 }
@@ -43,6 +45,8 @@ export default {
         Vue.component(`${prefix}focus-trap`, FocusTrap)
 
         Vue.component(`${prefix}hamburger-nav`, HamburgerNav)
+
+        Vue.component(`${prefix}code-block`, CodeBlock)
     }
 }
 
@@ -61,4 +65,5 @@ export {
     VisuallyHidden,
     FocusTrap,
     HamburgerNav,
+    CodeBlock,
 }
