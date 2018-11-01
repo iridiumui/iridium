@@ -1,5 +1,5 @@
 <template>
-    <transition :name="name" v-on="hooks">
+    <transition :name="name" v-on="hooks" :appear="$attrs.appear">
         <slot></slot>
     </transition>
 </template>

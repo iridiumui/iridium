@@ -17,4 +17,18 @@ describe('TransitionBase', () => {
         expect(wrapper.text()).toBe('default slot')
     })
 
+    test('it can appear on the initial render', () => {
+        const wrapper = mount(TransitionBase, {
+            propsData: {
+                name: 'slide',
+                appear: true
+            },
+            slots: {
+                default: '<div>default slot</div>'
+            }
+        })
+
+        expect(wrapper.attributes('appear')).toBe('true')
+    })
+
 })
