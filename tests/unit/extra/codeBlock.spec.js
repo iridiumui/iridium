@@ -120,7 +120,7 @@ describe('Code Block', () => {
             }
         })
 
-        const copyStub = jest.fn(x => {
+        const copyStub = jest.fn(() => {
             wrapper.setData({ copied: true })
         })
 
@@ -147,7 +147,7 @@ describe('Code Block', () => {
             }
         })
 
-        const copyStub = jest.fn(x => {
+        const copyStub = jest.fn(() => {
             wrapper.setData({ error: true })
         })
 
