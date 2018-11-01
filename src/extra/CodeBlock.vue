@@ -1,5 +1,16 @@
 <script>
     export default {
+        props: {
+            successCallback: {
+                type: Function,
+                required: false
+            },
+
+            errorCallback: {
+                type: Function,
+                required: false
+            },
+        },
 
         data() {
             return {
@@ -22,17 +33,37 @@
                     selection.removeAllRanges()
 
                     this.copied = true
+                    this.error = false
 
-                        setTimeout(() => {
-                            this.copied = false
-                        }, 2000)
                 } catch (error) {
-
+                    this.copied = false
                     this.error = true
+                }
+            }
+        },
 
-                        setTimeout(() => {
-                            this.error = false
-                        }, 2000)
+        watch: {
+            copied(newValue) {
+                if (!newValue) return
+
+                if (this.successCallback) {
+                    this.successCallback()
+                } else {
+                    setTimeout(() => {
+                        this.copied = false
+                    }, 2000)
+                }
+            },
+
+            error(newValue) {
+                if (!newValue) return
+
+                if (this.errorCallback) {
+                    this.errorCallback()
+                } else {
+                    setTimeout(() => {
+                        this.error = false
+                    }, 2000)
                 }
             }
         },

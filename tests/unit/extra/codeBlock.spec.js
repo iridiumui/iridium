@@ -104,4 +104,57 @@ describe('Code Block', () => {
         expect(wrapper.find('.error-message').isVisible()).toBe(true)
         expect(wrapper.contains('.default-message')).toBe(false)
     })
+
+    test('a callback can be run when the copy was successful', () => {
+        const callback = jest.fn(x => x)
+
+        const wrapper = mount(CodeBlock, {
+            slots: {
+                content: content
+            },
+            scopedSlots: {
+                button: '<button @click="props.copy">copy</button>'
+            },
+            propsData: {
+                successCallback: callback
+            }
+        })
+
+        const copyStub = jest.fn(x => {
+            wrapper.setData({ copied: true })
+        })
+
+        wrapper.setMethods({ copy: copyStub })
+
+        wrapper.find('button').trigger('click')
+
+        expect(callback.mock.calls).toHaveLength(1)
+    })
+
+    test('a callback can be run when the copy failed', () => {
+        const callback = jest.fn(x => x)
+
+        const wrapper = mount(CodeBlock, {
+            slots: {
+                content: content
+            },
+            scopedSlots: {
+                button: '<button @click="props.copy">copy</button>'
+            },
+            propsData: {
+                errorCallback: callback
+            }
+        })
+
+        const copyStub = jest.fn(x => {
+            wrapper.setData({ error: true })
+        })
+
+        wrapper.setMethods({ copy: copyStub })
+
+        wrapper.find('button').trigger('click')
+
+        expect(callback.mock.calls).toHaveLength(1)
+    })
+
 })
