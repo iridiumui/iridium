@@ -35,7 +35,6 @@
 
         methods: {
             setDuration(el) {
-                el.style.transition = 'all'
                 el.style.transitionDuration = `${this.duration}ms`
                 el.style.transitionTimingFunction = this.timingFunction
             },
