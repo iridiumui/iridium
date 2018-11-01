@@ -3,12 +3,20 @@
         props: {
             successCallback: {
                 type: Function,
-                required: false
+                default: function(resetCopied) {
+                    setTimeout(() => {
+                        resetCopied()
+                    }, 2000)
+                }
             },
 
             errorCallback: {
                 type: Function,
-                required: false
+                default: function(resetError) {
+                    setTimeout(() => {
+                        resetError()
+                    }, 2000)
+                }
             },
         },
 
@@ -34,7 +42,6 @@
 
                     this.copied = true
                     this.error = false
-
                 } catch (error) {
                     this.copied = false
                     this.error = true
@@ -46,25 +53,13 @@
             copied(newValue) {
                 if (!newValue) return
 
-                if (this.successCallback) {
-                    this.successCallback(() => { this.copied = false })
-                } else {
-                    setTimeout(() => {
-                        this.copied = false
-                    }, 2000)
-                }
+                this.successCallback(() => { this.copied = false })
             },
 
             error(newValue) {
                 if (!newValue) return
 
-                if (this.errorCallback) {
-                    this.errorCallback(() => { this.error = false })
-                } else {
-                    setTimeout(() => {
-                        this.error = false
-                    }, 2000)
-                }
+                this.errorCallback(() => { this.error = false })
             }
         },
 
