@@ -94,5 +94,22 @@ describe('ScrollTo', () => {
         )
     })
 
-})
+    test('it accepts an offset', () => {
+        const wrapper = mount(ScrollTo, {
+            scopedSlots: {
+                default: '<button @click="props.scroll">Scroll</button>'
+            },
+            propsData: {
+                top: 200,
+                offset: 50
+            }
+        })
 
+        wrapper.trigger('click')
+
+        expect(window.scrollTo).toBeCalledWith(
+            expect.objectContaining({ top: 150 })
+        )
+    })
+
+})

@@ -10,6 +10,10 @@
             },
             element: String,
             top: Number,
+            offset: {
+                type: Number,
+                default: 0
+            },
         },
 
         computed: {
@@ -21,10 +25,10 @@
 
             calculatedTop() {
                 if (this.target) {
-                    return this.getOffsetTop(this.target)
+                    return this.getOffsetTop(this.target) - this.offset
                 }
 
-                return this.top
+                return this.top - this.offset
             },
         },
 
