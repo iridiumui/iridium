@@ -15,7 +15,7 @@
                 type: Number,
                 default: 200
             },
-            timingFunction: {
+            easing: {
                 type: String,
                 default: 'ease'
             }
@@ -24,21 +24,21 @@
         computed: {
             hooks() {
                 return {
-                    beforeEnter: this.setDuration,
-                    afterEnter: this.cleanUpDuration,
-                    beforeLeave: this.setDuration,
-                    afterLeave: this.cleanUpDuration,
+                    beforeEnter: this.setUpTransition,
+                    afterEnter: this.cleanUpTransition,
+                    beforeLeave: this.setUpTransition,
+                    afterLeave: this.cleanUpTransition,
                     ...this.$listeners
                 };
             }
         },
 
         methods: {
-            setDuration(el) {
+            setUpTransition(el) {
                 el.style.transitionDuration = `${this.duration}ms`
-                el.style.transitionTimingFunction = this.timingFunction
+                el.style.transitionTimingFunction = this.easing
             },
-            cleanUpDuration(el) {
+            cleanUpTransition(el) {
                 el.style.transitionDuration = ''
                 el.style.transitionTimingFunction = ''
             }
