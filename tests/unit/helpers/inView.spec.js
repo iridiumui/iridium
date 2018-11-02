@@ -64,4 +64,24 @@ describe('InView', () => {
 
         expect(observe.mock.calls[0][0].classList.contains('default')).toBe(true)
     })
+
+    test('the slot has access to the in-view state', () => {
+        const wrapper = mount(InView, {
+            scopedSlots: {
+                default: `
+                    <div :class="[ props.inView ? 'in-view' : 'not-in-view' ]">
+                        default slot
+                    </div>
+                `
+            }
+        })
+
+        wrapper.setData({ inView: false })
+
+        expect(wrapper.classes()).toContain('not-in-view')
+
+        wrapper.setData({ inView: true })
+
+        expect(wrapper.classes()).toContain('in-view')
+    })
 })
