@@ -14,6 +14,7 @@ import ScreenLG from './helpers/ScreenLG.vue'
 import ScreenXL from './helpers/ScreenXL.vue'
 
 import InView from './helpers/InView.vue'
+import ScrollTo from './helpers/ScrollTo.vue'
 
 import TransitionSlideUp from './transitions/TransitionSlideUp.vue'
 import TransitionSlideDown from './transitions/TransitionSlideDown.vue'
@@ -56,6 +57,7 @@ export default {
         Vue.component(`${prefix}screen-xl`, ScreenXL)
 
         Vue.component(`${prefix}in-view`, InView)
+        Vue.component(`${prefix}scroll-to`, ScrollTo)
 
         Vue.component(`${prefix}transition-slide-up`, TransitionSlideUp)
         Vue.component(`${prefix}transition-slide-down`, TransitionSlideDown)
@@ -93,6 +95,7 @@ export {
     ScreenXL,
 
     InView,
+    ScrollTo,
 
     TransitionSlideUp,
     TransitionSlideDown,
