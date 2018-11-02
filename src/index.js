@@ -20,6 +20,11 @@ import TransitionSlideLeft from './transitions/TransitionSlideLeft.vue'
 
 import TransitionFade from './transitions/TransitionFade.vue'
 
+import TransitionFadeSlideUp from './transitions/TransitionFadeSlideUp.vue'
+import TransitionFadeSlideRight from './transitions/TransitionFadeSlideRight.vue'
+import TransitionFadeSlideDown from './transitions/TransitionFadeSlideDown.vue'
+import TransitionFadeSlideLeft from './transitions/TransitionFadeSlideLeft.vue'
+
 import VisuallyHidden from './helpers/VisuallyHidden.vue'
 import FocusTrap from './helpers/FocusTrap.vue'
 
@@ -55,6 +60,11 @@ export default {
 
         Vue.component(`${prefix}transition-fade`, TransitionFade)
 
+        Vue.component(`${prefix}transition-fade-slide-up`, TransitionFadeSlideUp)
+        Vue.component(`${prefix}transition-fade-slide-right`, TransitionFadeSlideRight)
+        Vue.component(`${prefix}transition-fade-slide-down`, TransitionFadeSlideDown)
+        Vue.component(`${prefix}transition-fade-slide-left`, TransitionFadeSlideLeft)
+
         Vue.component(`${prefix}visually-hidden`, VisuallyHidden)
         Vue.component(`${prefix}focus-trap`, FocusTrap)
 
@@ -84,6 +94,11 @@ export {
     TransitionSlideLeft,
 
     TransitionFade,
+
+    TransitionFadeSlideUp,
+    TransitionFadeSlideRight,
+    TransitionFadeSlideDown,
+    TransitionFadeSlideLeft,
 
     VisuallyHidden,
     FocusTrap,
