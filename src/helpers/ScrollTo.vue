@@ -1,9 +1,12 @@
 <script>
     export default {
+        props: {
+            top: Number,
+        },
         methods: {
             scroll() {
                 window.scrollTo({
-                    top: 0,
+                    top: this.top,
                     behavior: 'smooth'
                 })
             },

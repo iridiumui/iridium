@@ -30,5 +30,22 @@ describe('ScrollTo', () => {
         expect(window.scrollTo).toHaveBeenCalled()
     })
 
+    test('it accepts a specific top value to scroll to', () => {
+        const wrapper = mount(ScrollTo, {
+            scopedSlots: {
+                default: '<button @click="props.scroll">Scroll</button>'
+            },
+            propsData: {
+                top: 200
+            }
+        })
+
+        wrapper.trigger('click')
+
+        expect(window.scrollTo).toBeCalledWith(
+            expect.objectContaining({ top: 200 })
+        )
+    })
+
 })
 
