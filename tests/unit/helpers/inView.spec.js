@@ -43,7 +43,7 @@ describe('InView', () => {
             </div>
         `
 
-        const wrapper = mount(InView, {
+        mount(InView, {
             slots: {
                 default: '<div class="default">default slot</div>'
             },
@@ -56,7 +56,7 @@ describe('InView', () => {
     })
 
     test('it can target the slot element', () => {
-        const wrapper = mount(InView, {
+        mount(InView, {
             slots: {
                 default: '<div class="default">default slot</div>'
             }
@@ -98,7 +98,7 @@ describe('InView', () => {
     })
 
     test('it accepts a custom threshold', () => {
-        const wrapper = mount(InView, {
+        mount(InView, {
             slots: {
                 default: '<div class="default">default slot</div>'
             },

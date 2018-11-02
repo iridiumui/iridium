@@ -2,7 +2,8 @@
     export default {
         props: {
             element: {
-                type: String
+                type: String,
+                default: null
             },
             threshold: {
                 type: [Number, Array],
@@ -34,7 +35,7 @@
         methods: {
             setupObserver() {
                 this.destroyObserver()
-                this.observer = new IntersectionObserver((entries, observer) => {
+                this.observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         this.inView = entry.isIntersecting
                     })
@@ -57,7 +58,7 @@
                 this.$emit('inView', newValue)
             },
 
-            $route(to, from) {
+            $route() {
                 this.setupObserver()
             }
         },
