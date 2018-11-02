@@ -13,6 +13,11 @@ import ScreenMD from './helpers/ScreenMD.vue'
 import ScreenLG from './helpers/ScreenLG.vue'
 import ScreenXL from './helpers/ScreenXL.vue'
 
+import TransitionSlideUp from './transitions/TransitionSlideUp.vue'
+import TransitionSlideDown from './transitions/TransitionSlideDown.vue'
+import TransitionSlideRight from './transitions/TransitionSlideRight.vue'
+import TransitionSlideLeft from './transitions/TransitionSlideLeft.vue'
+
 import VisuallyHidden from './helpers/VisuallyHidden.vue'
 import FocusTrap from './helpers/FocusTrap.vue'
 
@@ -41,6 +46,14 @@ export default {
         Vue.component(`${prefix}screen-lg`, ScreenLG)
         Vue.component(`${prefix}screen-xl`, ScreenXL)
 
+        Vue.component(`${prefix}transition-slide-up`, TransitionSlideUp)
+        Vue.component(`${prefix}transition-slide-down`, TransitionSlideDown)
+        Vue.component(`${prefix}transition-slide-right`, TransitionSlideRight)
+        Vue.component(`${prefix}transition-slide-left`, TransitionSlideLeft)
+
+        Vue.component(`${prefix}transition-fade-in`, TransitionFadeIn)
+        Vue.component(`${prefix}transition-fade-out`, TransitionFadeOut)
+
         Vue.component(`${prefix}visually-hidden`, VisuallyHidden)
         Vue.component(`${prefix}focus-trap`, FocusTrap)
 
@@ -56,14 +69,22 @@ export {
     FixedRight,
     FixedBottom,
     FixedLeft,
+
     Breakpoint,
     ScreenXS,
     ScreenSM,
     ScreenMD,
     ScreenLG,
     ScreenXL,
+
+    TransitionSlideUp,
+    TransitionSlideDown,
+    TransitionSlideRight,
+    TransitionSlideLeft,
+
     VisuallyHidden,
     FocusTrap,
+
     HamburgerNav,
     CodeBlock,
 }
