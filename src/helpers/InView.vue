@@ -4,6 +4,10 @@
             element: {
                 type: String
             },
+            threshold: {
+                type: [Number, Array],
+                default: 0
+            }
         },
 
         data() {
@@ -35,6 +39,7 @@
                         this.inView = entry.isIntersecting
                     })
                 }, {
+                    threshold: this.threshold
                 })
 
                 this.observer.observe(this.target)

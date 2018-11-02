@@ -11,7 +11,7 @@ describe('InView', () => {
         observe = jest.fn(x => x)
         window.IntersectionObserver = jest.fn(function() {
             this.observe = observe
-        })
+        }, {})
     })
 
     test('it can render the default slot', () => {
@@ -95,6 +95,19 @@ describe('InView', () => {
         wrapper.setData({ inView: true })
 
         expect(wrapper.emitted().inView[0][0]).toBe(true)
+    })
+
+    test('it accepts a custom threshold', () => {
+        const wrapper = mount(InView, {
+            slots: {
+                default: '<div class="default">default slot</div>'
+            },
+            propsData: {
+                threshold: 0.8
+            }
+        })
+
+        expect(window.IntersectionObserver.mock.calls[0][1].threshold).toBe(0.8)
     })
 
 })
