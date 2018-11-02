@@ -1,6 +1,13 @@
 <script>
     export default {
         props: {
+            behavior: {
+                type: String,
+                default: 'smooth',
+                validator: function (value) {
+                    return ['smooth', 'auto'].indexOf(value) !== -1
+                }
+            },
             element: String,
             top: Number,
         },
@@ -24,8 +31,8 @@
         methods: {
             scroll() {
                 window.scrollTo({
-                    behavior: 'smooth'
                     top: this.calculatedTop,
+                    behavior: this.behavior
                 })
             },
 

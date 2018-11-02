@@ -4,6 +4,7 @@ import ScrollTo from '../../../src/helpers/ScrollTo.vue'
 describe('ScrollTo', () => {
 
     beforeEach(() => {
+        document.body.innerHTML = ''
         window.scrollTo = jest.fn()
     })
 
@@ -73,6 +74,23 @@ describe('ScrollTo', () => {
 
         expect(window.scrollTo).toBeCalledWith(
             expect.objectContaining({ top: 300 })
+        )
+    })
+
+    test('it accepts a scroll behavior', () => {
+        const wrapper = mount(ScrollTo, {
+            scopedSlots: {
+                default: '<button @click="props.scroll">Scroll</button>'
+            },
+            propsData: {
+                behavior: 'auto'
+            }
+        })
+
+        wrapper.trigger('click')
+
+        expect(window.scrollTo).toBeCalledWith(
+            expect.objectContaining({ behavior: 'auto' })
         )
     })
 
