@@ -47,5 +47,34 @@ describe('ScrollTo', () => {
         )
     })
 
+    test('it accepts an element to scroll to', () => {
+        document.body.innerHTML = `
+            <div>
+                <div class="scroll-to-here">some element</div>
+            </div>
+        `
+
+        const wrapper = mount(ScrollTo, {
+            scopedSlots: {
+                default: '<button @click="props.scroll">Scroll</button>'
+            },
+            propsData: {
+                element: '.scroll-to-here'
+            }
+        })
+
+        wrapper.vm.target.getBoundingClientRect = jest.fn(x => {
+            return {
+                top: 300
+            }
+        })
+
+        wrapper.trigger('click')
+
+        expect(window.scrollTo).toBeCalledWith(
+            expect.objectContaining({ top: 300 })
+        )
+    })
+
 })
 
