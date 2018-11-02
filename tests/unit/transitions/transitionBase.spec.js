@@ -31,4 +31,18 @@ describe('TransitionBase', () => {
         expect(wrapper.attributes('appear')).toBe('true')
     })
 
+    test('it supports transition modes', () => {
+        const wrapper = mount(TransitionBase, {
+            propsData: {
+                name: 'slide',
+                mode: 'out-in'
+            },
+            slots: {
+                default: '<div>default slot</div>'
+            }
+        })
+
+        expect(wrapper.attributes('mode')).toBe('out-in')
+    })
+
 })
