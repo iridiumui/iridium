@@ -1,6 +1,8 @@
 <template>
-    <transition-base name="fade-slide-left" v-bind="$attrs">
-        <slot></slot>
+    <transition-base 
+        name="fade-slide-left" 
+        v-bind="$attrs">
+        <slot/>
     </transition-base>
 </template>
 

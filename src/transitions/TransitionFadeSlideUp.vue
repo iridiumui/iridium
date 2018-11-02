@@ -1,6 +1,8 @@
 <template>
-    <transition-base name="fade-slide-up" v-bind="$attrs">
-        <slot></slot>
+    <transition-base 
+        name="fade-slide-up" 
+        v-bind="$attrs">
+        <slot/>
     </transition-base>
 </template>
 

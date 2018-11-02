@@ -1,6 +1,10 @@
 <template>
-    <transition :name="name" v-on="hooks" :appear="$attrs.appear" :mode="$attrs.mode">
-        <slot></slot>
+    <transition 
+        :name="name" 
+        v-on="hooks" 
+        :appear="$attrs.appear" 
+        :mode="$attrs.mode">
+        <slot/>
     </transition>
 </template>
 
@@ -33,7 +37,7 @@
                     beforeLeave: this.setUpTransition,
                     afterLeave: this.cleanUpTransition,
                     ...this.$listeners
-                };
+                }
             }
         },
 
