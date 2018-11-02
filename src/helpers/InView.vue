@@ -31,6 +31,9 @@
             setupObserver() {
                 this.destroyObserver()
                 this.observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        this.inView = entry.isIntersecting
+                    })
                 }, {
                 })
 
@@ -45,6 +48,10 @@
         },
 
         watch: {
+            inView(newValue) {
+                this.$emit('inView', newValue)
+            },
+
             $route(to, from) {
                 this.setupObserver()
             }

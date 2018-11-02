@@ -84,4 +84,17 @@ describe('InView', () => {
 
         expect(wrapper.classes()).toContain('in-view')
     })
+
+    test('an event is emitted when the state changes', () => {
+        const wrapper = mount(InView, {
+            slots: {
+                default: '<div class="default">default slot</div>'
+            }
+        })
+
+        wrapper.setData({ inView: true })
+
+        expect(wrapper.emitted().inView[0][0]).toBe(true)
+    })
+
 })
