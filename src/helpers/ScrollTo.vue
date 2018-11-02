@@ -8,7 +8,9 @@
                     return ['smooth', 'auto'].indexOf(value) !== -1
                 }
             },
+            /* eslint-disable-next-line vue/require-default-prop */
             element: String,
+            /* eslint-disable-next-line vue/require-default-prop */
             top: Number,
             offset: {
                 type: Number,

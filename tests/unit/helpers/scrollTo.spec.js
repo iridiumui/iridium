@@ -64,7 +64,7 @@ describe('ScrollTo', () => {
             }
         })
 
-        wrapper.vm.target.getBoundingClientRect = jest.fn(x => {
+        wrapper.vm.target.getBoundingClientRect = jest.fn(() => {
             return {
                 top: 300
             }
