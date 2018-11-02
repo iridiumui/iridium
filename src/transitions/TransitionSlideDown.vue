@@ -1,6 +1,6 @@
 <template>
-    <transition-base 
-        name="slide-down" 
+    <transition-base
+        name="iridium-slide-down"
         v-bind="$attrs">
         <slot/>
     </transition-base>
@@ -17,7 +17,7 @@
 </script>
 
 <style>
-    .slide-down-enter, .slide-down-leave-to {
+    .iridium-slide-down-enter, .iridium-slide-down-leave-to {
         transform: translateY(-100%);
     }
 </style>

@@ -1,6 +1,6 @@
 <template>
-    <transition-base 
-        name="fade-slide-down" 
+    <transition-base
+        name="iridium-fade-slide-down"
         v-bind="$attrs">
         <slot/>
     </transition-base>
@@ -17,7 +17,7 @@
 </script>
 
 <style>
-    .fade-slide-down-enter, .fade-slide-down-leave-to {
+    .iridium-fade-slide-down-enter, .iridium-fade-slide-down-leave-to {
         transform: translateY(-100%);
         opacity: 0;
     }
