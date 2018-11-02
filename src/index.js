@@ -13,6 +13,18 @@ import ScreenMD from './helpers/ScreenMD.vue'
 import ScreenLG from './helpers/ScreenLG.vue'
 import ScreenXL from './helpers/ScreenXL.vue'
 
+import TransitionSlideUp from './transitions/TransitionSlideUp.vue'
+import TransitionSlideDown from './transitions/TransitionSlideDown.vue'
+import TransitionSlideRight from './transitions/TransitionSlideRight.vue'
+import TransitionSlideLeft from './transitions/TransitionSlideLeft.vue'
+
+import TransitionFade from './transitions/TransitionFade.vue'
+
+import TransitionFadeSlideUp from './transitions/TransitionFadeSlideUp.vue'
+import TransitionFadeSlideRight from './transitions/TransitionFadeSlideRight.vue'
+import TransitionFadeSlideDown from './transitions/TransitionFadeSlideDown.vue'
+import TransitionFadeSlideLeft from './transitions/TransitionFadeSlideLeft.vue'
+
 import VisuallyHidden from './helpers/VisuallyHidden.vue'
 import FocusTrap from './helpers/FocusTrap.vue'
 
@@ -41,6 +53,18 @@ export default {
         Vue.component(`${prefix}screen-lg`, ScreenLG)
         Vue.component(`${prefix}screen-xl`, ScreenXL)
 
+        Vue.component(`${prefix}transition-slide-up`, TransitionSlideUp)
+        Vue.component(`${prefix}transition-slide-down`, TransitionSlideDown)
+        Vue.component(`${prefix}transition-slide-right`, TransitionSlideRight)
+        Vue.component(`${prefix}transition-slide-left`, TransitionSlideLeft)
+
+        Vue.component(`${prefix}transition-fade`, TransitionFade)
+
+        Vue.component(`${prefix}transition-fade-slide-up`, TransitionFadeSlideUp)
+        Vue.component(`${prefix}transition-fade-slide-right`, TransitionFadeSlideRight)
+        Vue.component(`${prefix}transition-fade-slide-down`, TransitionFadeSlideDown)
+        Vue.component(`${prefix}transition-fade-slide-left`, TransitionFadeSlideLeft)
+
         Vue.component(`${prefix}visually-hidden`, VisuallyHidden)
         Vue.component(`${prefix}focus-trap`, FocusTrap)
 
@@ -56,14 +80,29 @@ export {
     FixedRight,
     FixedBottom,
     FixedLeft,
+
     Breakpoint,
     ScreenXS,
     ScreenSM,
     ScreenMD,
     ScreenLG,
     ScreenXL,
+
+    TransitionSlideUp,
+    TransitionSlideDown,
+    TransitionSlideRight,
+    TransitionSlideLeft,
+
+    TransitionFade,
+
+    TransitionFadeSlideUp,
+    TransitionFadeSlideRight,
+    TransitionFadeSlideDown,
+    TransitionFadeSlideLeft,
+
     VisuallyHidden,
     FocusTrap,
+
     HamburgerNav,
     CodeBlock,
 }
