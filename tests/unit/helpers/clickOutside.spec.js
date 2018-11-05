@@ -35,4 +35,16 @@ describe('ClickOutside', () => {
         expect(wrapper.emitted().clickoutside).toBeTruthy()
     })
 
+    test('it doesnt fire an event if the passed in element is clicked', () => {
+        const wrapper = mount(ClickOutside, {
+            slots: {
+                default: '<button>default button</button>'
+            }
+        })
+
+        wrapper.find('button').trigger('click')
+
+        expect(wrapper.emitted().clickoutside).toBeFalsy()
+    })
+
 })

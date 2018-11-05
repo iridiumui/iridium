@@ -1,9 +1,10 @@
 <script>
     export default {
-
         mounted() {
             document.addEventListener('click', (e) => {
+                if (this.$el !== e.target) {
                     this.$emit('clickoutside')
+                }
             })
         },
 
