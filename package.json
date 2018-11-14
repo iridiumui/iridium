@@ -1,6 +1,6 @@
 {
     "name": "iridium-vue",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "description": "A UI framework with no UI",
     "main": "dist/index.js",
     "module": "dist/index.es.js",
