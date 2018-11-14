@@ -19,17 +19,13 @@
         },
 
         mounted() {
+            this.target = document.querySelector(this.element) || this.$el
+
             this.setupObserver()
         },
 
         beforeDestroy() {
             this.destroyObserver()
-        },
-
-        computed: {
-            target() {
-                return document.querySelector(this.element) || this.$el
-            },
         },
 
         methods: {
