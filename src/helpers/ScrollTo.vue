@@ -20,7 +20,7 @@
 
         computed: {
             target() {
-                if (!this.element) return null
+                if (!this.element || !document) return null
 
                 return document.querySelector(this.element)
             },
