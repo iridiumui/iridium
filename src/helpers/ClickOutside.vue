@@ -1,11 +1,19 @@
 <script>
     export default {
         mounted() {
-            document.addEventListener('click', (e) => {
-                if (this.$el !== e.target) {
+            this.clickListener = (e) => {
+                if (this.$el.contains(e.target) || this.$el === e.target) {
+                    this.$emit('clickinside')
+                } else {
                     this.$emit('clickoutside')
                 }
-            })
+            }
+
+            document.addEventListener('click', this.clickListener)
+        },
+
+        beforeDestroy() {
+            document.removeEventListener('click', this.clickListener)
         },
 
         render() {
