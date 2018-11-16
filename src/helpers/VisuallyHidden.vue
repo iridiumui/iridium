@@ -30,8 +30,8 @@
 
         render(createElement) {
             return createElement('span', [
-                    this.$slots.default[0]
-                ])
+                this.$slots.default[0]
+            ])
         }
     }
 </script>
