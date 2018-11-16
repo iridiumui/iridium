@@ -2,7 +2,9 @@
     export default {
         mounted() {
             this.clickListener = (e) => {
-                if (this.$el !== e.target) {
+                if (this.$el.contains(e.target) || this.$el === e.target) {
+                    this.$emit('clickinside')
+                } else {
                     this.$emit('clickoutside')
                 }
             }
