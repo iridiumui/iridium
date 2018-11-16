@@ -19,7 +19,7 @@ describe('Fixed', () => {
     test('the pinned edge can be determined via a prop', () => {
         wrapper = mount(Fixed, {
             propsData: {
-                edge: 'left'
+                edges: ['left']
             },
             slots: {
                 default: '<div>component</div>'

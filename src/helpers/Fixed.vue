@@ -1,20 +1,27 @@
 <script>
     export default {
         props: {
-            edge: {
-                type: String,
-                default: 'top'
+            edges: {
+                type: Array,
+                default: () => {
+                    return ['top']
+                }
             }
         },
 
         mounted() {
             this.$el.style.position = 'fixed'
-            this.$el.style[this.edge] = '0'
+
+            this.edges.forEach(edge => {
+                this.$el.style[edge] = '0'
+            })
         },
 
         beforeDestroy() {
             this.$el.style.position = null
-            this.$el.style[this.edge] = null
+            this.edges.forEach(edge => {
+                this.$el.style[edge] = '0'
+            })
         },
 
         render() {
