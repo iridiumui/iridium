@@ -15,7 +15,10 @@
         props: {
             direction: {
                 type: String,
-                default: 'up'
+                default: 'up',
+                validator: function (value) {
+                    return ['up', 'down'].indexOf(value) !== -1
+                }
             }
         },
 
