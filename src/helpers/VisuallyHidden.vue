@@ -28,8 +28,10 @@
             }
         },
 
-        render() {
-            return this.$slots.default[0]
+        render(createElement) {
+            return createElement('span', [
+                    this.$slots.default[0]
+                ])
         }
     }
 </script>

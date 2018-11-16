@@ -6,18 +6,18 @@ describe('VisuallyHidden', () => {
     test('it renders the default slot', () => {
         const wrapper = mount(VisuallyHidden, {
             slots: {
-                default: '<div>default slot</div>'
+                default: 'default slot'
             }
         })
 
-        expect(wrapper.is('div')).toBe(true)
+        expect(wrapper.is('span')).toBe(true)
         expect(wrapper.text()).toBe('default slot')
     })
 
     test('it hides the component for visual users', () => {
         const wrapper = mount(VisuallyHidden, {
             slots: {
-                default: '<div>component</div>'
+                default: 'component'
             }
         })
 
