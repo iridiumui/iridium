@@ -1,5 +1,5 @@
 <template>
-    <fixed edge="right">
+    <fixed :edges="['right']">
         <slot/>
     </fixed>
 </template>

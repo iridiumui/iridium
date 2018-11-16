@@ -19,7 +19,7 @@ describe('Fixed', () => {
     test('the pinned edge can be determined via a prop', () => {
         wrapper = mount(Fixed, {
             propsData: {
-                edge: 'left'
+                edges: ['left']
             },
             slots: {
                 default: '<div>component</div>'
@@ -27,6 +27,19 @@ describe('Fixed', () => {
         })
 
         expect(wrapper.attributes('style')).toBe('position: fixed; left: 0px;')
+    })
+
+    test('it can pin to multiple edges', () => {
+        wrapper = mount(Fixed, {
+            propsData: {
+                edges: ['left', 'bottom']
+            },
+            slots: {
+                default: '<div>component</div>'
+            }
+        })
+
+        expect(wrapper.attributes('style')).toBe('position: fixed; left: 0px; bottom: 0px;')
     })
 
     test('it renders the default slot', () => {

@@ -5,6 +5,10 @@ import FixedTop from './helpers/FixedTop.vue'
 import FixedRight from './helpers/FixedRight.vue'
 import FixedBottom from './helpers/FixedBottom.vue'
 import FixedLeft from './helpers/FixedLeft.vue'
+import FixedTopRight from './helpers/FixedTopRight.vue'
+import FixedTopLeft from './helpers/FixedTopLeft.vue'
+import FixedBottomRight from './helpers/FixedBottomRight.vue'
+import FixedBottomLeft from './helpers/FixedBottomLeft.vue'
 
 import Breakpoint from './helpers/Breakpoint.vue'
 import ScreenXS from './helpers/ScreenXS.vue'
@@ -49,6 +53,10 @@ export default {
         Vue.component(`${prefix}fixed-right`, FixedRight)
         Vue.component(`${prefix}fixed-bottom`, FixedBottom)
         Vue.component(`${prefix}fixed-left`, FixedLeft)
+        Vue.component(`${prefix}fixed-top-right`, FixedTopRight)
+        Vue.component(`${prefix}fixed-top-left`, FixedTopLeft)
+        Vue.component(`${prefix}fixed-bottom-right`, FixedBottomRight)
+        Vue.component(`${prefix}fixed-bottom-left`, FixedBottomLeft)
 
         Vue.component(`${prefix}breakpoint`, Breakpoint)
         Vue.component(`${prefix}screen-xs`, ScreenXS)
@@ -88,6 +96,10 @@ export {
     FixedRight,
     FixedBottom,
     FixedLeft,
+    FixedTopRight,
+    FixedTopLeft,
+    FixedBottomRight,
+    FixedBottomLeft,
 
     Breakpoint,
     ScreenXS,
