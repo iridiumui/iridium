@@ -1,29 +1,29 @@
 <template>
     <div>
-        <slot 
-            name="toggle" 
-            :open="open" 
+        <slot
+            name="toggle"
+            :open="open"
             :open-modal="openModal"/>
 
-        <portal 
-            :to="portalName" 
+        <portal
+            :to="portalName"
             v-if="usePortal">
-            <focus-trap 
-                :active="open" 
+            <focus-trap
+                :active="open"
                 :options="{ onDeactivate: returnFocus }">
-                <slot 
-                    name="content" 
-                    :open="open" 
+                <slot
+                    name="content"
+                    :open="open"
                     :close-modal="closeModal"/>
             </focus-trap>
         </portal>
-        <focus-trap 
-            :active="open" 
-            :options="{ onDeactivate: returnFocus }" 
+        <focus-trap
+            :active="open"
+            :options="{ onDeactivate: returnFocus }"
             v-else>
-            <slot 
-                name="content" 
-                :open="open" 
+            <slot
+                name="content"
+                :open="open"
                 :close-modal="closeModal"/>
         </focus-trap>
 
@@ -46,7 +46,7 @@
 
             portalName: {
                 type: String,
-                default: 'modalsss'
+                default: 'modal'
             }
         },
 
