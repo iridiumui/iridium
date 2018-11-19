@@ -39,6 +39,7 @@ import VisuallyHidden from './helpers/VisuallyHidden.vue'
 import FocusTrap from './helpers/FocusTrap.vue'
 
 import HamburgerNav from './core/HamburgerNav.vue'
+import Modal from './core/Modal.vue'
 
 import CodeBlock from './extra/CodeBlock.vue'
 
@@ -89,6 +90,7 @@ export default {
         Vue.component(`${prefix}focus-trap`, FocusTrap)
 
         Vue.component(`${prefix}hamburger-nav`, HamburgerNav)
+        Vue.component(`${prefix}modal`, Modal)
 
         Vue.component(`${prefix}code-block`, CodeBlock)
     }
