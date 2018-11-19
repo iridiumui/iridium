@@ -1,5 +1,7 @@
 const isUndefined = require('lodash/isUndefined')
 
+import PortalVue from 'portal-vue'
+
 import Fixed from './helpers/Fixed.vue'
 import FixedTop from './helpers/FixedTop.vue'
 import FixedRight from './helpers/FixedRight.vue'
@@ -37,6 +39,7 @@ import VisuallyHidden from './helpers/VisuallyHidden.vue'
 import FocusTrap from './helpers/FocusTrap.vue'
 
 import HamburgerNav from './core/HamburgerNav.vue'
+import Modal from './core/Modal.vue'
 
 import CodeBlock from './extra/CodeBlock.vue'
 
@@ -46,6 +49,8 @@ const standardOptions = {
 
 export default {
     install(Vue, options = standardOptions) {
+        Vue.use(PortalVue)
+
         const prefix = isUndefined(options.prefix) ? standardOptions.prefix : options.prefix
 
         Vue.component(`${prefix}fixed`, Fixed)
@@ -85,6 +90,7 @@ export default {
         Vue.component(`${prefix}focus-trap`, FocusTrap)
 
         Vue.component(`${prefix}hamburger-nav`, HamburgerNav)
+        Vue.component(`${prefix}modal`, Modal)
 
         Vue.component(`${prefix}code-block`, CodeBlock)
     }

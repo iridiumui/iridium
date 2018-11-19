@@ -78,6 +78,7 @@
         }
     },
     "dependencies": {
-        "@babel/runtime": "^7.1.2"
+        "@babel/runtime": "^7.1.2",
+        "portal-vue": "^1.4.0"
     }
 }
