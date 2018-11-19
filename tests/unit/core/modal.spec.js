@@ -71,4 +71,23 @@ describe('Modal', () => {
         expect(wrapper.find('main').isVisible()).toBe(true)
     })
 
+    test('the content can close the modal', () => {
+        const wrapper = mount(Modal, {
+            scopedSlots: {
+                toggle: '<button>Toggle Button</button>',
+                content: `
+                    <main v-show="props.open">
+                        <button @click="props.closeModal" class="close-modal">Close Modal</button>
+                    </main>
+                `
+            }
+        })
+
+        wrapper.setData({ open: true })
+
+        wrapper.find('.close-modal').trigger('click')
+
+        expect(wrapper.find('main').isVisible()).toBe(false)
+    })
+
 })

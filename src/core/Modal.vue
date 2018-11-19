@@ -1,7 +1,7 @@
 <template>
     <div>
-        <slot name="content" :open="open"></slot>
         <slot name="toggle" :open="open" :open-modal="openModal"></slot>
+        <slot name="content" :open="open" :close-modal="closeModal"></slot>
     </div>
 </template>
 <script>
@@ -12,6 +12,10 @@
             }
         },
         methods: {
+            closeModal() {
+                this.open = false
+            },
+
             openModal() {
                 this.open = true
             },
