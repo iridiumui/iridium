@@ -94,6 +94,25 @@ describe('Modal', () => {
         expect(wrapper.find('main').isVisible()).toBe(false)
     })
 
+    test('it can be closed with the escaped button', () => {
+        const wrapper = mount(Modal, {
+            scopedSlots: {
+                toggle: '<button @click="props.openModal">Toggle Button</button>',
+                content: '<main v-show="props.open">Content</main>'
+            }
+        })
+
+        wrapper.find('button').trigger('click')
+
+        const escapeKeyEvent = new KeyboardEvent('keyup', {
+            keyCode: '27',
+        });
+
+        document.dispatchEvent(escapeKeyEvent)
+
+        expect(wrapper.find('main').isVisible()).toBe(false)
+    })
+
     test('scrolling on the body is disabled when the modal is open', () => {
         const wrapper = mount(Modal, {
             scopedSlots: {

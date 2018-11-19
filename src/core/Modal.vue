@@ -23,14 +23,25 @@
             closeModal() {
                 this.open = false
 
+                document.removeEventListener('keyup', this.escapeListener)
+
                 this.toggleBodyScrolling()
             },
 
             openModal() {
                 this.open = true
 
+                document.addEventListener('keyup', this.escapeListener)
+
                 this.toggleBodyScrolling()
             },
+
+            escapeListener(e) {
+                if (e.keyCode === 27) {
+                    this.closeModal()
+                }
+            },
+
             toggleBodyScrolling() {
                 document.querySelector('body').style.overflow = this.open ? 'hidden' : this.initialBodyOverflowValue
             },
