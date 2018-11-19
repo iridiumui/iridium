@@ -25,4 +25,9 @@ describe('Modal', () => {
         expect(wrapper.find('main').text()).toBe('Content')
     })
 
+    test('its closed by default', () => {
+        expect(typeof Modal.data).toBe('function')
+        expect(Modal.data().open).toBe(false)
+    })
+
 })
