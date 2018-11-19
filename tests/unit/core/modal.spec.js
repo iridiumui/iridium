@@ -169,7 +169,7 @@ describe('Modal', () => {
 
         const escapeKeyEvent = new KeyboardEvent('keyup', {
             keyCode: '27',
-        });
+        })
 
         document.dispatchEvent(escapeKeyEvent)
 

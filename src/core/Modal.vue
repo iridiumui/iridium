@@ -1,14 +1,30 @@
 <template>
     <div>
-        <slot name="toggle" :open="open" :open-modal="openModal"></slot>
+        <slot 
+            name="toggle" 
+            :open="open" 
+            :open-modal="openModal"/>
 
-        <portal :to="portalName" v-if="usePortal">
-            <focus-trap :active="open" :options="{ onDeactivate: returnFocus }">
-                <slot name="content" :open="open" :close-modal="closeModal"></slot>
+        <portal 
+            :to="portalName" 
+            v-if="usePortal">
+            <focus-trap 
+                :active="open" 
+                :options="{ onDeactivate: returnFocus }">
+                <slot 
+                    name="content" 
+                    :open="open" 
+                    :close-modal="closeModal"/>
             </focus-trap>
         </portal>
-        <focus-trap :active="open" :options="{ onDeactivate: returnFocus }" v-else>
-            <slot name="content" :open="open" :close-modal="closeModal"></slot>
+        <focus-trap 
+            :active="open" 
+            :options="{ onDeactivate: returnFocus }" 
+            v-else>
+            <slot 
+                name="content" 
+                :open="open" 
+                :close-modal="closeModal"/>
         </focus-trap>
 
     </div>
