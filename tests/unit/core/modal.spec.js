@@ -1,5 +1,9 @@
 import { mount } from '@vue/test-utils'
+import { mount, createLocalVue } from '@vue/test-utils'
 import Modal from '../../../src/core/Modal.vue'
+import PortalVue from 'portal-vue'
+
+const localVue = createLocalVue()
 
 describe('Modal', () => {
 
@@ -9,6 +13,10 @@ describe('Modal', () => {
 
     test('it renders the toggle button', () => {
         const wrapper = mount(Modal, {
+            localVue,
+            propsData: {
+                usePortal: false
+            },
             scopedSlots: {
                 toggle: '<button>Toggle Button</button>',
                 content: '<main>Content</main>'
@@ -20,6 +28,10 @@ describe('Modal', () => {
 
     test('it renders the content', () => {
         const wrapper = mount(Modal, {
+            localVue,
+            propsData: {
+                usePortal: false
+            },
             scopedSlots: {
                 toggle: '<button>Toggle Button</button>',
                 content: '<main>Content</main>'
@@ -36,6 +48,10 @@ describe('Modal', () => {
 
     test('the content can control its visibility', () => {
         const wrapper = mount(Modal, {
+            localVue,
+            propsData: {
+                usePortal: false
+            },
             scopedSlots: {
                 toggle: '<button>Toggle Button</button>',
                 content: '<main v-show="props.open">Content</main>'
@@ -49,6 +65,10 @@ describe('Modal', () => {
 
     test('the toggle can use the visibility', () => {
         const wrapper = mount(Modal, {
+            localVue,
+            propsData: {
+                usePortal: false
+            },
             scopedSlots: {
                 toggle: '<button :disabled="props.open">Toggle Button</button>',
                 content: '<main>Content</main>'
@@ -62,6 +82,10 @@ describe('Modal', () => {
 
     test('the toggle can open the modal', () => {
         const wrapper = mount(Modal, {
+            localVue,
+            propsData: {
+                usePortal: false
+            },
             scopedSlots: {
                 toggle: '<button @click="props.openModal">Toggle Button</button>',
                 content: '<main v-show="props.open">Content</main>'
@@ -77,6 +101,10 @@ describe('Modal', () => {
 
     test('the content can close the modal', () => {
         const wrapper = mount(Modal, {
+            localVue,
+            propsData: {
+                usePortal: false
+            },
             scopedSlots: {
                 toggle: '<button>Toggle Button</button>',
                 content: `
@@ -96,6 +124,10 @@ describe('Modal', () => {
 
     test('it can be closed with the escaped button', () => {
         const wrapper = mount(Modal, {
+            localVue,
+            propsData: {
+                usePortal: false
+            },
             scopedSlots: {
                 toggle: '<button @click="props.openModal">Toggle Button</button>',
                 content: '<main v-show="props.open">Content</main>'
@@ -115,6 +147,10 @@ describe('Modal', () => {
 
     test('scrolling on the body is disabled when the modal is open', () => {
         const wrapper = mount(Modal, {
+            localVue,
+            propsData: {
+                usePortal: false
+            },
             scopedSlots: {
                 toggle: '<button @click="props.openModal" class="open-modal">Toggle Button</button>',
                 content: `

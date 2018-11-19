@@ -1,5 +1,7 @@
 const isUndefined = require('lodash/isUndefined')
 
+import PortalVue from 'portal-vue'
+
 import Fixed from './helpers/Fixed.vue'
 import FixedTop from './helpers/FixedTop.vue'
 import FixedRight from './helpers/FixedRight.vue'
@@ -46,6 +48,8 @@ const standardOptions = {
 
 export default {
     install(Vue, options = standardOptions) {
+        Vue.use(PortalVue)
+
         const prefix = isUndefined(options.prefix) ? standardOptions.prefix : options.prefix
 
         Vue.component(`${prefix}fixed`, Fixed)

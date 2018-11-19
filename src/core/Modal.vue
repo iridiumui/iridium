@@ -1,11 +1,29 @@
 <template>
     <div>
         <slot name="toggle" :open="open" :open-modal="openModal"></slot>
-        <slot name="content" :open="open" :close-modal="closeModal"></slot>
+
+        <portal :to="portalName" v-if="usePortal">
+                <slot name="content" :open="open" :close-modal="closeModal"></slot>
+        </portal>
+            <slot name="content" :open="open" :close-modal="closeModal"></slot>
+
     </div>
 </template>
+
 <script>
     export default {
+        props: {
+            usePortal: {
+                type: Boolean,
+                default: true
+            },
+
+            portalName: {
+                type: String,
+                default: 'modalsss'
+            }
+        },
+
         data() {
             return {
                 open: false,
