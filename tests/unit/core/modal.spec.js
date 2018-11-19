@@ -30,4 +30,17 @@ describe('Modal', () => {
         expect(Modal.data().open).toBe(false)
     })
 
+    test('the content can control its visibility', () => {
+        const wrapper = mount(Modal, {
+            scopedSlots: {
+                toggle: '<button>Toggle Button</button>',
+                content: '<main v-show="props.open">Content</main>'
+            }
+        })
+
+        wrapper.setData({ open: true })
+
+        expect(wrapper.find('main').isVisible()).toBe(true)
+    })
+
 })

@@ -1,7 +1,7 @@
 <template>
     <div>
         <slot name="toggle"></slot>
-        <slot name="content"></slot>
+        <slot name="content" :open="open"></slot>
     </div>
 </template>
 <script>
