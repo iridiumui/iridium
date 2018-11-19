@@ -1,9 +1,9 @@
-import { mount } from '@vue/test-utils'
 import { mount, createLocalVue } from '@vue/test-utils'
 import Modal from '../../../src/core/Modal.vue'
 import PortalVue from 'portal-vue'
 
 const localVue = createLocalVue()
+localVue.use(PortalVue)
 
 describe('Modal', () => {
 
@@ -19,7 +19,11 @@ describe('Modal', () => {
             },
             scopedSlots: {
                 toggle: '<button>Toggle Button</button>',
-                content: '<main>Content</main>'
+                content: `
+                    <main v-show="props.open">
+                        <button>Focusable element</button>
+                    </main>
+                `
             }
         })
 
@@ -34,11 +38,16 @@ describe('Modal', () => {
             },
             scopedSlots: {
                 toggle: '<button>Toggle Button</button>',
-                content: '<main>Content</main>'
+                content: `
+                    <main v-show="props.open">
+                        <button>Focusable element</button>
+                        <p>Content</p>
+                    </main>
+                `
             }
         })
 
-        expect(wrapper.find('main').text()).toBe('Content')
+        expect(wrapper.find('main p').text()).toBe('Content')
     })
 
     test('its closed by default', () => {
@@ -54,7 +63,11 @@ describe('Modal', () => {
             },
             scopedSlots: {
                 toggle: '<button>Toggle Button</button>',
-                content: '<main v-show="props.open">Content</main>'
+                content: `
+                    <main v-show="props.open">
+                        <button>Focusable element</button>
+                    </main>
+                `
             }
         })
 
@@ -71,7 +84,11 @@ describe('Modal', () => {
             },
             scopedSlots: {
                 toggle: '<button :disabled="props.open">Toggle Button</button>',
-                content: '<main>Content</main>'
+                content: `
+                    <main v-show="props.open">
+                        <button>Focusable element</button>
+                    </main>
+                `
             }
         })
 
@@ -88,7 +105,11 @@ describe('Modal', () => {
             },
             scopedSlots: {
                 toggle: '<button @click="props.openModal">Toggle Button</button>',
-                content: '<main v-show="props.open">Content</main>'
+                content: `
+                    <main v-show="props.open">
+                        <button>Focusable element</button>
+                    </main>
+                `
             }
         })
 
@@ -106,11 +127,14 @@ describe('Modal', () => {
                 usePortal: false
             },
             scopedSlots: {
-                toggle: '<button>Toggle Button</button>',
+                toggle: '<button @click="props.openModal" class="open-modal">Toggle Button</button>',
                 content: `
-                    <main v-show="props.open">
-                        <button @click="props.closeModal" class="close-modal">Close Modal</button>
-                    </main>
+                    <div>
+                        <main v-show="props.open">
+                            <button @click="props.closeModal" class="close-modal">Close Modal</button>
+                        </main>
+                        <button>Focusable Element</button>
+                    </div>
                 `
             }
         })
@@ -130,7 +154,14 @@ describe('Modal', () => {
             },
             scopedSlots: {
                 toggle: '<button @click="props.openModal">Toggle Button</button>',
-                content: '<main v-show="props.open">Content</main>'
+                content: `
+                    <div>
+                        <main v-show="props.open">
+                            <p>Content</p>
+                        </main>
+                        <button>Focusable element</button>
+                    </div>
+                `
             }
         })
 
@@ -154,9 +185,12 @@ describe('Modal', () => {
             scopedSlots: {
                 toggle: '<button @click="props.openModal" class="open-modal">Toggle Button</button>',
                 content: `
-                    <main v-show="props.open">
-                        <button @click="props.closeModal" class="close-modal">Close Modal</button>
-                    </main>
+                    <div>
+                        <main v-show="props.open">
+                            <button @click="props.closeModal" class="close-modal">Close Modal</button>
+                        </main>
+                        <button>Focusable Element</button>
+                    </div>
                 `
             }
         })

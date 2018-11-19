@@ -3,15 +3,25 @@
         <slot name="toggle" :open="open" :open-modal="openModal"></slot>
 
         <portal :to="portalName" v-if="usePortal">
+            <focus-trap :active="open" :options="{ onDeactivate: returnFocus }">
                 <slot name="content" :open="open" :close-modal="closeModal"></slot>
+            </focus-trap>
         </portal>
+        <focus-trap :active="open" :options="{ onDeactivate: returnFocus }" v-else>
             <slot name="content" :open="open" :close-modal="closeModal"></slot>
+        </focus-trap>
 
     </div>
 </template>
 
 <script>
+    import FocusTrap from '../helpers/FocusTrap.vue'
+
     export default {
+        components: {
+            FocusTrap
+        },
+
         props: {
             usePortal: {
                 type: Boolean,
@@ -28,6 +38,7 @@
             return {
                 open: false,
                 initialBodyOverflowValue: '',
+                returnFocusTo: null
             }
         },
 
@@ -47,6 +58,8 @@
             },
 
             openModal() {
+                this.returnFocusTo = document.activeElement
+
                 this.open = true
 
                 document.addEventListener('keyup', this.escapeListener)
@@ -63,6 +76,15 @@
             toggleBodyScrolling() {
                 document.querySelector('body').style.overflow = this.open ? 'hidden' : this.initialBodyOverflowValue
             },
+
+            returnFocus() {
+                this.$nextTick(() => {
+                    setTimeout(() => {
+                        this.returnFocusTo.focus()
+                        this.returnFocusTo = null
+                    }, 0)
+                })
+            }
         }
     }
 </script>
