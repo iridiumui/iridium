@@ -3,6 +3,10 @@ import Modal from '../../../src/core/Modal.vue'
 
 describe('Modal', () => {
 
+    beforeEach(() => {
+        document.querySelector('body').style.overflow = 'visibile'
+    })
+
     test('it renders the toggle button', () => {
         const wrapper = mount(Modal, {
             scopedSlots: {
@@ -88,6 +92,27 @@ describe('Modal', () => {
         wrapper.find('.close-modal').trigger('click')
 
         expect(wrapper.find('main').isVisible()).toBe(false)
+    })
+
+    test('scrolling on the body is disabled when the modal is open', () => {
+        const wrapper = mount(Modal, {
+            scopedSlots: {
+                toggle: '<button @click="props.openModal" class="open-modal">Toggle Button</button>',
+                content: `
+                    <main v-show="props.open">
+                        <button @click="props.closeModal" class="close-modal">Close Modal</button>
+                    </main>
+                `
+            }
+        })
+
+        wrapper.find('.open-modal').trigger('click')
+
+        expect(document.querySelector('body').style.overflow).toBe('hidden')
+
+        wrapper.find('.close-modal').trigger('click')
+
+        expect(document.querySelector('body').style.overflow).toBe('visibile')
     })
 
 })
