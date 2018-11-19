@@ -43,4 +43,17 @@ describe('Modal', () => {
         expect(wrapper.find('main').isVisible()).toBe(true)
     })
 
+    test('the toggle can use the visibility', () => {
+        const wrapper = mount(Modal, {
+            scopedSlots: {
+                toggle: '<button :disabled="props.open">Toggle Button</button>',
+                content: '<main>Content</main>'
+            }
+        })
+
+        wrapper.setData({ open: true })
+
+        expect(wrapper.find('button').element.disabled).toBe(true)
+    })
+
 })
