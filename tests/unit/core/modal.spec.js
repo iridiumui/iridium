@@ -56,4 +56,19 @@ describe('Modal', () => {
         expect(wrapper.find('button').element.disabled).toBe(true)
     })
 
+    test('the toggle can open the modal', () => {
+        const wrapper = mount(Modal, {
+            scopedSlots: {
+                toggle: '<button @click="props.openModal">Toggle Button</button>',
+                content: '<main v-show="props.open">Content</main>'
+            }
+        })
+
+        expect(wrapper.find('main').isVisible()).toBe(false)
+
+        wrapper.find('button').trigger('click')
+
+        expect(wrapper.find('main').isVisible()).toBe(true)
+    })
+
 })
