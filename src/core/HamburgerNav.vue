@@ -4,7 +4,7 @@
 
     export default {
         props: {
-            defaultState: {
+            openDefault: {
                 type: Boolean,
                 default: false
             }
@@ -12,7 +12,7 @@
 
         data() {
             return {
-                open: this.defaultState
+                open: this.openDefault
             }
         },
 

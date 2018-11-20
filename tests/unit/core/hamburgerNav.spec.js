@@ -43,7 +43,7 @@ describe('Hamburger Nav', () => {
     test('it accepts a default state', () => {
         const wrapper = mount(HamburgerNav, {
             propsData: {
-                defaultState: true
+                openDefault: true
             },
             scopedSlots: {
                 default: `
