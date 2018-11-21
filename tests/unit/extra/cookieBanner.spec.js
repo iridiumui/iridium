@@ -10,7 +10,7 @@ describe('Cookie Banner', () => {
     test('it can render the default scoped slot', () => {
         const wrapper = mount(CookieBanner, {
             scopedSlots: {
-                default: `<div>Cookie Banner</div>`
+                default: '<div>Cookie Banner</div>'
             }
         })
 
@@ -20,7 +20,7 @@ describe('Cookie Banner', () => {
     test('its visible by default', () => {
         const wrapper = mount(CookieBanner, {
             scopedSlots: {
-                default: `<div v-show="!props.accepted">Cookie Banner</div>`
+                default: '<div v-show="!props.accepted">Cookie Banner</div>'
             }
         })
 
@@ -32,7 +32,7 @@ describe('Cookie Banner', () => {
 
         const wrapper = mount(CookieBanner, {
             scopedSlots: {
-                default: `<div v-show="!props.accepted">Cookie Banner</div>`
+                default: '<div v-show="!props.accepted">Cookie Banner</div>'
             }
         })
 
