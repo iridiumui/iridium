@@ -2,12 +2,22 @@
     export default {
         data() {
             return  {
-                accepted: false
+                get accepted() {
+                    return (localStorage.getItem('cookies_accepted') == 'true')
+                },
+                set accepted(value) {
+                    localStorage.setItem('cookies_accepted', value)
+                }
+            }
+        },
+
             }
         },
 
         render() {
-            return this.$scopedSlots.default()
+            return this.$scopedSlots.default({
+                accepted: this.accepted
+            })
         }
     }
 </script>

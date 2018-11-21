@@ -3,6 +3,10 @@ import CookieBanner from '../../../src/extra/CookieBanner.vue'
 
 describe('Cookie Banner', () => {
 
+    beforeEach(() => {
+        localStorage.clear()
+    })
+
     test('it can render the default scoped slot', () => {
         const wrapper = mount(CookieBanner, {
             scopedSlots: {
@@ -14,8 +18,27 @@ describe('Cookie Banner', () => {
     })
 
     test('its visible by default', () => {
-        expect(typeof CookieBanner.data).toBe('function')
-        expect(CookieBanner.data().accepted).toBe(false)
+        const wrapper = mount(CookieBanner, {
+            scopedSlots: {
+                default: `<div v-show="!props.accepted">Cookie Banner</div>`
+            }
+        })
+
+        expect(wrapper.isVisible()).toBe(true)
+    })
+
+    test('it doesnt show up if cookies are already accepted', () => {
+        localStorage.setItem('cookies_accepted', true)
+
+        const wrapper = mount(CookieBanner, {
+            scopedSlots: {
+                default: `<div v-show="!props.accepted">Cookie Banner</div>`
+            }
+        })
+
+        expect(wrapper.isVisible()).toBe(false)
+    })
+
     })
 
 })
