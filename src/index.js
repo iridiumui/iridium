@@ -42,6 +42,7 @@ import HamburgerNav from './core/HamburgerNav.vue'
 import Modal from './core/Modal.vue'
 
 import CodeBlock from './extra/CodeBlock.vue'
+import CookieBanner from './extra/CookieBanner.vue'
 
 const standardOptions = {
     prefix: 'iridium-'
@@ -93,6 +94,7 @@ export default {
         Vue.component(`${prefix}modal`, Modal)
 
         Vue.component(`${prefix}code-block`, CodeBlock)
+        Vue.component(`${prefix}cookie-banner`, CookieBanner)
     }
 }
 
@@ -135,4 +137,5 @@ export {
 
     HamburgerNav,
     CodeBlock,
+    CookieBanner,
 }
