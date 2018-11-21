@@ -11,11 +11,15 @@
             }
         },
 
+        methods: {
+            accept() {
+                this.accepted = true
             }
         },
 
         render() {
             return this.$scopedSlots.default({
+                accept: this.accept,
                 accepted: this.accepted
             })
         }

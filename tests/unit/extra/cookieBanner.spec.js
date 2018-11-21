@@ -39,6 +39,22 @@ describe('Cookie Banner', () => {
         expect(wrapper.isVisible()).toBe(false)
     })
 
+    test('it can be hidden', () => {
+        const wrapper = mount(CookieBanner, {
+            scopedSlots: {
+                default: `
+                    <div v-show="!props.accepted">
+                        <button @click="props.accept">Accept</button>
+                    </div>
+                `
+            }
+        })
+
+        expect(wrapper.isVisible()).toBe(true)
+
+        wrapper.find('button').trigger('click')
+
+        expect(wrapper.isVisible()).toBe(false)
     })
 
 })
