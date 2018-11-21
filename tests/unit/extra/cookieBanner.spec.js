@@ -13,4 +13,9 @@ describe('Cookie Banner', () => {
         expect(wrapper.html()).toBe('<div>Cookie Banner</div>')
     })
 
+    test('its visible by default', () => {
+        expect(typeof CookieBanner.data).toBe('function')
+        expect(CookieBanner.data().accepted).toBe(false)
+    })
+
 })
