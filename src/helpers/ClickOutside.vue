@@ -1,7 +1,16 @@
 <script>
     export default {
+        props: {
+            active: {
+                type: Boolean,
+                default: true
+            }
+        },
+
         mounted() {
             this.clickListener = (e) => {
+                if (!this.active) return
+
                 if (this.$el.contains(e.target) || this.$el === e.target) {
                     this.$emit('clickinside')
                 } else {
