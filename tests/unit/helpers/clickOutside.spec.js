@@ -47,4 +47,24 @@ describe('ClickOutside', () => {
         expect(wrapper.emitted().clickoutside).toBeFalsy()
     })
 
+    test('it doesnt fire an event if its not active', () => {
+        document.body.innerHTML = `
+            </div>
+                <button class="other-element">Button</button>
+            </div>
+        `
+        const wrapper = mount(ClickOutside, {
+            propsData: {
+                active: false
+            },
+            slots: {
+                default: '<div>default slot</div>'
+            }
+        })
+
+        document.querySelector('.other-element').click()
+
+        expect(wrapper.emitted().clickoutside).toBeFalsy()
+    })
+
 })
