@@ -16,7 +16,8 @@
         "style": "./node_modules/.bin/eslint .eslintrc --ext .js,.vue src tests",
         "style:fix": "./node_modules/.bin/eslint .eslintrc --ext .js,.vue src tests --fix",
         "prepublish": "run-s style:fix && run-s test",
-        "precommit": "run-s style:fix && run-s test"
+        "precommit": "run-s style:fix && run-s test",
+        "storybook": "start-storybook -p 9001 -c .storybook"
     },
     "repository": {
         "type": "git",
@@ -44,10 +45,12 @@
         "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
         "@babel/plugin-transform-runtime": "^7.1.0",
         "@babel/preset-env": "^7.1.0",
+        "@storybook/vue": "^4.1.4",
         "@vue/test-utils": "^1.0.0-beta.25",
         "babel-core": "^7.0.0-bridge.0",
         "babel-jest": "^23.6.0",
         "babel-loader": "^8.0.4",
+        "babel-preset-vue": "^2.0.2",
         "eslint": "^5.7.0",
         "eslint-plugin-jest": "^21.26.1",
         "eslint-plugin-vue": "^4.7.1",
