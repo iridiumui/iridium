@@ -1,9 +1,8 @@
 import Vue from 'vue'
-
 import { storiesOf, addDecorator } from '@storybook/vue'
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import centered from '@storybook/addon-centered';
 import ClickOutside from '../../helpers/ClickOutside'
-import { withKnobs, text, boolean, color } from '@storybook/addon-knobs';
 
 Vue.component('click-outside', ClickOutside)
 
@@ -127,6 +126,10 @@ export default storiesOf('ClickOutside', module)
                 default: function () {
                     return defaultStyles
                 }
+            },
+            active: {
+                type: Boolean,
+                default: boolean('Active', false)
             }
         },
         data() {
@@ -136,7 +139,7 @@ export default storiesOf('ClickOutside', module)
         },
         template: `
             <div>
-                <click-outside :active="false" @clickinside="clicked = true">
+                <click-outside :active="active" @clickinside="clicked = true">
                     <div :style="styles">
                         <span v-if="!clicked" style="text-align: center;">
                             {{ text }}
