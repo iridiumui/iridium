@@ -1,6 +1,7 @@
 import Vue from 'vue'
 
 import { storiesOf, addDecorator } from '@storybook/vue'
+import centered from '@storybook/addon-centered';
 import ClickOutside from '../../helpers/ClickOutside'
 import { withKnobs, text, boolean, color } from '@storybook/addon-knobs';
 
@@ -17,6 +18,7 @@ const defaultStyles = {
 
 export default storiesOf('ClickOutside', module)
     .addDecorator(withKnobs)
+    .addDecorator(centered)
     .add('render default slot', () => ({
         components: { ClickOutside },
         props: {
