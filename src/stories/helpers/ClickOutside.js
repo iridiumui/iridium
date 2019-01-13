@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue'
 import ClickOutside from '../../helpers/ClickOutside'
 
-storiesOf('ClickOutside', module)
+export default storiesOf('ClickOutside', module)
     .add('render default slot', () => ({
         components: { ClickOutside },
         template: `

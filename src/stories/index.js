@@ -1,1 +1,1 @@
-require("./helpers/ClickOutside")
+import ClickOutside from './helpers/ClickOutside'
