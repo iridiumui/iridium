@@ -1,5 +1,5 @@
-import { configure } from '@storybook/vue'
 import Vue from 'vue'
+import { configure } from '@storybook/vue'
 
 import ClickOutside from '../src/helpers/ClickOutside'
 
