@@ -1,1 +1,1 @@
-import './helpers/ClickOutside'
+import './helpers/ClickOutside.stories'
