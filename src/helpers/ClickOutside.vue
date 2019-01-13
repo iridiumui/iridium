@@ -9,12 +9,8 @@
 
         mounted() {
             this.clickListener = (e) => {
-                if (!this.active) return
-
-                if (this.$el.contains(e.target) || this.$el === e.target) {
-                    this.$emit('clickinside')
-                } else {
-                    this.$emit('clickoutside')
+                if (this.active) {
+                    this.emitEvents(e.target)
                 }
             }
 
@@ -23,6 +19,16 @@
 
         beforeDestroy() {
             document.removeEventListener('click', this.clickListener)
+        },
+
+        methods: {
+            emitEvents(target) {
+                if (this.$el.contains(target) || this.$el === target) {
+                    this.$emit('clickinside')
+                } else {
+                    this.$emit('clickoutside')
+                }
+            }
         },
 
         render() {
