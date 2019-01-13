@@ -1,6 +1,10 @@
+import Vue from 'vue'
+
 import { storiesOf, addDecorator } from '@storybook/vue'
 import ClickOutside from '../../helpers/ClickOutside'
 import { withKnobs, text, boolean, color } from '@storybook/addon-knobs';
+
+Vue.component('click-outside', ClickOutside)
 
 const defaultStyles = {
     width: '200px',
