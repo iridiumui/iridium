@@ -1,1 +1,1 @@
-import ClickOutside from './helpers/ClickOutside'
+import './helpers/ClickOutside'
