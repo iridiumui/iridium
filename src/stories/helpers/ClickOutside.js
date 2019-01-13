@@ -1,19 +1,54 @@
-import { storiesOf } from '@storybook/vue'
+import { storiesOf, addDecorator } from '@storybook/vue'
 import ClickOutside from '../../helpers/ClickOutside'
+import { withKnobs, text, boolean, color } from '@storybook/addon-knobs';
+
+const defaultStyles = {
+    width: '200px',
+    height: '200px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FF5F7A'
+}
 
 export default storiesOf('ClickOutside', module)
+    .addDecorator(withKnobs)
     .add('render default slot', () => ({
         components: { ClickOutside },
+        props: {
+            text: {
+                type: String,
+                default: text('Text', 'This is the default slot')
+            },
+            styles: {
+                type: Object,
+                default: defaultStyles
+            }
+        },
         template: `
             <click-outside>
-                <div width="200" height="200" style="width: 200px; height: 200px; background-color: pink; display: flex; justify-content: center; align-items: center;">
-                    This is the default slot
+                <div :style="styles">
+                    {{ text }}
                 </div>
             </click-outside>
         `
     }))
     .add('emit event when clicking outside', () => ({
         components: { ClickOutside },
+        props: {
+            text: {
+                type: String,
+                default: text('Text', 'Try clicking outside the box')
+            },
+            successText: {
+                type: String,
+                default: text('Success Text', "It is working")
+            },
+            styles: {
+                type: Object,
+                default: defaultStyles
+            }
+        },
         data() {
             return {
                 clicked: false
@@ -22,16 +57,32 @@ export default storiesOf('ClickOutside', module)
         template: `
             <div>
                 <click-outside @clickoutside="clicked = true">
-                    <div style="display: flex; justify-content: center; align-items: center; width: 200px; height: 200px; background-color: pink;">
-                        <span>Try clicking outside the box</span>
+                    <div :style="styles">
+                        {{ text }}
                     </div>
                 </click-outside>
-                <h2 v-if="clicked">It's working</h2>
+                <h2 v-if="clicked">
+                    {{ successText }}
+                </h2>
             </div>
         `
     }))
     .add('emit event when clicking inside', () => ({
         components: { ClickOutside },
+        props: {
+            text: {
+                type: String,
+                default: text('Text', 'Try clicking inside the box')
+            },
+            successText: {
+                type: String,
+                default: text('Success Text', "It is working")
+            },
+            styles: {
+                type: Object,
+                default: defaultStyles
+            }
+        },
         data() {
             return {
                 clicked: false
@@ -40,9 +91,9 @@ export default storiesOf('ClickOutside', module)
         template: `
             <div>
                 <click-outside @clickinside="clicked = true">
-                    <div style="display: flex; justify-content: center; align-items: center; width: 200px; height: 200px; background-color: pink;">
-                        <span v-if="!clicked">Try clicking inside the box</span>
-                        <span v-else>It's working</span>
+                    <div :style="styles">
+                        <span v-if="!clicked">{{ text }}</span>
+                        <span v-else>{{ successText }}</span>
                     </div>
                 </click-outside>
             </div>
@@ -50,6 +101,20 @@ export default storiesOf('ClickOutside', module)
     }))
     .add('deactivated', () => ({
         components: { ClickOutside },
+        props: {
+            text: {
+                type: String,
+                default: text('Text', 'Nothing should happen if you click in the box')
+            },
+            failureText: {
+                type: String,
+                default: text('Failure Text', "It is not working")
+            },
+            styles: {
+                type: Object,
+                default: defaultStyles
+            }
+        },
         data() {
             return {
                 clicked: false
@@ -58,9 +123,11 @@ export default storiesOf('ClickOutside', module)
         template: `
             <div>
                 <click-outside :active="false" @clickinside="clicked = true">
-                    <div style="display: flex; justify-content: center; align-items: center; width: 200px; height: 200px; background-color: pink;">
-                        <span v-if="!clicked" style="text-align: center;">Nothing should happen if you click here</span>
-                        <span v-else>This shouldn't become visible</span>
+                    <div :style="styles">
+                        <span v-if="!clicked" style="text-align: center;">
+                            {{ text }}
+                        </span>
+                        <span v-else>{{ failureText }}</span>
                     </div>
                 </click-outside>
             </div>
