@@ -28,7 +28,9 @@ export default storiesOf('ClickOutside', module)
             },
             styles: {
                 type: Object,
-                default: defaultStyles
+                default: function () {
+                    return defaultStyles
+                }
             }
         },
         template: `
@@ -52,7 +54,9 @@ export default storiesOf('ClickOutside', module)
             },
             styles: {
                 type: Object,
-                default: defaultStyles
+                default: function () {
+                    return defaultStyles
+                }
             }
         },
         data() {
@@ -86,7 +90,9 @@ export default storiesOf('ClickOutside', module)
             },
             styles: {
                 type: Object,
-                default: defaultStyles
+                default: function () {
+                    return defaultStyles
+                }
             }
         },
         data() {
@@ -118,7 +124,9 @@ export default storiesOf('ClickOutside', module)
             },
             styles: {
                 type: Object,
-                default: defaultStyles
+                default: function () {
+                    return defaultStyles
+                }
             }
         },
         data() {
