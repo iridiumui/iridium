@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import { storiesOf, addDecorator } from '@storybook/vue'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import centered from '@storybook/addon-centered';
