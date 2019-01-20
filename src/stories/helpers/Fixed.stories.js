@@ -1,4 +1,5 @@
-import { storiesOf } from "@storybook/vue";
+import { storiesOf, addDecorator } from "@storybook/vue";
+import { withKnobs, text } from "@storybook/addon-knobs";
 import Fixed from "../../helpers/Fixed";
 
 const defaultStyles = {
@@ -25,6 +26,7 @@ const box = Object.assign({
 }, defaultStyles)
 
 export default storiesOf('Fixed', module)
+    .addDecorator(withKnobs)
     .add('It attaches on the top', () => ({
         components: { Fixed },
         props: {
@@ -35,12 +37,16 @@ export default storiesOf('Fixed', module)
             edges: {
                 type: Array,
                 default: ['top']
+            },
+            text: {
+                type: String,
+                default: text('Text', 'This is fixed on the top of the page')
             }
         },
         template: `
             <Fixed :edges="edges">
                 <aside :style="styles">
-                    <p>This is fixed on the top of the page</p>
+                    {{ text }}
                 </aside>
             </Fixed>
         `
@@ -55,12 +61,16 @@ export default storiesOf('Fixed', module)
             edges: {
                 type: Array,
                 default: ['bottom']
+            },
+            text: {
+                type: String,
+                default: text('Text', 'This is fixed on the bottom of the page')
             }
         },
         template: `
             <Fixed :edges="edges">
                 <aside :style="styles">
-                    <p>This is fixed on the bottom of the page</p>
+                    {{ text }}
                 </aside>
             </Fixed>
         `
@@ -75,12 +85,16 @@ export default storiesOf('Fixed', module)
             edges: {
                 type: Array,
                 default: ['left']
+            },
+            text: {
+                type: String,
+                default: text('Text', 'This is fixed on the left of the page')
             }
         },
         template: `
             <Fixed :edges="edges">
                 <aside :style="styles">
-                    <p>This is fixed on the left of the page</p>
+                    {{ text }}
                 </aside>
             </Fixed>
         `
@@ -95,12 +109,16 @@ export default storiesOf('Fixed', module)
             edges: {
                 type: Array,
                 default: ['right']
+            },
+            text: {
+                type: String,
+                default: text('Text', 'This is fixed on the right of the page')
             }
         },
         template: `
             <Fixed :edges="edges">
                 <aside :style="styles">
-                    <p>This is fixed on the right of the page</p>
+                    {{ text }}
                 </aside>
             </Fixed>
         `

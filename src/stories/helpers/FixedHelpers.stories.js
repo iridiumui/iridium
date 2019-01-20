@@ -1,5 +1,6 @@
 import Vue from "vue";
-import { storiesOf } from "@storybook/vue";
+import { storiesOf, addDecorator } from "@storybook/vue";
+import { withKnobs } from "@storybook/addon-knobs";
 
 import FixedTop from "../../helpers/FixedTop";
 import FixedTopLeft from "../../helpers/FixedTopLeft";
@@ -36,18 +37,23 @@ const box = Object.assign({
 }, defaultStyles)
 
 export default storiesOf('Fixed/Helpers', module)
+    .addDecorator(withKnobs)
     .add('Fixed Top', () => ({
         components: { FixedTop },
         props: {
             styles: {
                 type: Object,
                 default: horizontalBox
+            },
+            text: {
+                type: String,
+                default: text('Text', 'This is fixed on the top of the page')
             }
         },
         template: `
             <FixedTop>
                 <aside :style="styles">
-                    <p>This is fixed on the top of the page</p>
+                    {{ text }}
                 </aside>
             </FixedTop>
         `
@@ -58,12 +64,16 @@ export default storiesOf('Fixed/Helpers', module)
             styles: {
                 type: Object,
                 default: horizontalBox
+            },
+            text: {
+                type: String,
+                default: text('Text', 'This is fixed on the bottom of the page')
             }
         },
         template: `
             <FixedBottom>
                 <aside :style="styles">
-                    <p>This is fixed on the bottom of the page</p>
+                    {{ text }}
                 </aside>
             </FixedBottom>
         `
@@ -74,12 +84,16 @@ export default storiesOf('Fixed/Helpers', module)
             styles: {
                 type: Object,
                 default: verticalBox
+            },
+            text: {
+                type: String,
+                default: text('Text', 'This is fixed on the left of the page')
             }
         },
         template: `
             <FixedLeft>
                 <aside :style="styles">
-                    <p>This is fixed on the left of the page</p>
+                    {{ text }}
                 </aside>
             </FixedLeft>
         `
@@ -90,12 +104,16 @@ export default storiesOf('Fixed/Helpers', module)
             styles: {
                 type: Object,
                 default: verticalBox
+            },
+            text: {
+                type: String,
+                default: text('Text', 'This is fixed on the right of the page')
             }
         },
         template: `
             <FixedRight>
                 <aside :style="styles">
-                    <p>This is fixed on the right of the page</p>
+                    {{ text }}
                 </aside>
             </FixedRight>
         `
@@ -106,12 +124,16 @@ export default storiesOf('Fixed/Helpers', module)
             styles: {
                 type: Object,
                 default: box
+            },
+            text: {
+                type: String,
+                default: text('Text', 'This is fixed on the top left of the page')
             }
         },
         template: `
             <FixedTopLeft>
                 <aside :style="styles">
-                    <p>This is fixed on the top left of the page</p>
+                    {{ text }}
                 </aside>
             </FixedTopLeft>
         `
@@ -122,12 +144,16 @@ export default storiesOf('Fixed/Helpers', module)
             styles: {
                 type: Object,
                 default: box
+            },
+            text: {
+                type: String,
+                default: text('Text', 'This is fixed on the top right of the page')
             }
         },
         template: `
             <FixedTopRight>
                 <aside :style="styles">
-                    <p>This is fixed on the top right of the page</p>
+                    {{ text }}
                 </aside>
             </FixedTopRight>
         `
@@ -138,12 +164,16 @@ export default storiesOf('Fixed/Helpers', module)
             styles: {
                 type: Object,
                 default: box
+            },
+            text: {
+                type: String,
+                default: text('Text', 'This is fixed on the bottom left of the page')
             }
         },
         template: `
             <FixedBottomLeft>
                 <aside :style="styles">
-                    <p>This is fixed on the bottom left of the page</p>
+                    {{ text }}
                 </aside>
             </FixedBottomLeft>
         `
@@ -154,12 +184,16 @@ export default storiesOf('Fixed/Helpers', module)
             styles: {
                 type: Object,
                 default: box
+            },
+            text: {
+                type: String,
+                default: text('Text', 'This is fixed on the bottom right of the page')
             }
         },
         template: `
             <FixedBottomRight>
                 <aside :style="styles">
-                    <p>This is fixed on the bottom right of the page</p>
+                    {{ text }}
                 </aside>
             </FixedBottomRight>
         `
