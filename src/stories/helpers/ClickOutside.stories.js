@@ -4,8 +4,6 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import centered from '@storybook/addon-centered';
 import ClickOutside from '../../helpers/ClickOutside'
 
-Vue.component('click-outside', ClickOutside)
-
 const defaultStyles = {
     width: '200px',
     height: '200px',
@@ -18,28 +16,6 @@ const defaultStyles = {
 export default storiesOf('ClickOutside', module)
     .addDecorator(withKnobs)
     .addDecorator(centered)
-    .add('render default slot', () => ({
-        components: { ClickOutside },
-        props: {
-            text: {
-                type: String,
-                default: text('Text', 'This is the default slot')
-            },
-            styles: {
-                type: Object,
-                default: function () {
-                    return defaultStyles
-                }
-            }
-        },
-        template: `
-            <click-outside>
-                <div :style="styles">
-                    {{ text }}
-                </div>
-            </click-outside>
-        `
-    }))
     .add('emit event when clicking outside', () => ({
         components: { ClickOutside },
         props: {
@@ -65,11 +41,11 @@ export default storiesOf('ClickOutside', module)
         },
         template: `
             <div>
-                <click-outside @clickoutside="clicked = true">
+                <ClickOutside @clickoutside="clicked = true">
                     <div :style="styles">
                         {{ text }}
                     </div>
-                </click-outside>
+                </ClickOutside>
                 <h2 v-if="clicked">
                     {{ successText }}
                 </h2>
@@ -101,12 +77,12 @@ export default storiesOf('ClickOutside', module)
         },
         template: `
             <div>
-                <click-outside @clickinside="clicked = true">
+                <ClickOutside @clickinside="clicked = true">
                     <div :style="styles">
                         <span v-if="!clicked">{{ text }}</span>
                         <span v-else>{{ successText }}</span>
                     </div>
-                </click-outside>
+                </ClickOutside>
             </div>
         `
     }))
@@ -139,14 +115,14 @@ export default storiesOf('ClickOutside', module)
         },
         template: `
             <div>
-                <click-outside :active="active" @clickinside="clicked = true">
+                <ClickOutside :active="active" @clickinside="clicked = true">
                     <div :style="styles">
                         <span v-if="!clicked" style="text-align: center;">
                             {{ text }}
                         </span>
                         <span v-else>{{ failureText }}</span>
                     </div>
-                </click-outside>
+                </ClickOutside>
             </div>
         `
     }))
