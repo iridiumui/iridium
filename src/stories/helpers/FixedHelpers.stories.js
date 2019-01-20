@@ -36,7 +36,7 @@ const box = Object.assign({
     width: "200px"
 }, defaultStyles)
 
-export default storiesOf('Fixed/Helpers', module)
+export default storiesOf('Helpers|Fixed/Helpers', module)
     .addDecorator(withKnobs)
     .add('Fixed Top', () => ({
         components: { FixedTop },

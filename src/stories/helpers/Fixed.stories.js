@@ -25,7 +25,7 @@ const box = Object.assign({
     width: "200px"
 }, defaultStyles)
 
-export default storiesOf('Fixed', module)
+export default storiesOf('Helpers|Fixed', module)
     .addDecorator(withKnobs)
     .add('It attaches on the top', () => ({
         components: { Fixed },

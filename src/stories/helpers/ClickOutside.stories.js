@@ -12,7 +12,7 @@ const defaultStyles = {
     backgroundColor: '#FF5F7A'
 }
 
-export default storiesOf('ClickOutside', module)
+export default storiesOf('Helpers|ClickOutside', module)
     .addDecorator(withKnobs)
     .addDecorator(centered)
     .add('emit event when clicking outside', () => ({
