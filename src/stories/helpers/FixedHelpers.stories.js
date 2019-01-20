@@ -1,6 +1,6 @@
 import Vue from "vue";
 import { storiesOf, addDecorator } from "@storybook/vue";
-import { withKnobs } from "@storybook/addon-knobs";
+import { withKnobs, text } from "@storybook/addon-knobs";
 
 import FixedTop from "../../helpers/FixedTop";
 import FixedTopLeft from "../../helpers/FixedTopLeft";
