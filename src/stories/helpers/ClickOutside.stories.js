@@ -15,7 +15,7 @@ const defaultStyles = {
 export default storiesOf('Helpers|ClickOutside', module)
     .addDecorator(withKnobs)
     .addDecorator(centered)
-    .add('emit event when clicking outside', () => ({
+    .add('Click outside event', () => ({
         components: { ClickOutside },
         props: {
             text: {
@@ -51,7 +51,7 @@ export default storiesOf('Helpers|ClickOutside', module)
             </div>
         `
     }))
-    .add('emit event when clicking inside', () => ({
+    .add('Click inside event', () => ({
         components: { ClickOutside },
         props: {
             text: {
@@ -85,7 +85,7 @@ export default storiesOf('Helpers|ClickOutside', module)
             </div>
         `
     }))
-    .add('deactivated', () => ({
+    .add('Deactivated', () => ({
         components: { ClickOutside },
         props: {
             text: {
