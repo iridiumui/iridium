@@ -1,5 +1,6 @@
 import { configure, addDecorator } from '@storybook/vue'
 import { withOptions } from '@storybook/addon-options';
+import { withBackgrounds } from '@storybook/addon-backgrounds';
 
 addDecorator(
     withOptions({
@@ -7,6 +8,11 @@ addDecorator(
     })
 );
 
+addDecorator(
+    withBackgrounds([
+        { name: 'grey', value: '#FAFAFA', default: true },
+    ])
+);
 function loadStories() {
     require('../src/stories')
 }
