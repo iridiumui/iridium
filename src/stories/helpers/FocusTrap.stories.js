@@ -3,7 +3,7 @@ import { withKnobs, boolean, text, object } from '@storybook/addon-knobs'
 import centered from '@storybook/addon-centered'
 import FocusTrap from '../../helpers/FocusTrap'
 
-export default storiesOf('Helpers|Focus Trap', module)
+export default storiesOf('Accessibility|Focus Trap', module)
     .addDecorator(withKnobs)
     .addDecorator(centered)
     .add("Trap's focus", () => ({
