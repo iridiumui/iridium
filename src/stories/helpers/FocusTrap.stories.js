@@ -8,6 +8,28 @@ export default storiesOf('Accessibility|Focus Trap', module)
     .addDecorator(centered)
     .add("Trap's focus", () => ({
         components: { FocusTrap },
+        template: `
+            <div>
+                <section>
+                    <h2>Inside focus trap</h2>
+                    <FocusTrap>
+                        <form @submit.prevent="">
+                            <input type="email" placeholder="Email">
+                            <input type="password" placeholder="Password">
+                            <button>Log in</button>
+                        </form>
+                    </FocusTrap>
+                </section>
+                <section>
+                    <h2>Outside focus trap</h2>
+                    <button type="button">Button</button>
+                    <button type="button">Another button</button>
+                </section>
+            </div>
+        `
+    }))
+    .add("The trap can be deactivated", () => ({
+        components: { FocusTrap },
         props: {
             active: {
                 type: Boolean,
