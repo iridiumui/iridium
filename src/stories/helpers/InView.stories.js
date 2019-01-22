@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue'
 import InView from '../../helpers/InView'
 
 export default storiesOf('Helpers|In View', module)
-    .add('Show an element only if another element is in view', () => ({
+    .add('Check if another element is in view', () => ({
         components: { InView },
         template: `
             <div style="height: 200vh;">
@@ -20,7 +20,7 @@ export default storiesOf('Helpers|In View', module)
             </div>
         `
     }))
-    .add('Animate an element in when it enters the viewport', () => ({
+    .add('Check if the slot element is in view', () => ({
         components: { InView },
         template: `
             <div>
@@ -67,6 +67,86 @@ export default storiesOf('Helpers|In View', module)
                         style="height: 50vh; transition: all 500ms;"
                         :style="inView ? 'background-color: cyan;' : ''"
                     ></section>
+                </InView>
+            </div>
+        `
+    }))
+    .add('Listen for event emitted', () => ({
+        components: { InView },
+        data() {
+            return {
+                show: false
+            }
+        },
+        template: `
+            <div>
+                <h1 style="margin-bottom: 50vh;">Scroll down the page</h1>
+                <InView :threshold="1" @inView="show = $event">
+                    <section
+                        style="height: 80vh; background-color: #FF5F7A; margin-bottom: 50vh; display: flex; justify-content: center; align-items: center;"
+                    >
+                        <p v-if="show">
+                            This is only visible if an event has been emitted
+                        </p>
+                    </section>
+                </InView>
+            </div>
+        `
+    }))
+    .add('It accepts a number as a threshold', () => ({
+        components: { InView },
+        template: `
+            <div>
+                <h1 style="height: 100vh;">Scroll down the page</h1>
+                <InView :threshold="1">
+                    <section
+                        slot-scope="{ inView }"
+                        style="height: 50vh;"
+                        :style="inView ? 'background-color: red;' : ''"
+                    >
+                        <p>
+                            This will change color when all of it is in the viewport
+                        </p>
+                    </section>
+                </InView>
+                <InView :threshold="0.5">
+                    <section
+                        slot-scope="{ inView }"
+                        style="height: 50vh;"
+                        :style="inView ? 'background-color: yellow;' : ''"
+                    >
+                        <p>
+                            This will change color when half of it is in the viewport
+                        </p>
+                    </section>
+                </InView>
+                <InView :threshold="0">
+                    <section
+                        slot-scope="{ inView }"
+                        style="height: 50vh;"
+                        :style="inView ? 'background-color: green;' : ''"
+                    >
+                        <p>
+                            This will change color when any of it is in the viewport
+                        </p>
+                    </section>
+                </InView>
+            </div>
+        `
+    }))
+    .add('The default threshold is 0', () => ({
+        components: { InView },
+        template: `
+            <div>
+                <h1 style="height: 100vh;">Scroll down the page</h1>
+                <InView>
+                    <section
+                        slot-scope="{ inView }"
+                        style="height: 50vh; display: flex; justify-content: center; align-items: center; transition: all 1000ms;"
+                        :style="inView ? 'background-color: #FF5F7A;' : ''"
+                    >
+                        <p>This changed color as soon as it was in the viewport</p>
+                    </section>
                 </InView>
             </div>
         `
