@@ -1,3 +1,5 @@
+import './core/Modal.stories'
+
 import './helpers/Breakpoint.stories'
 import './helpers/BreakpointHelpers.stories'
 import './helpers/ClickOutside.stories'
