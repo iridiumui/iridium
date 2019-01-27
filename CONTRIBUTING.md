@@ -24,13 +24,13 @@ npm run style:fix
 
 ## Running tests
 
-You can run the test with the following command:
+The primary way to test components is Storybook. 
 
 ```sh
-npm test
+npm run storybook
 ```
 
-Please make sure that tests are passing before submitting a pull request. If you are adding a new feature please make sure it's covered by tests.
+Please make sure that the component is working in Storybook before submitting a pull request. If you are adding a new feature please make sure to add stories to the relevant component.
 
 ## Documentation
 

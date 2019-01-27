@@ -6,7 +6,7 @@
                 default: null
             },
             threshold: {
-                type: [Number, Array],
+                type: Number,
                 default: 0
             }
         },
