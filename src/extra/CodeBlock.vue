@@ -5,8 +5,8 @@
                 type: Function,
                 default: function(resetCopied) {
                     setTimeout(() => {
-                        resetCopied()
-                    }, 2000)
+                        resetCopied();
+                    }, 2000);
                 }
             },
 
@@ -14,8 +14,8 @@
                 type: Function,
                 default: function(resetError) {
                     setTimeout(() => {
-                        resetError()
-                    }, 2000)
+                        resetError();
+                    }, 2000);
                 }
             },
         },
@@ -24,54 +24,54 @@
             return {
                 copied: false,
                 error: false
-            }
+            };
         },
 
         methods: {
             copy() {
-                const selection = window.getSelection()
-                const range = document.createRange()
+                const selection = window.getSelection();
+                const range = document.createRange();
 
-                range.selectNodeContents(this.$el.querySelector('pre code'))
-                selection.removeAllRanges()
-                selection.addRange(range)
+                range.selectNodeContents(this.$el.querySelector("pre code"));
+                selection.removeAllRanges();
+                selection.addRange(range);
 
                 try {
-                    document.execCommand('copy')
-                    selection.removeAllRanges()
+                    document.execCommand("copy");
+                    selection.removeAllRanges();
 
-                    this.copied = true
-                    this.error = false
+                    this.copied = true;
+                    this.error = false;
                 } catch (error) {
-                    this.copied = false
-                    this.error = true
+                    this.copied = false;
+                    this.error = true;
                 }
             }
         },
 
         watch: {
             copied(newValue) {
-                if (!newValue) return
+                if (!newValue) return;
 
-                this.successCallback(() => { this.copied = false })
+                this.successCallback(() => { this.copied = false; });
             },
 
             error(newValue) {
-                if (!newValue) return
+                if (!newValue) return;
 
-                this.errorCallback(() => { this.error = false })
+                this.errorCallback(() => { this.error = false; });
             }
         },
 
         render(createElement) {
-            return createElement('div', [
+            return createElement("div", [
                 this.$slots.content[0],
                 this.$scopedSlots.button({
                     copy: this.copy,
                     copied: this.copied,
                     error: this.error
                 })
-            ])
+            ]);
         }
-    }
+    };
 </script>

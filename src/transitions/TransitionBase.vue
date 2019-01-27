@@ -21,11 +21,11 @@
             },
             easing: {
                 type: String,
-                default: 'ease'
+                default: "ease"
             },
             origin: {
                 type: String,
-                default: '50% 50%'
+                default: "50% 50%"
             }
         },
 
@@ -37,21 +37,21 @@
                     beforeLeave: this.setUpTransition,
                     afterLeave: this.cleanUpTransition,
                     ...this.$listeners
-                }
+                };
             }
         },
 
         methods: {
             setUpTransition(el) {
-                el.style.transitionDuration = `${this.duration}ms`
-                el.style.transitionTimingFunction = this.easing
-                el.style.transitionOrigin = this.origin
+                el.style.transitionDuration = `${this.duration}ms`;
+                el.style.transitionTimingFunction = this.easing;
+                el.style.transitionOrigin = this.origin;
             },
             cleanUpTransition(el) {
-                el.style.transitionDuration = ''
-                el.style.transitionTimingFunction = ''
-                el.style.transitionOrigin = 'this.origin'
+                el.style.transitionDuration = "";
+                el.style.transitionTimingFunction = "";
+                el.style.transitionOrigin = "this.origin";
             }
         }
-    }
+    };
 </script>

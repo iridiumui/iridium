@@ -31,7 +31,7 @@
 </template>
 
 <script>
-    import FocusTrap from '../helpers/FocusTrap.vue'
+    import FocusTrap from "../helpers/FocusTrap.vue";
 
     export default {
         components: {
@@ -46,61 +46,61 @@
 
             portalName: {
                 type: String,
-                default: 'modal'
+                default: "modal"
             }
         },
 
         data() {
             return {
                 open: false,
-                initialBodyOverflowValue: '',
+                initialBodyOverflowValue: "",
                 returnFocusTo: null
-            }
+            };
         },
 
         mounted() {
-            const body = document.querySelector('body')
+            const body = document.querySelector("body");
 
-            this.initialBodyOverflowValue = body.style.overflow || getComputedStyle(body).getPropertyValue('overflow')
+            this.initialBodyOverflowValue = body.style.overflow || getComputedStyle(body).getPropertyValue("overflow");
         },
 
         methods: {
             closeModal() {
-                this.open = false
+                this.open = false;
 
-                document.removeEventListener('keyup', this.escapeListener)
+                document.removeEventListener("keyup", this.escapeListener);
 
-                this.toggleBodyScrolling()
+                this.toggleBodyScrolling();
             },
 
             openModal() {
-                this.returnFocusTo = document.activeElement
+                this.returnFocusTo = document.activeElement;
 
-                this.open = true
+                this.open = true;
 
-                document.addEventListener('keyup', this.escapeListener)
+                document.addEventListener("keyup", this.escapeListener);
 
-                this.toggleBodyScrolling()
+                this.toggleBodyScrolling();
             },
 
             escapeListener(e) {
                 if (e.keyCode === 27) {
-                    this.closeModal()
+                    this.closeModal();
                 }
             },
 
             toggleBodyScrolling() {
-                document.querySelector('body').style.overflow = this.open ? 'hidden' : this.initialBodyOverflowValue
+                document.querySelector("body").style.overflow = this.open ? "hidden" : this.initialBodyOverflowValue;
             },
 
             returnFocus() {
                 this.$nextTick(() => {
                     setTimeout(() => {
-                        this.returnFocusTo.focus()
-                        this.returnFocusTo = null
-                    }, 0)
-                })
+                        this.returnFocusTo.focus();
+                        this.returnFocusTo = null;
+                    }, 0);
+                });
             }
         }
-    }
+    };
 </script>

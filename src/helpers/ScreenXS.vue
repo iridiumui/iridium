@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import Breakpoint from './Breakpoint.vue'
+    import Breakpoint from "./Breakpoint.vue";
 
     export default {
         components: {
@@ -14,8 +14,8 @@
 
         computed: {
             query() {
-                return '(max-width: 575.98px)'
+                return "(max-width: 575.98px)";
             }
         }
-    }
+    };
 </script>

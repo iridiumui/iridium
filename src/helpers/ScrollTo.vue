@@ -3,9 +3,9 @@
         props: {
             behavior: {
                 type: String,
-                default: 'smooth',
+                default: "smooth",
                 validator: function (value) {
-                    return ['smooth', 'auto'].indexOf(value) !== -1
+                    return ["smooth", "auto"].indexOf(value) !== -1;
                 }
             },
             /* eslint-disable-next-line vue/require-default-prop */
@@ -20,17 +20,17 @@
 
         computed: {
             target() {
-                if (!this.element || !document) return null
+                if (!this.element || !document) return null;
 
-                return document.querySelector(this.element)
+                return document.querySelector(this.element);
             },
 
             calculatedTop() {
                 if (this.target) {
-                    return this.getOffsetTop(this.target) - this.offset
+                    return this.getOffsetTop(this.target) - this.offset;
                 }
 
-                return this.top - this.offset
+                return this.top - this.offset;
             },
         },
 
@@ -39,18 +39,18 @@
                 window.scrollTo({
                     top: this.calculatedTop,
                     behavior: this.behavior
-                })
+                });
             },
 
             getOffsetTop() {
-                return window.pageYOffset + this.target.getBoundingClientRect().top
+                return window.pageYOffset + this.target.getBoundingClientRect().top;
             }
         },
 
         render() {
             return this.$scopedSlots.default({
                 scroll: this.scroll
-            })
+            });
         }
-    }
+    };
 </script>

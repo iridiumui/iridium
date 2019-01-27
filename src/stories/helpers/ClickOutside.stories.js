@@ -1,42 +1,42 @@
-import { storiesOf } from '@storybook/vue'
-import { withKnobs, text, boolean } from '@storybook/addon-knobs'
-import centered from '@storybook/addon-centered'
-import ClickOutside from '../../helpers/ClickOutside'
+import { storiesOf } from "@storybook/vue";
+import { withKnobs, text, boolean } from "@storybook/addon-knobs";
+import centered from "@storybook/addon-centered";
+import ClickOutside from "../../helpers/ClickOutside";
 
 const defaultStyles = {
-    width: '200px',
-    height: '200px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#FF5F7A'
-}
+    width: "200px",
+    height: "200px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#FF5F7A"
+};
 
-export default storiesOf('Helpers|Click Outside', module)
+export default storiesOf("Helpers|Click Outside", module)
     .addDecorator(withKnobs)
     .addDecorator(centered)
-    .add('Click outside event', () => ({
+    .add("Click outside event", () => ({
         components: { ClickOutside },
         props: {
             text: {
                 type: String,
-                default: text('Text', 'Try clicking outside the box')
+                default: text("Text", "Try clicking outside the box")
             },
             successText: {
                 type: String,
-                default: text('Success Text', 'It is working')
+                default: text("Success Text", "It is working")
             },
             styles: {
                 type: Object,
                 default: function () {
-                    return defaultStyles
+                    return defaultStyles;
                 }
             }
         },
         data() {
             return {
                 clicked: false
-            }
+            };
         },
         template: `
             <div>
@@ -51,28 +51,28 @@ export default storiesOf('Helpers|Click Outside', module)
             </div>
         `
     }))
-    .add('Click inside event', () => ({
+    .add("Click inside event", () => ({
         components: { ClickOutside },
         props: {
             text: {
                 type: String,
-                default: text('Text', 'Try clicking inside the box')
+                default: text("Text", "Try clicking inside the box")
             },
             successText: {
                 type: String,
-                default: text('Success Text', 'It is working')
+                default: text("Success Text", "It is working")
             },
             styles: {
                 type: Object,
                 default: function () {
-                    return defaultStyles
+                    return defaultStyles;
                 }
             }
         },
         data() {
             return {
                 clicked: false
-            }
+            };
         },
         template: `
             <div>
@@ -85,32 +85,32 @@ export default storiesOf('Helpers|Click Outside', module)
             </div>
         `
     }))
-    .add('Deactivated', () => ({
+    .add("Deactivated", () => ({
         components: { ClickOutside },
         props: {
             text: {
                 type: String,
-                default: text('Text', 'Nothing should happen if you click in the box')
+                default: text("Text", "Nothing should happen if you click in the box")
             },
             failureText: {
                 type: String,
-                default: text('Failure Text', 'It is not working')
+                default: text("Failure Text", "It is not working")
             },
             styles: {
                 type: Object,
                 default: function () {
-                    return defaultStyles
+                    return defaultStyles;
                 }
             },
             active: {
                 type: Boolean,
-                default: boolean('Active', false)
+                default: boolean("Active", false)
             }
         },
         data() {
             return {
                 clicked: false
-            }
+            };
         },
         template: `
             <div>
@@ -124,4 +124,4 @@ export default storiesOf('Helpers|Click Outside', module)
                 </ClickOutside>
             </div>
         `
-    }))
+    }));

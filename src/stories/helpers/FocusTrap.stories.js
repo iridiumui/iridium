@@ -1,12 +1,12 @@
-import { storiesOf } from '@storybook/vue'
-import { withKnobs, boolean, object } from '@storybook/addon-knobs'
-import centered from '@storybook/addon-centered'
-import FocusTrap from '../../helpers/FocusTrap'
+import { storiesOf } from "@storybook/vue";
+import { withKnobs, boolean, object } from "@storybook/addon-knobs";
+import centered from "@storybook/addon-centered";
+import FocusTrap from "../../helpers/FocusTrap";
 
-export default storiesOf('Accessibility|Focus Trap', module)
+export default storiesOf("Accessibility|Focus Trap", module)
     .addDecorator(withKnobs)
     .addDecorator(centered)
-    .add('Trap\'s focus', () => ({
+    .add("Trap's focus", () => ({
         components: { FocusTrap },
         template: `
             <div>
@@ -28,12 +28,12 @@ export default storiesOf('Accessibility|Focus Trap', module)
             </div>
         `
     }))
-    .add('The trap can be deactivated', () => ({
+    .add("The trap can be deactivated", () => ({
         components: { FocusTrap },
         props: {
             active: {
                 type: Boolean,
-                default: boolean('Active', true)
+                default: boolean("Active", true)
             }
         },
         template: `
@@ -56,13 +56,13 @@ export default storiesOf('Accessibility|Focus Trap', module)
             </div>
         `
     }))
-    .add('With options', () => ({
+    .add("With options", () => ({
         components: { FocusTrap },
         props: {
             options: {
                 type: Object,
-                default: (items => () => items)(object('Options', {
-                    initialFocus: 'button'
+                default: (items => () => items)(object("Options", {
+                    initialFocus: "button"
                 }))
             }
         },
@@ -83,4 +83,4 @@ export default storiesOf('Accessibility|Focus Trap', module)
                 </p>
             </div>
         `
-    }))
+    }));

@@ -7,13 +7,13 @@
 </template>
 
 <script>
-    import TransitionBase from './TransitionBase.vue'
+    import TransitionBase from "./TransitionBase.vue";
 
     export default {
         components: {
             TransitionBase
         }
-    }
+    };
 </script>
 
 <style>

@@ -10,20 +10,20 @@
         data() {
             return {
                 matches: false
-            }
+            };
         },
 
         mounted() {
-            this.mediaQueryList = window.matchMedia(this.mediaQuery)
-            this.matches = this.mediaQueryList.matches
+            this.mediaQueryList = window.matchMedia(this.mediaQuery);
+            this.matches = this.mediaQueryList.matches;
 
             this.mediaQueryList.onchange = (e) => {
-                this.matches = e.matches
-            }
+                this.matches = e.matches;
+            };
         },
 
         render() {
-            return this.matches ? this.$slots.default[0] : null
+            return this.matches ? this.$slots.default[0] : null;
         }
-    }
+    };
 </script>

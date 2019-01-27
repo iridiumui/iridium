@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import Breakpoint from './Breakpoint.vue'
+    import Breakpoint from "./Breakpoint.vue";
 
     export default {
         components: {
@@ -14,8 +14,8 @@
 
         computed: {
             query() {
-                return '(min-width: 1200px)'
+                return "(min-width: 1200px)";
             }
         }
-    }
+    };
 </script>

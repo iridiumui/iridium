@@ -1,5 +1,5 @@
 <script>
-    import FocusTrap from '../helpers/FocusTrap.vue'
+    import FocusTrap from "../helpers/FocusTrap.vue";
 
     export const HamburgerNavToggle = {
         props: {
@@ -10,25 +10,25 @@
         },
 
         mounted() {
-            this.updateAriaAttribute()
+            this.updateAriaAttribute();
         },
 
         methods: {
             updateAriaAttribute() {
-                this.$el.setAttribute('aria-expanded', this.active ? 'true' : 'false')
+                this.$el.setAttribute("aria-expanded", this.active ? "true" : "false");
             }
         },
 
         watch: {
             active() {
-                this.updateAriaAttribute()
+                this.updateAriaAttribute();
             }
         },
 
         render() {
-            return this.$slots.default[0]
+            return this.$slots.default[0];
         }
-    }
+    };
 
     export default {
         props: {
@@ -41,12 +41,12 @@
         data() {
             return {
                 open: this.openDefault
-            }
+            };
         },
 
         methods: {
             toggle() {
-                this.open = !this.open
+                this.open = !this.open;
             }
         },
 
@@ -54,16 +54,16 @@
             const props = {
                 open: this.open,
                 toggle: this.toggle
-            }
+            };
 
-            return this.$scopedSlots.hasOwnProperty('default') ? this.$scopedSlots.default(props) : createElement('div', [
+            return this.$scopedSlots.hasOwnProperty("default") ? this.$scopedSlots.default(props) : createElement("div", [
                 createElement(HamburgerNavToggle, { props: { active: this.open } }, [
                     this.$scopedSlots.toggle(props)
                 ]),
                 createElement(FocusTrap, { props: { active: this.open } }, [
                     this.$scopedSlots.content(props)
                 ])
-            ])
+            ]);
         }
-    }
+    };
 </script>

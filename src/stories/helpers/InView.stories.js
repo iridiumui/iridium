@@ -1,8 +1,8 @@
-import { storiesOf } from '@storybook/vue'
-import InView from '../../helpers/InView'
+import { storiesOf } from "@storybook/vue";
+import InView from "../../helpers/InView";
 
-export default storiesOf('Helpers|In View', module)
-    .add('Check if another element is in view', () => ({
+export default storiesOf("Helpers|In View", module)
+    .add("Check if another element is in view", () => ({
         components: { InView },
         template: `
             <div style="height: 200vh;">
@@ -20,7 +20,7 @@ export default storiesOf('Helpers|In View', module)
             </div>
         `
     }))
-    .add('Check if the slot element is in view', () => ({
+    .add("Check if the slot element is in view", () => ({
         components: { InView },
         template: `
             <div>
@@ -71,12 +71,12 @@ export default storiesOf('Helpers|In View', module)
             </div>
         `
     }))
-    .add('Listen for event emitted', () => ({
+    .add("Listen for event emitted", () => ({
         components: { InView },
         data() {
             return {
                 show: false
-            }
+            };
         },
         template: `
             <div>
@@ -93,7 +93,7 @@ export default storiesOf('Helpers|In View', module)
             </div>
         `
     }))
-    .add('It accepts a number as a threshold', () => ({
+    .add("It accepts a number as a threshold", () => ({
         components: { InView },
         template: `
             <div>
@@ -134,7 +134,7 @@ export default storiesOf('Helpers|In View', module)
             </div>
         `
     }))
-    .add('The default threshold is 0', () => ({
+    .add("The default threshold is 0", () => ({
         components: { InView },
         template: `
             <div>
@@ -150,4 +150,4 @@ export default storiesOf('Helpers|In View', module)
                 </InView>
             </div>
         `
-    }))
+    }));

@@ -1,5 +1,5 @@
 <script>
-    import createFocusTrap from 'focus-trap'
+    import createFocusTrap from "focus-trap";
 
     export default {
         props: {
@@ -11,47 +11,47 @@
             options: {
                 type: Object,
                 default: () => {
-                    return {}
+                    return {};
                 }
             }
         },
 
         mounted() {
-            this.focusTrap = createFocusTrap(this.$el, this.options)
+            this.focusTrap = createFocusTrap(this.$el, this.options);
 
             if (this.active) {
-                this.activateLock()
+                this.activateLock();
             } else {
-                this.deactivateLock()
+                this.deactivateLock();
             }
         },
 
         methods: {
             activateLock() {
                 this.$nextTick(() => {
-                    this.focusTrap.activate()
-                })
+                    this.focusTrap.activate();
+                });
             },
 
             deactivateLock() {
                 this.$nextTick(() => {
-                    this.focusTrap.deactivate()
-                })
+                    this.focusTrap.deactivate();
+                });
             }
         },
 
         watch: {
             active(active) {
                 if (active) {
-                    this.activateLock()
+                    this.activateLock();
                 } else {
-                    this.deactivateLock()
+                    this.deactivateLock();
                 }
             }
         },
 
         render() {
-            return this.$slots.default[0]
+            return this.$slots.default[0];
         }
-    }
+    };
 </script>

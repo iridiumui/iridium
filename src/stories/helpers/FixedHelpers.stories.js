@@ -1,43 +1,43 @@
-import { storiesOf } from '@storybook/vue'
-import { withKnobs, text } from '@storybook/addon-knobs'
+import { storiesOf } from "@storybook/vue";
+import { withKnobs, text } from "@storybook/addon-knobs";
 
-import FixedTop from '../../helpers/FixedTop'
-import FixedTopLeft from '../../helpers/FixedTopLeft'
-import FixedTopRight from '../../helpers/FixedTopRight'
+import FixedTop from "../../helpers/FixedTop";
+import FixedTopLeft from "../../helpers/FixedTopLeft";
+import FixedTopRight from "../../helpers/FixedTopRight";
 
-import FixedBottom from '../../helpers/FixedBottom'
-import FixedBottomLeft from '../../helpers/FixedBottomLeft'
-import FixedBottomRight from '../../helpers/FixedBottomRight'
+import FixedBottom from "../../helpers/FixedBottom";
+import FixedBottomLeft from "../../helpers/FixedBottomLeft";
+import FixedBottomRight from "../../helpers/FixedBottomRight";
 
-import FixedLeft from '../../helpers/FixedLeft'
-import FixedRight from '../../helpers/FixedRight'
+import FixedLeft from "../../helpers/FixedLeft";
+import FixedRight from "../../helpers/FixedRight";
 
 const defaultStyles = {
-    backgroundColor: '#FF5F7A',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: 'center'
-}
+    backgroundColor: "#FF5F7A",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center"
+};
 
 const horizontalBox = Object.assign({
-    width: '100%',
-    height: '200px'
-}, defaultStyles)
+    width: "100%",
+    height: "200px"
+}, defaultStyles);
 
 const verticalBox = Object.assign({
-    height: '100%',
-    width: '200px'
-}, defaultStyles)
+    height: "100%",
+    width: "200px"
+}, defaultStyles);
 
 const box = Object.assign({
-    height: '200px',
-    width: '200px'
-}, defaultStyles)
+    height: "200px",
+    width: "200px"
+}, defaultStyles);
 
-export default storiesOf('Helpers|Fixed/Helpers', module)
+export default storiesOf("Helpers|Fixed/Helpers", module)
     .addDecorator(withKnobs)
-    .add('Fixed Top', () => ({
+    .add("Fixed Top", () => ({
         components: { FixedTop },
         props: {
             styles: {
@@ -46,7 +46,7 @@ export default storiesOf('Helpers|Fixed/Helpers', module)
             },
             text: {
                 type: String,
-                default: text('Text', 'This is fixed on the top of the page')
+                default: text("Text", "This is fixed on the top of the page")
             }
         },
         template: `
@@ -57,7 +57,7 @@ export default storiesOf('Helpers|Fixed/Helpers', module)
             </FixedTop>
         `
     }))
-    .add('Fixed Bottom', () => ({
+    .add("Fixed Bottom", () => ({
         components: { FixedBottom },
         props: {
             styles: {
@@ -66,7 +66,7 @@ export default storiesOf('Helpers|Fixed/Helpers', module)
             },
             text: {
                 type: String,
-                default: text('Text', 'This is fixed on the bottom of the page')
+                default: text("Text", "This is fixed on the bottom of the page")
             }
         },
         template: `
@@ -77,7 +77,7 @@ export default storiesOf('Helpers|Fixed/Helpers', module)
             </FixedBottom>
         `
     }))
-    .add('Fixed Left', () => ({
+    .add("Fixed Left", () => ({
         components: { FixedLeft },
         props: {
             styles: {
@@ -86,7 +86,7 @@ export default storiesOf('Helpers|Fixed/Helpers', module)
             },
             text: {
                 type: String,
-                default: text('Text', 'This is fixed on the left of the page')
+                default: text("Text", "This is fixed on the left of the page")
             }
         },
         template: `
@@ -97,7 +97,7 @@ export default storiesOf('Helpers|Fixed/Helpers', module)
             </FixedLeft>
         `
     }))
-    .add('Fixed Right', () => ({
+    .add("Fixed Right", () => ({
         components: { FixedRight },
         props: {
             styles: {
@@ -106,7 +106,7 @@ export default storiesOf('Helpers|Fixed/Helpers', module)
             },
             text: {
                 type: String,
-                default: text('Text', 'This is fixed on the right of the page')
+                default: text("Text", "This is fixed on the right of the page")
             }
         },
         template: `
@@ -117,7 +117,7 @@ export default storiesOf('Helpers|Fixed/Helpers', module)
             </FixedRight>
         `
     }))
-    .add('Fixed Top Left', () => ({
+    .add("Fixed Top Left", () => ({
         components: { FixedTopLeft },
         props: {
             styles: {
@@ -126,7 +126,7 @@ export default storiesOf('Helpers|Fixed/Helpers', module)
             },
             text: {
                 type: String,
-                default: text('Text', 'This is fixed on the top left of the page')
+                default: text("Text", "This is fixed on the top left of the page")
             }
         },
         template: `
@@ -137,7 +137,7 @@ export default storiesOf('Helpers|Fixed/Helpers', module)
             </FixedTopLeft>
         `
     }))
-    .add('Fixed Top Right', () => ({
+    .add("Fixed Top Right", () => ({
         components: { FixedTopRight },
         props: {
             styles: {
@@ -146,7 +146,7 @@ export default storiesOf('Helpers|Fixed/Helpers', module)
             },
             text: {
                 type: String,
-                default: text('Text', 'This is fixed on the top right of the page')
+                default: text("Text", "This is fixed on the top right of the page")
             }
         },
         template: `
@@ -157,7 +157,7 @@ export default storiesOf('Helpers|Fixed/Helpers', module)
             </FixedTopRight>
         `
     }))
-    .add('Fixed Bottom Left', () => ({
+    .add("Fixed Bottom Left", () => ({
         components: { FixedBottomLeft },
         props: {
             styles: {
@@ -166,7 +166,7 @@ export default storiesOf('Helpers|Fixed/Helpers', module)
             },
             text: {
                 type: String,
-                default: text('Text', 'This is fixed on the bottom left of the page')
+                default: text("Text", "This is fixed on the bottom left of the page")
             }
         },
         template: `
@@ -177,7 +177,7 @@ export default storiesOf('Helpers|Fixed/Helpers', module)
             </FixedBottomLeft>
         `
     }))
-    .add('Fixed Bottom Right', () => ({
+    .add("Fixed Bottom Right", () => ({
         components: { FixedBottomRight },
         props: {
             styles: {
@@ -186,7 +186,7 @@ export default storiesOf('Helpers|Fixed/Helpers', module)
             },
             text: {
                 type: String,
-                default: text('Text', 'This is fixed on the bottom right of the page')
+                default: text("Text", "This is fixed on the bottom right of the page")
             }
         },
         template: `
@@ -196,4 +196,4 @@ export default storiesOf('Helpers|Fixed/Helpers', module)
                 </aside>
             </FixedBottomRight>
         `
-    }))
+    }));

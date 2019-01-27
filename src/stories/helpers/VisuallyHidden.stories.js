@@ -1,28 +1,28 @@
-import { storiesOf } from '@storybook/vue'
-import { withKnobs, text } from '@storybook/addon-knobs'
-import centered from '@storybook/addon-centered'
-import { checkA11y, configureA11y } from '@storybook/addon-a11y'
-import VisuallyHidden from '../../helpers/VisuallyHidden'
-import axe from 'axe-core'
+import { storiesOf } from "@storybook/vue";
+import { withKnobs, text } from "@storybook/addon-knobs";
+import centered from "@storybook/addon-centered";
+import { checkA11y, configureA11y } from "@storybook/addon-a11y";
+import VisuallyHidden from "../../helpers/VisuallyHidden";
+import axe from "axe-core";
 
 configureA11y({
     rules: axe
-        .getRules(['cat.name-role-value'])
-        .filter(rule => rule.ruleId === 'button-name')
+        .getRules(["cat.name-role-value"])
+        .filter(rule => rule.ruleId === "button-name")
         .map((rule) => Object.assign({ id: rule.ruleId }, rule)),
     disableOtherRules: true
-})
+});
 
-export default storiesOf('Accessibility|Visually Hidden', module)
+export default storiesOf("Accessibility|Visually Hidden", module)
     .addDecorator(withKnobs)
     .addDecorator(centered)
     .addDecorator(checkA11y)
-    .add('Accessible button', () => ({
+    .add("Accessible button", () => ({
         components: { VisuallyHidden },
         props: {
             text: {
                 type: String,
-                default: text('Text', 'This text is hidden')
+                default: text("Text", "This text is hidden")
             }
         },
         template: `
@@ -37,4 +37,4 @@ export default storiesOf('Accessibility|Visually Hidden', module)
                 </svg>
             </button>
         `
-    }))
+    }));

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import Breakpoint from './Breakpoint.vue'
+    import Breakpoint from "./Breakpoint.vue";
 
     export default {
         components: {
@@ -15,17 +15,17 @@
         props: {
             direction: {
                 type: String,
-                default: 'up',
+                default: "up",
                 validator: function (value) {
-                    return ['up', 'down'].indexOf(value) !== -1
+                    return ["up", "down"].indexOf(value) !== -1;
                 }
             }
         },
 
         computed: {
             query() {
-                return this.direction === 'up' ? '(min-width: 768px)' : '(max-width: 991.98px)'
+                return this.direction === "up" ? "(min-width: 768px)" : "(max-width: 991.98px)";
             }
         }
-    }
+    };
 </script>

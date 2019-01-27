@@ -1,36 +1,36 @@
-import { storiesOf } from '@storybook/vue'
-import CookieBanner from '../../extra/CookieBanner'
+import { storiesOf } from "@storybook/vue";
+import CookieBanner from "../../extra/CookieBanner";
 
 const CookieBannerStyles = {
-    position: 'fixed',
+    position: "fixed",
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: '#333'
-}
+    backgroundColor: "#333"
+};
 
 const CookieBannerContainerStyles = {
-    maxWidth: '80vw',
-    margin: '0 auto',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-}
+    maxWidth: "80vw",
+    margin: "0 auto",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center"
+};
 
-export default storiesOf('Extra|Cookie Banner', module)
-    .add('It renders a cookie banner', () => ({
+export default storiesOf("Extra|Cookie Banner", module)
+    .add("It renders a cookie banner", () => ({
         components: { CookieBanner },
         props: {
             bannerStyles: {
                 type: Object,
                 default: function () {
-                    return CookieBannerStyles
+                    return CookieBannerStyles;
                 }
             },
             containerStyles: {
                 type: Object,
                 default: function () {
-                    return CookieBannerContainerStyles
+                    return CookieBannerContainerStyles;
                 }
             }
         },
@@ -53,25 +53,25 @@ export default storiesOf('Extra|Cookie Banner', module)
             </CookieBanner>
         `
     }))
-    .add('Cookies can be accepted', () => ({
+    .add("Cookies can be accepted", () => ({
         components: { CookieBanner },
         props: {
             bannerStyles: {
                 type: Object,
                 default: function () {
-                    return CookieBannerStyles
+                    return CookieBannerStyles;
                 }
             },
             containerStyles: {
                 type: Object,
                 default: function () {
-                    return CookieBannerContainerStyles
+                    return CookieBannerContainerStyles;
                 }
             }
         },
         methods: {
             resetLocalStorage() {
-                localStorage.removeItem('cookies_accepted')
+                localStorage.removeItem("cookies_accepted");
             }
         },
         template: `
@@ -105,25 +105,25 @@ export default storiesOf('Extra|Cookie Banner', module)
             </div>
         `
     }))
-    .add('Cookie Banner is only shown if cookies haven\'t been accepted' , () => ({
+    .add("Cookie Banner is only shown if cookies haven't been accepted" , () => ({
         components: { CookieBanner },
         props: {
             bannerStyles: {
                 type: Object,
                 default: function () {
-                    return CookieBannerStyles
+                    return CookieBannerStyles;
                 }
             },
             containerStyles: {
                 type: Object,
                 default: function () {
-                    return CookieBannerContainerStyles
+                    return CookieBannerContainerStyles;
                 }
             }
         },
         methods: {
             resetLocalStorage() {
-                localStorage.removeItem('cookies_accepted')
+                localStorage.removeItem("cookies_accepted");
             }
         },
         template: `
@@ -156,4 +156,4 @@ export default storiesOf('Extra|Cookie Banner', module)
                 </CookieBanner>
             </div>
         `
-    }))
+    }));
