@@ -1,10 +1,10 @@
-import { storiesOf } from '@storybook/vue'
-import { withViewport } from '@storybook/addon-viewport'
-import Breakpoint from '../../helpers/Breakpoint'
+import { storiesOf } from "@storybook/vue";
+import { withViewport } from "@storybook/addon-viewport";
+import Breakpoint from "@/components/helpers/Breakpoint";
 
-export default storiesOf('Helpers|Breakpoint', module)
-    .addDecorator(withViewport('xs'))
-    .add('All breakpoints', () => ({
+export default storiesOf("Helpers|Breakpoint", module)
+    .addDecorator(withViewport("xs"))
+    .add("All breakpoints", () => ({
         components: { Breakpoint },
         template: `
             <div>
@@ -40,4 +40,4 @@ export default storiesOf('Helpers|Breakpoint', module)
                 </Breakpoint>
             </div>
         `
-    }))
+    }));

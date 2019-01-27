@@ -1,15 +1,15 @@
-import { storiesOf } from '@storybook/vue'
-import { withViewport } from '@storybook/addon-viewport'
+import { storiesOf } from "@storybook/vue";
+import { withViewport } from "@storybook/addon-viewport";
 
-import ScreenXS from '../../helpers/ScreenXS'
-import ScreenSM from '../../helpers/ScreenSM'
-import ScreenMD from '../../helpers/ScreenMD'
-import ScreenLG from '../../helpers/ScreenLG'
-import ScreenXL from '../../helpers/ScreenXL'
+import ScreenXS from "@/components/helpers/ScreenXS";
+import ScreenSM from "@/components/helpers/ScreenSM";
+import ScreenMD from "@/components/helpers/ScreenMD";
+import ScreenLG from "@/components/helpers/ScreenLG";
+import ScreenXL from "@/components/helpers/ScreenXL";
 
-export default storiesOf('Helpers|Breakpoint/Helpers', module)
-    .addDecorator(withViewport('xs'))
-    .add('Screen XS', () => ({
+export default storiesOf("Helpers|Breakpoint/Helpers", module)
+    .addDecorator(withViewport("xs"))
+    .add("Screen XS", () => ({
         components: { ScreenXS },
         template: `
             <div>
@@ -24,7 +24,7 @@ export default storiesOf('Helpers|Breakpoint/Helpers', module)
             </div>
         `
     }))
-    .add('Screen SM', () => ({
+    .add("Screen SM", () => ({
         components: { ScreenSM },
         template: `
             <div>
@@ -41,7 +41,7 @@ export default storiesOf('Helpers|Breakpoint/Helpers', module)
             </div>
         `
     }))
-    .add('Screen MD', () => ({
+    .add("Screen MD", () => ({
         components: { ScreenMD },
         template: `
             <div>
@@ -58,7 +58,7 @@ export default storiesOf('Helpers|Breakpoint/Helpers', module)
             </div>
         `
     }))
-    .add('Screen LG', () => ({
+    .add("Screen LG", () => ({
         components: { ScreenLG },
         template: `
             <div>
@@ -76,7 +76,7 @@ export default storiesOf('Helpers|Breakpoint/Helpers', module)
         `
     }))
 
-    .add('Screen XL', () => ({
+    .add("Screen XL", () => ({
         components: { ScreenXL },
         template: `
             <div>
@@ -90,4 +90,4 @@ export default storiesOf('Helpers|Breakpoint/Helpers', module)
                 </ScreenXL>
             </div>
         `
-    }))
+    }));

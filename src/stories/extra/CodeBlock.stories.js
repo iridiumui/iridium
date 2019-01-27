@@ -1,10 +1,10 @@
-import { storiesOf } from '@storybook/vue'
-import centered from '@storybook/addon-centered'
-import CodeBlock from '../../extra/CodeBlock'
+import { storiesOf } from "@storybook/vue";
+import centered from "@storybook/addon-centered";
+import CodeBlock from "@/components/extra/CodeBlock";
 
-export default storiesOf('Extra|Code Block', module)
+export default storiesOf("Extra|Code Block", module)
     .addDecorator(centered)
-    .add('Render a code block and a copy button', () => ({
+    .add("Render a code block and a copy button", () => ({
         components: { CodeBlock },
         template: `
             <div>
@@ -29,7 +29,7 @@ export default storiesOf('Extra|Code Block', module)
             </div>
         `
     }))
-    .add('The button can copy the code', () => ({
+    .add("The button can copy the code", () => ({
         components: { CodeBlock },
         template: `
             <div>
@@ -56,11 +56,11 @@ export default storiesOf('Extra|Code Block', module)
             </div>
         `
     }))
-    .add('Run a callback if the copy was successful', () => ({
+    .add("Run a callback if the copy was successful", () => ({
         components: { CodeBlock },
         methods: {
             success() {
-                alert('The code has been copied to your clipboard')
+                alert("The code has been copied to your clipboard");
             }
         },
         template: `
@@ -87,4 +87,4 @@ export default storiesOf('Extra|Code Block', module)
                 <textarea cols="30" rows="10" placeholder="Past the code here"></textarea>
             </div>
         `
-    }))
+    }));

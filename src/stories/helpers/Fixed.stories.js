@@ -1,33 +1,33 @@
-import { storiesOf } from '@storybook/vue'
-import { withKnobs, text } from '@storybook/addon-knobs'
-import Fixed from '../../helpers/Fixed'
+import { storiesOf } from "@storybook/vue";
+import { withKnobs, text } from "@storybook/addon-knobs";
+import Fixed from "@/components/helpers/Fixed";
 
 const defaultStyles = {
-    backgroundColor: '#FF5F7A',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: 'center'
-}
+    backgroundColor: "#FF5F7A",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center"
+};
 
 const horizontalBox = Object.assign({
-    width: '100%',
-    height: '200px'
-}, defaultStyles)
+    width: "100%",
+    height: "200px"
+}, defaultStyles);
 
 const verticalBox = Object.assign({
-    height: '100%',
-    width: '200px'
-}, defaultStyles)
+    height: "100%",
+    width: "200px"
+}, defaultStyles);
 
 const box = Object.assign({
-    height: '200px',
-    width: '200px'
-}, defaultStyles)
+    height: "200px",
+    width: "200px"
+}, defaultStyles);
 
-export default storiesOf('Helpers|Fixed', module)
+export default storiesOf("Helpers|Fixed", module)
     .addDecorator(withKnobs)
-    .add('It attaches on the top', () => ({
+    .add("It attaches on the top", () => ({
         components: { Fixed },
         props: {
             styles: {
@@ -36,11 +36,11 @@ export default storiesOf('Helpers|Fixed', module)
             },
             edges: {
                 type: Array,
-                default: ['top']
+                default: ["top"]
             },
             text: {
                 type: String,
-                default: text('Text', 'This is fixed on the top of the page')
+                default: text("Text", "This is fixed on the top of the page")
             }
         },
         template: `
@@ -51,7 +51,7 @@ export default storiesOf('Helpers|Fixed', module)
             </Fixed>
         `
     }))
-    .add('It attaches on the bottom', () => ({
+    .add("It attaches on the bottom", () => ({
         components: { Fixed },
         props: {
             styles: {
@@ -60,11 +60,11 @@ export default storiesOf('Helpers|Fixed', module)
             },
             edges: {
                 type: Array,
-                default: ['bottom']
+                default: ["bottom"]
             },
             text: {
                 type: String,
-                default: text('Text', 'This is fixed on the bottom of the page')
+                default: text("Text", "This is fixed on the bottom of the page")
             }
         },
         template: `
@@ -75,7 +75,7 @@ export default storiesOf('Helpers|Fixed', module)
             </Fixed>
         `
     }))
-    .add('It attaches on the left', () => ({
+    .add("It attaches on the left", () => ({
         components: { Fixed },
         props: {
             styles: {
@@ -84,11 +84,11 @@ export default storiesOf('Helpers|Fixed', module)
             },
             edges: {
                 type: Array,
-                default: ['left']
+                default: ["left"]
             },
             text: {
                 type: String,
-                default: text('Text', 'This is fixed on the left of the page')
+                default: text("Text", "This is fixed on the left of the page")
             }
         },
         template: `
@@ -99,7 +99,7 @@ export default storiesOf('Helpers|Fixed', module)
             </Fixed>
         `
     }))
-    .add('It attaches on the right', () => ({
+    .add("It attaches on the right", () => ({
         components: { Fixed },
         props: {
             styles: {
@@ -108,11 +108,11 @@ export default storiesOf('Helpers|Fixed', module)
             },
             edges: {
                 type: Array,
-                default: ['right']
+                default: ["right"]
             },
             text: {
                 type: String,
-                default: text('Text', 'This is fixed on the right of the page')
+                default: text("Text", "This is fixed on the right of the page")
             }
         },
         template: `
@@ -123,7 +123,7 @@ export default storiesOf('Helpers|Fixed', module)
             </Fixed>
         `
     }))
-    .add('It attaches to multiple sides', () => ({
+    .add("It attaches to multiple sides", () => ({
         components: { Fixed },
         props: {
             styles: {
@@ -132,7 +132,7 @@ export default storiesOf('Helpers|Fixed', module)
             },
             edges: {
                 type: Array,
-                default: ['bottom', 'right']
+                default: ["bottom", "right"]
             }
         },
         template: `
@@ -142,4 +142,4 @@ export default storiesOf('Helpers|Fixed', module)
                 </aside>
             </Fixed>
         `
-    }))
+    }));

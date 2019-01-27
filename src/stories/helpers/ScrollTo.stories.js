@@ -1,8 +1,8 @@
-import { storiesOf } from '@storybook/vue'
-import ScrollTo from '../../helpers/ScrollTo'
+import { storiesOf } from "@storybook/vue";
+import ScrollTo from "@/components/helpers/ScrollTo";
 
-export default storiesOf('Helpers|Scroll To', module)
-    .add('Scroll to element', () => ({
+export default storiesOf("Helpers|Scroll To", module)
+    .add("Scroll to element", () => ({
         components: { ScrollTo },
         template: `
             <div>
@@ -25,7 +25,7 @@ export default storiesOf('Helpers|Scroll To', module)
             </div>
         `
     }))
-    .add('Scroll to fixed position', () => ({
+    .add("Scroll to fixed position", () => ({
         components: { ScrollTo },
         template: `
             <div>
@@ -43,7 +43,7 @@ export default storiesOf('Helpers|Scroll To', module)
             </div>
         `
     }))
-    .add('Scroll with offset', () => ({
+    .add("Scroll with offset", () => ({
         components: { ScrollTo },
         template: `
             <div>
@@ -66,7 +66,7 @@ export default storiesOf('Helpers|Scroll To', module)
             </div>
         `
     }))
-    .add('Scroll behavior can be changed', () => ({
+    .add("Scroll behavior can be changed", () => ({
         components: { ScrollTo },
         template: `
             <div>
@@ -88,4 +88,4 @@ export default storiesOf('Helpers|Scroll To', module)
                 </h2>
             </div>
         `
-    }))
+    }));

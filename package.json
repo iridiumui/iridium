@@ -13,8 +13,8 @@
         "watch:es": "NODE_ENV=es rollup -c -w",
         "watch:cjs": "NODE_ENV=cjs rollup -c -w",
         "test": "./node_modules/.bin/jest",
-        "style": "./node_modules/.bin/eslint .eslintrc --ext .js,.vue src tests",
-        "style:fix": "./node_modules/.bin/eslint .eslintrc --ext .js,.vue src tests --fix",
+        "style": "./node_modules/.bin/eslint .eslintrc --ext .js,.vue src",
+        "style:fix": "./node_modules/.bin/eslint .eslintrc --ext .js,.vue src --fix",
         "prepublish": "run-s style:fix && run-s test",
         "precommit": "run-s style:fix && run-s test",
         "storybook": "start-storybook -p 9001 -c .storybook"
@@ -69,8 +69,10 @@
         "match-media-mock": "^0.1.1",
         "npm-run-all": "^4.1.5",
         "regenerator-runtime": "^0.12.1",
+        "rollup-plugin-alias": "^1.5.1",
         "rollup-plugin-babel": "^4.0.3",
         "rollup-plugin-commonjs": "^9.2.0",
+        "rollup-plugin-eslint": "^5.0.0",
         "rollup-plugin-node-resolve": "^3.4.0",
         "rollup-plugin-vue": "^4.3.2",
         "vue": "^2.5.17",
@@ -84,6 +86,11 @@
             "json",
             "vue"
         ],
+        "moduleNameMapper": {
+            "@babel(.*)$": "<rootDir>/node_modules/$0",
+            "@(.*)$": "<rootDir>/src/$1",
+            "~(.*)$": "<rootDir>/$1"
+        },
         "transform": {
             ".*\\.(vue)$": "vue-jest",
             "^.+\\.js$": "<rootDir>/node_modules/babel-jest"

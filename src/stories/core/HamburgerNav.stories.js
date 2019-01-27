@@ -1,47 +1,47 @@
-import { storiesOf } from '@storybook/vue'
-import HamburgerNav from '../../core/HamburgerNav'
+import { storiesOf } from "@storybook/vue";
+import HamburgerNav from "@/components/core/HamburgerNav";
 
 const HamburgerNavToggleStyles = {
-    backgroundColor: 'none',
-    border: 'none'
-}
+    backgroundColor: "none",
+    border: "none"
+};
 
 const HamburgerNavStyles = {
-    width: '25vw',
-    backgroundColor: '#333',
-    padding: '1rem',
-    position: 'fixed',
+    width: "25vw",
+    backgroundColor: "#333",
+    padding: "1rem",
+    position: "fixed",
     top: 0,
     left: 0,
     bottom: 0
-}
+};
 
 const HamburgerNavLinkItemStyles = {
-    display: 'block',
-    color: '#fff',
-    marginTop: '1rem'
-}
+    display: "block",
+    color: "#fff",
+    marginTop: "1rem"
+};
 
-export default storiesOf('Core|Hamburger Nav', module)
-    .add('It can render a toggle and content', () => ({
+export default storiesOf("Core|Hamburger Nav", module)
+    .add("It can render a toggle and content", () => ({
         components: { HamburgerNav },
         props: {
             toggleStyles: {
                 type: Object,
                 default: function () {
-                    return HamburgerNavToggleStyles
+                    return HamburgerNavToggleStyles;
                 }
             },
             navStyles: {
                 type: Object,
                 default: function () {
-                    return HamburgerNavStyles
+                    return HamburgerNavStyles;
                 }
             },
             linkItemStyles: {
                 type: Object,
                 default: function () {
-                    return HamburgerNavLinkItemStyles
+                    return HamburgerNavLinkItemStyles;
                 }
             }
         },
@@ -85,25 +85,25 @@ export default storiesOf('Core|Hamburger Nav', module)
             </HamburgerNav>
         `
     }))
-    .add('It can render a default slot', () => ({
+    .add("It can render a default slot", () => ({
         components: { HamburgerNav },
         props: {
             toggleStyles: {
                 type: Object,
                 default: function () {
-                    return HamburgerNavToggleStyles
+                    return HamburgerNavToggleStyles;
                 }
             },
             navStyles: {
                 type: Object,
                 default: function () {
-                    return HamburgerNavStyles
+                    return HamburgerNavStyles;
                 }
             },
             linkItemStyles: {
                 type: Object,
                 default: function () {
-                    return HamburgerNavLinkItemStyles
+                    return HamburgerNavLinkItemStyles;
                 }
             }
         },
@@ -145,25 +145,25 @@ export default storiesOf('Core|Hamburger Nav', module)
             </HamburgerNav>
         `
     }))
-    .add('It can be open by default', () => ({
+    .add("It can be open by default", () => ({
         components: { HamburgerNav },
         props: {
             toggleStyles: {
                 type: Object,
                 default: function () {
-                    return HamburgerNavToggleStyles
+                    return HamburgerNavToggleStyles;
                 }
             },
             navStyles: {
                 type: Object,
                 default: function () {
-                    return HamburgerNavStyles
+                    return HamburgerNavStyles;
                 }
             },
             linkItemStyles: {
                 type: Object,
                 default: function () {
-                    return HamburgerNavLinkItemStyles
+                    return HamburgerNavLinkItemStyles;
                 }
             }
         },
@@ -206,4 +206,4 @@ export default storiesOf('Core|Hamburger Nav', module)
                 </div>
             </HamburgerNav>
         `
-    }))
+    }));
