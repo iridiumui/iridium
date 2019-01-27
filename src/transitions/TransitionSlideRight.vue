@@ -7,7 +7,7 @@
 </template>
 
 <script>
-    import TransitionBase from "./TransitionBase.vue";
+    import TransitionBase from "@/transitions/TransitionBase";
 
     export default {
         components: {

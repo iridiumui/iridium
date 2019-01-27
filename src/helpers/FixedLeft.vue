@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import Fixed from "./Fixed.vue";
+    import Fixed from "@/helpers/Fixed";
 
     export default {
         components: {

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import Breakpoint from "./Breakpoint.vue";
+    import Breakpoint from "@/helpers/Breakpoint";
 
     export default {
         components: {

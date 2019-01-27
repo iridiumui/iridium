@@ -1,15 +1,15 @@
-import "./core/HamburgerNav.stories";
-import "./core/Modal.stories";
+import "@/stories/core/HamburgerNav.stories";
+import "@/stories/core/Modal.stories";
 
-import "./extra/CodeBlock.stories";
-import "./extra/CookieBanner.stories";
+import "@/stories/extra/CodeBlock.stories";
+import "@/stories/extra/CookieBanner.stories";
 
-import "./helpers/Breakpoint.stories";
-import "./helpers/BreakpointHelpers.stories";
-import "./helpers/ClickOutside.stories";
-import "./helpers/Fixed.stories";
-import "./helpers/FixedHelpers.stories";
-import "./helpers/FocusTrap.stories";
-import "./helpers/InView.stories";
-import "./helpers/ScrollTo.stories";
-import "./helpers/VisuallyHidden.stories";
+import "@/stories/helpers/Breakpoint.stories";
+import "@/stories/helpers/BreakpointHelpers.stories";
+import "@/stories/helpers/ClickOutside.stories";
+import "@/stories/helpers/Fixed.stories";
+import "@/stories/helpers/FixedHelpers.stories";
+import "@/stories/helpers/FocusTrap.stories";
+import "@/stories/helpers/InView.stories";
+import "@/stories/helpers/ScrollTo.stories";
+import "@/stories/helpers/VisuallyHidden.stories";

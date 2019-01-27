@@ -1,7 +1,7 @@
 import { storiesOf } from "@storybook/vue";
 import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 import centered from "@storybook/addon-centered";
-import ClickOutside from "../../helpers/ClickOutside";
+import ClickOutside from "@/helpers/ClickOutside";
 
 const defaultStyles = {
     width: "200px",

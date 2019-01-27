@@ -31,7 +31,7 @@
 </template>
 
 <script>
-    import FocusTrap from "../helpers/FocusTrap.vue";
+    import FocusTrap from "@/helpers/FocusTrap";
 
     export default {
         components: {

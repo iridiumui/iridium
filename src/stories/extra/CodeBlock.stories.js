@@ -1,6 +1,6 @@
 import { storiesOf } from "@storybook/vue";
 import centered from "@storybook/addon-centered";
-import CodeBlock from "../../extra/CodeBlock";
+import CodeBlock from "@/extra/CodeBlock";
 
 export default storiesOf("Extra|Code Block", module)
     .addDecorator(centered)

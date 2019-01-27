@@ -2,7 +2,7 @@ import { storiesOf } from "@storybook/vue";
 import { withKnobs, text } from "@storybook/addon-knobs";
 import centered from "@storybook/addon-centered";
 import { checkA11y, configureA11y } from "@storybook/addon-a11y";
-import VisuallyHidden from "../../helpers/VisuallyHidden";
+import VisuallyHidden from "@/helpers/VisuallyHidden";
 import axe from "axe-core";
 
 configureA11y({

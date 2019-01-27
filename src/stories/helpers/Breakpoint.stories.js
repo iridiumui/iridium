@@ -1,6 +1,6 @@
 import { storiesOf } from "@storybook/vue";
 import { withViewport } from "@storybook/addon-viewport";
-import Breakpoint from "../../helpers/Breakpoint";
+import Breakpoint from "@/helpers/Breakpoint";
 
 export default storiesOf("Helpers|Breakpoint", module)
     .addDecorator(withViewport("xs"))

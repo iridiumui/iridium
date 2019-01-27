@@ -2,47 +2,47 @@ const isUndefined = require("lodash/isUndefined");
 
 import PortalVue from "portal-vue";
 
-import Fixed from "./helpers/Fixed.vue";
-import FixedTop from "./helpers/FixedTop.vue";
-import FixedRight from "./helpers/FixedRight.vue";
-import FixedBottom from "./helpers/FixedBottom.vue";
-import FixedLeft from "./helpers/FixedLeft.vue";
-import FixedTopRight from "./helpers/FixedTopRight.vue";
-import FixedTopLeft from "./helpers/FixedTopLeft.vue";
-import FixedBottomRight from "./helpers/FixedBottomRight.vue";
-import FixedBottomLeft from "./helpers/FixedBottomLeft.vue";
+import Fixed from "@/helpers/Fixed";
+import FixedTop from "@/helpers/FixedTop";
+import FixedRight from "@/helpers/FixedRight";
+import FixedBottom from "@/helpers/FixedBottom";
+import FixedLeft from "@/helpers/FixedLeft";
+import FixedTopRight from "@/helpers/FixedTopRight";
+import FixedTopLeft from "@/helpers/FixedTopLeft";
+import FixedBottomRight from "@/helpers/FixedBottomRight";
+import FixedBottomLeft from "@/helpers/FixedBottomLeft";
 
-import Breakpoint from "./helpers/Breakpoint.vue";
-import ScreenXS from "./helpers/ScreenXS.vue";
-import ScreenSM from "./helpers/ScreenSM.vue";
-import ScreenMD from "./helpers/ScreenMD.vue";
-import ScreenLG from "./helpers/ScreenLG.vue";
-import ScreenXL from "./helpers/ScreenXL.vue";
+import Breakpoint from "@/helpers/Breakpoint";
+import ScreenXS from "@/helpers/ScreenXS";
+import ScreenSM from "@/helpers/ScreenSM";
+import ScreenMD from "@/helpers/ScreenMD";
+import ScreenLG from "@/helpers/ScreenLG";
+import ScreenXL from "@/helpers/ScreenXL";
 
-import InView from "./helpers/InView.vue";
-import ScrollTo from "./helpers/ScrollTo.vue";
-import ClickOutside from "./helpers/ClickOutside.vue";
+import InView from "@/helpers/InView";
+import ScrollTo from "@/helpers/ScrollTo";
+import ClickOutside from "@/helpers/ClickOutside";
 
-import TransitionSlideUp from "./transitions/TransitionSlideUp.vue";
-import TransitionSlideDown from "./transitions/TransitionSlideDown.vue";
-import TransitionSlideRight from "./transitions/TransitionSlideRight.vue";
-import TransitionSlideLeft from "./transitions/TransitionSlideLeft.vue";
+import TransitionSlideUp from "@/transitions/TransitionSlideUp";
+import TransitionSlideDown from "@/transitions/TransitionSlideDown";
+import TransitionSlideRight from "@/transitions/TransitionSlideRight";
+import TransitionSlideLeft from "@/transitions/TransitionSlideLeft";
 
-import TransitionFade from "./transitions/TransitionFade.vue";
+import TransitionFade from "@/transitions/TransitionFade";
 
-import TransitionFadeSlideUp from "./transitions/TransitionFadeSlideUp.vue";
-import TransitionFadeSlideRight from "./transitions/TransitionFadeSlideRight.vue";
-import TransitionFadeSlideDown from "./transitions/TransitionFadeSlideDown.vue";
-import TransitionFadeSlideLeft from "./transitions/TransitionFadeSlideLeft.vue";
+import TransitionFadeSlideUp from "@/transitions/TransitionFadeSlideUp";
+import TransitionFadeSlideRight from "@/transitions/TransitionFadeSlideRight";
+import TransitionFadeSlideDown from "@/transitions/TransitionFadeSlideDown";
+import TransitionFadeSlideLeft from "@/transitions/TransitionFadeSlideLeft";
 
-import VisuallyHidden from "./helpers/VisuallyHidden.vue";
-import FocusTrap from "./helpers/FocusTrap.vue";
+import VisuallyHidden from "@/helpers/VisuallyHidden";
+import FocusTrap from "@/helpers/FocusTrap";
 
-import HamburgerNav from "./core/HamburgerNav.vue";
-import Modal from "./core/Modal.vue";
+import HamburgerNav from "@/core/HamburgerNav";
+import Modal from "@/core/Modal";
 
-import CodeBlock from "./extra/CodeBlock.vue";
-import CookieBanner from "./extra/CookieBanner.vue";
+import CodeBlock from "@/extra/CodeBlock";
+import CookieBanner from "@/extra/CookieBanner";
 
 const standardOptions = {
     prefix: "iridium-"

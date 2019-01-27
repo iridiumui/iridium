@@ -1,7 +1,7 @@
 import { storiesOf } from "@storybook/vue";
 import { withKnobs, boolean, object } from "@storybook/addon-knobs";
 import centered from "@storybook/addon-centered";
-import FocusTrap from "../../helpers/FocusTrap";
+import FocusTrap from "@/helpers/FocusTrap";
 
 export default storiesOf("Accessibility|Focus Trap", module)
     .addDecorator(withKnobs)

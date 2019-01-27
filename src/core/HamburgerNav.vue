@@ -1,5 +1,5 @@
 <script>
-    import FocusTrap from "../helpers/FocusTrap.vue";
+    import FocusTrap from "@/helpers/FocusTrap";
 
     export const HamburgerNavToggle = {
         props: {

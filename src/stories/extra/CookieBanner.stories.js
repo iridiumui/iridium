@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/vue";
-import CookieBanner from "../../extra/CookieBanner";
+import CookieBanner from "@/extra/CookieBanner";
 
 const CookieBannerStyles = {
     position: "fixed",
