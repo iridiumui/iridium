@@ -86,6 +86,11 @@
             "json",
             "vue"
         ],
+        "moduleNameMapper": {
+            "@babel(.*)$": "<rootDir>/node_modules/$0",
+            "@(.*)$": "<rootDir>/src/$1",
+            "~(.*)$": "<rootDir>/$1"
+        },
         "transform": {
             ".*\\.(vue)$": "vue-jest",
             "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
