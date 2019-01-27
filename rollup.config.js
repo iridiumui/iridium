@@ -19,10 +19,10 @@ export default {
     external: ["vue"],
     plugins: [
         resolve(),
-        VuePlugin(),
         eslint({
             throwOnError: true
         }),
+        VuePlugin(),
         babel({
             exclude: "node_modules/**",
             plugins: ["@babel/external-helpers"],
