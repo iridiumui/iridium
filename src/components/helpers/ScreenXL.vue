@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import Breakpoint from "@/helpers/Breakpoint";
+    import Breakpoint from "@/components/helpers/Breakpoint";
 
     export default {
         components: {

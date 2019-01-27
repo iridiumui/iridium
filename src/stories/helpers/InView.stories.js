@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/vue";
-import InView from "@/helpers/InView";
+import InView from "@/components/helpers/InView";
 
 export default storiesOf("Helpers|In View", module)
     .add("Check if another element is in view", () => ({

@@ -1,13 +1,13 @@
 <template>
     <transition-base
-        name="iridium-slide-down"
+        name="iridium-fade"
         v-bind="$attrs">
         <slot/>
     </transition-base>
 </template>
 
 <script>
-    import TransitionBase from "@/transitions/TransitionBase";
+    import TransitionBase from "@/components/transitions/TransitionBase";
 
     export default {
         components: {
@@ -17,7 +17,7 @@
 </script>
 
 <style>
-    .iridium-slide-down-enter, .iridium-slide-down-leave-to {
-        transform: translateY(-100%);
+    .iridium-fade-enter, .iridium-fade-leave-to {
+        opacity: 0;
     }
 </style>

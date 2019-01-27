@@ -1,11 +1,11 @@
 <template>
-    <fixed :edges="['top', 'left']">
+    <fixed :edges="['top', 'right']">
         <slot/>
     </fixed>
 </template>
 
 <script>
-    import Fixed from "@/helpers/Fixed";
+    import Fixed from "@/components/helpers/Fixed";
 
     export default {
         components: {

@@ -31,7 +31,7 @@
 </template>
 
 <script>
-    import FocusTrap from "@/accessibility/FocusTrap";
+    import FocusTrap from "@/components/accessibility/FocusTrap";
 
     export default {
         components: {

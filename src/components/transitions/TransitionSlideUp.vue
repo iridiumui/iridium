@@ -1,13 +1,13 @@
 <template>
     <transition-base
-        name="iridium-slide-right"
+        name="iridium-slide-up"
         v-bind="$attrs">
         <slot/>
     </transition-base>
 </template>
 
 <script>
-    import TransitionBase from "@/transitions/TransitionBase";
+    import TransitionBase from "@/components/transitions/TransitionBase";
 
     export default {
         components: {
@@ -17,7 +17,7 @@
 </script>
 
 <style>
-    .iridium-slide-right-enter, .iridium-slide-right-leave-to {
-        transform: translateX(-100%);
+    .iridium-slide-up-enter, .iridium-slide-up-leave-to {
+        transform: translateY(100%);
     }
 </style>

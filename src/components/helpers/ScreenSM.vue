@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import Breakpoint from "@/helpers/Breakpoint";
+    import Breakpoint from "@/components/helpers/Breakpoint";
 
     export default {
         components: {
@@ -24,7 +24,7 @@
 
         computed: {
             query() {
-                return this.direction === "up" ? "(min-width: 992px)" : "(max-width: 1199.98px)";
+                return this.direction === "up" ? "(min-width: 576px)" : "(max-width: 767.98px)";
             }
         }
     };

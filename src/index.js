@@ -2,47 +2,47 @@ const isUndefined = require("lodash/isUndefined");
 
 import PortalVue from "portal-vue";
 
-import Fixed from "@/helpers/Fixed";
-import FixedTop from "@/helpers/FixedTop";
-import FixedRight from "@/helpers/FixedRight";
-import FixedBottom from "@/helpers/FixedBottom";
-import FixedLeft from "@/helpers/FixedLeft";
-import FixedTopRight from "@/helpers/FixedTopRight";
-import FixedTopLeft from "@/helpers/FixedTopLeft";
-import FixedBottomRight from "@/helpers/FixedBottomRight";
-import FixedBottomLeft from "@/helpers/FixedBottomLeft";
+import Fixed from "@/components/helpers/Fixed";
+import FixedTop from "@/components/helpers/FixedTop";
+import FixedRight from "@/components/helpers/FixedRight";
+import FixedBottom from "@/components/helpers/FixedBottom";
+import FixedLeft from "@/components/helpers/FixedLeft";
+import FixedTopRight from "@/components/helpers/FixedTopRight";
+import FixedTopLeft from "@/components/helpers/FixedTopLeft";
+import FixedBottomRight from "@/components/helpers/FixedBottomRight";
+import FixedBottomLeft from "@/components/helpers/FixedBottomLeft";
 
-import Breakpoint from "@/helpers/Breakpoint";
-import ScreenXS from "@/helpers/ScreenXS";
-import ScreenSM from "@/helpers/ScreenSM";
-import ScreenMD from "@/helpers/ScreenMD";
-import ScreenLG from "@/helpers/ScreenLG";
-import ScreenXL from "@/helpers/ScreenXL";
+import Breakpoint from "@/components/helpers/Breakpoint";
+import ScreenXS from "@/components/helpers/ScreenXS";
+import ScreenSM from "@/components/helpers/ScreenSM";
+import ScreenMD from "@/components/helpers/ScreenMD";
+import ScreenLG from "@/components/helpers/ScreenLG";
+import ScreenXL from "@/components/helpers/ScreenXL";
 
-import InView from "@/helpers/InView";
-import ScrollTo from "@/helpers/ScrollTo";
-import ClickOutside from "@/helpers/ClickOutside";
+import InView from "@/components/helpers/InView";
+import ScrollTo from "@/components/helpers/ScrollTo";
+import ClickOutside from "@/components/helpers/ClickOutside";
 
-import TransitionSlideUp from "@/transitions/TransitionSlideUp";
-import TransitionSlideDown from "@/transitions/TransitionSlideDown";
-import TransitionSlideRight from "@/transitions/TransitionSlideRight";
-import TransitionSlideLeft from "@/transitions/TransitionSlideLeft";
+import TransitionSlideUp from "@/components/transitions/TransitionSlideUp";
+import TransitionSlideDown from "@/components/transitions/TransitionSlideDown";
+import TransitionSlideRight from "@/components/transitions/TransitionSlideRight";
+import TransitionSlideLeft from "@/components/transitions/TransitionSlideLeft";
 
-import TransitionFade from "@/transitions/TransitionFade";
+import TransitionFade from "@/components/transitions/TransitionFade";
 
-import TransitionFadeSlideUp from "@/transitions/TransitionFadeSlideUp";
-import TransitionFadeSlideRight from "@/transitions/TransitionFadeSlideRight";
-import TransitionFadeSlideDown from "@/transitions/TransitionFadeSlideDown";
-import TransitionFadeSlideLeft from "@/transitions/TransitionFadeSlideLeft";
+import TransitionFadeSlideUp from "@/components/transitions/TransitionFadeSlideUp";
+import TransitionFadeSlideRight from "@/components/transitions/TransitionFadeSlideRight";
+import TransitionFadeSlideDown from "@/components/transitions/TransitionFadeSlideDown";
+import TransitionFadeSlideLeft from "@/components/transitions/TransitionFadeSlideLeft";
 
-import VisuallyHidden from "@/accessibility/VisuallyHidden";
-import FocusTrap from "@/accessibility/FocusTrap";
+import VisuallyHidden from "@/components/accessibility/VisuallyHidden";
+import FocusTrap from "@/components/accessibility/FocusTrap";
 
-import HamburgerNav from "@/core/HamburgerNav";
-import Modal from "@/core/Modal";
+import HamburgerNav from "@/components/core/HamburgerNav";
+import Modal from "@/components/core/Modal";
 
-import CodeBlock from "@/extra/CodeBlock";
-import CookieBanner from "@/extra/CookieBanner";
+import CodeBlock from "@/components/extra/CodeBlock";
+import CookieBanner from "@/components/extra/CookieBanner";
 
 const standardOptions = {
     prefix: "iridium-"

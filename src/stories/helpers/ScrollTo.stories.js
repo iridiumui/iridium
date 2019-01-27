@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/vue";
-import ScrollTo from "@/helpers/ScrollTo";
+import ScrollTo from "@/components/helpers/ScrollTo";
 
 export default storiesOf("Helpers|Scroll To", module)
     .add("Scroll to element", () => ({

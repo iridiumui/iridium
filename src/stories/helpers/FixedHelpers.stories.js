@@ -1,16 +1,16 @@
 import { storiesOf } from "@storybook/vue";
 import { withKnobs, text } from "@storybook/addon-knobs";
 
-import FixedTop from "@/helpers/FixedTop";
-import FixedTopLeft from "@/helpers/FixedTopLeft";
-import FixedTopRight from "@/helpers/FixedTopRight";
+import FixedTop from "@/components/helpers/FixedTop";
+import FixedTopLeft from "@/components/helpers/FixedTopLeft";
+import FixedTopRight from "@/components/helpers/FixedTopRight";
 
-import FixedBottom from "@/helpers/FixedBottom";
-import FixedBottomLeft from "@/helpers/FixedBottomLeft";
-import FixedBottomRight from "@/helpers/FixedBottomRight";
+import FixedBottom from "@/components/helpers/FixedBottom";
+import FixedBottomLeft from "@/components/helpers/FixedBottomLeft";
+import FixedBottomRight from "@/components/helpers/FixedBottomRight";
 
-import FixedLeft from "@/helpers/FixedLeft";
-import FixedRight from "@/helpers/FixedRight";
+import FixedLeft from "@/components/helpers/FixedLeft";
+import FixedRight from "@/components/helpers/FixedRight";
 
 const defaultStyles = {
     backgroundColor: "#FF5F7A",

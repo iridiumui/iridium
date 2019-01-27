@@ -1,11 +1,11 @@
 import { storiesOf } from "@storybook/vue";
 import { withViewport } from "@storybook/addon-viewport";
 
-import ScreenXS from "@/helpers/ScreenXS";
-import ScreenSM from "@/helpers/ScreenSM";
-import ScreenMD from "@/helpers/ScreenMD";
-import ScreenLG from "@/helpers/ScreenLG";
-import ScreenXL from "@/helpers/ScreenXL";
+import ScreenXS from "@/components/helpers/ScreenXS";
+import ScreenSM from "@/components/helpers/ScreenSM";
+import ScreenMD from "@/components/helpers/ScreenMD";
+import ScreenLG from "@/components/helpers/ScreenLG";
+import ScreenXL from "@/components/helpers/ScreenXL";
 
 export default storiesOf("Helpers|Breakpoint/Helpers", module)
     .addDecorator(withViewport("xs"))

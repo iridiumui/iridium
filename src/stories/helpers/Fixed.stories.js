@@ -1,6 +1,6 @@
 import { storiesOf } from "@storybook/vue";
 import { withKnobs, text } from "@storybook/addon-knobs";
-import Fixed from "@/helpers/Fixed";
+import Fixed from "@/components/helpers/Fixed";
 
 const defaultStyles = {
     backgroundColor: "#FF5F7A",

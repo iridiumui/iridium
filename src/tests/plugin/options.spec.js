@@ -1,5 +1,5 @@
 import Vue from "vue";
-import Iridium from "@/src/index.js";
+import Iridium from "@/index.js";
 
 describe("Plugin Options", () => {
 

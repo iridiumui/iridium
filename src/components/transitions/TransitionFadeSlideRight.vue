@@ -7,7 +7,7 @@
 </template>
 
 <script>
-    import TransitionBase from "@/transitions/TransitionBase";
+    import TransitionBase from "@/components/transitions/TransitionBase";
 
     export default {
         components: {

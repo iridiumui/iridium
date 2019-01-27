@@ -1,6 +1,6 @@
 import Vue from "vue";
 import { storiesOf } from "@storybook/vue";
-import Modal from "@/core/Modal";
+import Modal from "@/components/core/Modal";
 import PortalVue from "portal-vue";
 
 Vue.use(PortalVue);

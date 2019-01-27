@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/vue";
-import HamburgerNav from "@/core/HamburgerNav";
+import HamburgerNav from "@/components/core/HamburgerNav";
 
 const HamburgerNavToggleStyles = {
     backgroundColor: "none",
