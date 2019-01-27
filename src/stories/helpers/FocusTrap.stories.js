@@ -1,12 +1,12 @@
-import { storiesOf, addDecorator } from '@storybook/vue'
-import { withKnobs, boolean, text, object } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/vue'
+import { withKnobs, boolean, object } from '@storybook/addon-knobs'
 import centered from '@storybook/addon-centered'
 import FocusTrap from '../../helpers/FocusTrap'
 
 export default storiesOf('Accessibility|Focus Trap', module)
     .addDecorator(withKnobs)
     .addDecorator(centered)
-    .add("Trap's focus", () => ({
+    .add('Trap\'s focus', () => ({
         components: { FocusTrap },
         template: `
             <div>
@@ -28,7 +28,7 @@ export default storiesOf('Accessibility|Focus Trap', module)
             </div>
         `
     }))
-    .add("The trap can be deactivated", () => ({
+    .add('The trap can be deactivated', () => ({
         components: { FocusTrap },
         props: {
             active: {
@@ -56,7 +56,7 @@ export default storiesOf('Accessibility|Focus Trap', module)
             </div>
         `
     }))
-    .add("With options", () => ({
+    .add('With options', () => ({
         components: { FocusTrap },
         props: {
             options: {

@@ -1,10 +1,10 @@
-import { storiesOf } from '@storybook/vue';
-import HamburgerNav from '../../core/HamburgerNav';
+import { storiesOf } from '@storybook/vue'
+import HamburgerNav from '../../core/HamburgerNav'
 
 const HamburgerNavToggleStyles = {
     backgroundColor: 'none',
     border: 'none'
-};
+}
 
 const HamburgerNavStyles = {
     width: '25vw',
@@ -14,13 +14,13 @@ const HamburgerNavStyles = {
     top: 0,
     left: 0,
     bottom: 0
-};
+}
 
 const HamburgerNavLinkItemStyles = {
     display: 'block',
     color: '#fff',
     marginTop: '1rem'
-};
+}
 
 export default storiesOf('Core|Hamburger Nav', module)
     .add('It can render a toggle and content', () => ({
@@ -29,19 +29,19 @@ export default storiesOf('Core|Hamburger Nav', module)
             toggleStyles: {
                 type: Object,
                 default: function () {
-                    return HamburgerNavToggleStyles;
+                    return HamburgerNavToggleStyles
                 }
             },
             navStyles: {
                 type: Object,
                 default: function () {
-                    return HamburgerNavStyles;
+                    return HamburgerNavStyles
                 }
             },
             linkItemStyles: {
                 type: Object,
                 default: function () {
-                    return HamburgerNavLinkItemStyles;
+                    return HamburgerNavLinkItemStyles
                 }
             }
         },
@@ -91,19 +91,19 @@ export default storiesOf('Core|Hamburger Nav', module)
             toggleStyles: {
                 type: Object,
                 default: function () {
-                    return HamburgerNavToggleStyles;
+                    return HamburgerNavToggleStyles
                 }
             },
             navStyles: {
                 type: Object,
                 default: function () {
-                    return HamburgerNavStyles;
+                    return HamburgerNavStyles
                 }
             },
             linkItemStyles: {
                 type: Object,
                 default: function () {
-                    return HamburgerNavLinkItemStyles;
+                    return HamburgerNavLinkItemStyles
                 }
             }
         },
@@ -151,19 +151,19 @@ export default storiesOf('Core|Hamburger Nav', module)
             toggleStyles: {
                 type: Object,
                 default: function () {
-                    return HamburgerNavToggleStyles;
+                    return HamburgerNavToggleStyles
                 }
             },
             navStyles: {
                 type: Object,
                 default: function () {
-                    return HamburgerNavStyles;
+                    return HamburgerNavStyles
                 }
             },
             linkItemStyles: {
                 type: Object,
                 default: function () {
-                    return HamburgerNavLinkItemStyles;
+                    return HamburgerNavLinkItemStyles
                 }
             }
         },

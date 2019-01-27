@@ -1,5 +1,5 @@
-import { storiesOf } from '@storybook/vue';
-import CookieBanner from '../../extra/CookieBanner';
+import { storiesOf } from '@storybook/vue'
+import CookieBanner from '../../extra/CookieBanner'
 
 const CookieBannerStyles = {
     position: 'fixed',
@@ -7,7 +7,7 @@ const CookieBannerStyles = {
     left: 0,
     right: 0,
     backgroundColor: '#333'
-};
+}
 
 const CookieBannerContainerStyles = {
     maxWidth: '80vw',
@@ -15,7 +15,7 @@ const CookieBannerContainerStyles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center'
-};
+}
 
 export default storiesOf('Extra|Cookie Banner', module)
     .add('It renders a cookie banner', () => ({
@@ -24,13 +24,13 @@ export default storiesOf('Extra|Cookie Banner', module)
             bannerStyles: {
                 type: Object,
                 default: function () {
-                    return CookieBannerStyles;
+                    return CookieBannerStyles
                 }
             },
             containerStyles: {
                 type: Object,
                 default: function () {
-                    return CookieBannerContainerStyles;
+                    return CookieBannerContainerStyles
                 }
             }
         },
@@ -59,19 +59,19 @@ export default storiesOf('Extra|Cookie Banner', module)
             bannerStyles: {
                 type: Object,
                 default: function () {
-                    return CookieBannerStyles;
+                    return CookieBannerStyles
                 }
             },
             containerStyles: {
                 type: Object,
                 default: function () {
-                    return CookieBannerContainerStyles;
+                    return CookieBannerContainerStyles
                 }
             }
         },
         methods: {
             resetLocalStorage() {
-                localStorage.removeItem("cookies_accepted")
+                localStorage.removeItem('cookies_accepted')
             }
         },
         template: `
@@ -111,19 +111,19 @@ export default storiesOf('Extra|Cookie Banner', module)
             bannerStyles: {
                 type: Object,
                 default: function () {
-                    return CookieBannerStyles;
+                    return CookieBannerStyles
                 }
             },
             containerStyles: {
                 type: Object,
                 default: function () {
-                    return CookieBannerContainerStyles;
+                    return CookieBannerContainerStyles
                 }
             }
         },
         methods: {
             resetLocalStorage() {
-                localStorage.removeItem("cookies_accepted")
+                localStorage.removeItem('cookies_accepted')
             }
         },
         template: `

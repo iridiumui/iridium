@@ -1,39 +1,38 @@
-import Vue from "vue";
-import { storiesOf, addDecorator } from "@storybook/vue";
-import { withKnobs, text } from "@storybook/addon-knobs";
+import { storiesOf } from '@storybook/vue'
+import { withKnobs, text } from '@storybook/addon-knobs'
 
-import FixedTop from "../../helpers/FixedTop";
-import FixedTopLeft from "../../helpers/FixedTopLeft";
-import FixedTopRight from "../../helpers/FixedTopRight";
+import FixedTop from '../../helpers/FixedTop'
+import FixedTopLeft from '../../helpers/FixedTopLeft'
+import FixedTopRight from '../../helpers/FixedTopRight'
 
-import FixedBottom from "../../helpers/FixedBottom";
-import FixedBottomLeft from "../../helpers/FixedBottomLeft";
-import FixedBottomRight from "../../helpers/FixedBottomRight";
+import FixedBottom from '../../helpers/FixedBottom'
+import FixedBottomLeft from '../../helpers/FixedBottomLeft'
+import FixedBottomRight from '../../helpers/FixedBottomRight'
 
-import FixedLeft from "../../helpers/FixedLeft";
-import FixedRight from "../../helpers/FixedRight";
+import FixedLeft from '../../helpers/FixedLeft'
+import FixedRight from '../../helpers/FixedRight'
 
 const defaultStyles = {
-    backgroundColor: "#FF5F7A",
+    backgroundColor: '#FF5F7A',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center'
-};
+}
 
 const horizontalBox = Object.assign({
-    width: "100%",
-    height: "200px"
+    width: '100%',
+    height: '200px'
 }, defaultStyles)
 
 const verticalBox = Object.assign({
-    height: "100%",
-    width: "200px"
+    height: '100%',
+    width: '200px'
 }, defaultStyles)
 
 const box = Object.assign({
-    height: "200px",
-    width: "200px"
+    height: '200px',
+    width: '200px'
 }, defaultStyles)
 
 export default storiesOf('Helpers|Fixed/Helpers', module)

@@ -1,28 +1,28 @@
-import { storiesOf, addDecorator } from "@storybook/vue";
-import { withKnobs, text } from "@storybook/addon-knobs";
-import Fixed from "../../helpers/Fixed";
+import { storiesOf } from '@storybook/vue'
+import { withKnobs, text } from '@storybook/addon-knobs'
+import Fixed from '../../helpers/Fixed'
 
 const defaultStyles = {
-    backgroundColor: "#FF5F7A",
+    backgroundColor: '#FF5F7A',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center'
-};
+}
 
 const horizontalBox = Object.assign({
-    width: "100%",
-    height: "200px"
+    width: '100%',
+    height: '200px'
 }, defaultStyles)
 
 const verticalBox = Object.assign({
-    height: "100%",
-    width: "200px"
+    height: '100%',
+    width: '200px'
 }, defaultStyles)
 
 const box = Object.assign({
-    height: "200px",
-    width: "200px"
+    height: '200px',
+    width: '200px'
 }, defaultStyles)
 
 export default storiesOf('Helpers|Fixed', module)
@@ -142,4 +142,4 @@ export default storiesOf('Helpers|Fixed', module)
                 </aside>
             </Fixed>
         `
-    }));
+    }))

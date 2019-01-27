@@ -1,9 +1,9 @@
-import Vue from 'vue';
-import { storiesOf } from '@storybook/vue';
-import Modal from '../../core/Modal';
-import PortalVue from 'portal-vue';
+import Vue from 'vue'
+import { storiesOf } from '@storybook/vue'
+import Modal from '../../core/Modal'
+import PortalVue from 'portal-vue'
 
-Vue.use(PortalVue);
+Vue.use(PortalVue)
 
 const modalContainerStyles = {
     position: 'fixed',
@@ -15,25 +15,25 @@ const modalContainerStyles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'
-};
+}
 
 const modalStyles = {
     width: '60vw',
     backgroundColor: '#fff',
     padding: '2rem',
     boxShadow: '0px 10px 140px 0px rgba(0,0,0,0.25)'
-};
+}
 
 const modalHeaderStyles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center'
-};
+}
 
 const modalCloseButtonStyles = {
     backgroundColor: 'none',
     border: 'none',
-};
+}
 
 export default storiesOf('Core|Modal', module)
     .add('It can render a toggle and content', () => ({
@@ -42,25 +42,25 @@ export default storiesOf('Core|Modal', module)
             modalContainerStyles: {
                 type: Object,
                 default: function() {
-                    return modalContainerStyles;
+                    return modalContainerStyles
                 }
             },
             modalStyles: {
                 type: Object,
                 default: function () {
-                    return modalStyles;
+                    return modalStyles
                 }
             },
             modalHeaderStyles: {
                 type: Object,
                 default: function () {
-                    return modalHeaderStyles;
+                    return modalHeaderStyles
                 }
             },
             modalCloseButtonStyles: {
                 type: Object,
                 default: function () {
-                    return modalCloseButtonStyles;
+                    return modalCloseButtonStyles
                 }
             }
         },
@@ -111,25 +111,25 @@ export default storiesOf('Core|Modal', module)
             modalContainerStyles: {
                 type: Object,
                 default: function() {
-                    return modalContainerStyles;
+                    return modalContainerStyles
                 }
             },
             modalStyles: {
                 type: Object,
                 default: function () {
-                    return modalStyles;
+                    return modalStyles
                 }
             },
             modalHeaderStyles: {
                 type: Object,
                 default: function () {
-                    return modalHeaderStyles;
+                    return modalHeaderStyles
                 }
             },
             modalCloseButtonStyles: {
                 type: Object,
                 default: function () {
-                    return modalCloseButtonStyles;
+                    return modalCloseButtonStyles
                 }
             }
         },
@@ -188,25 +188,25 @@ export default storiesOf('Core|Modal', module)
             modalContainerStyles: {
                 type: Object,
                 default: function() {
-                    return modalContainerStyles;
+                    return modalContainerStyles
                 }
             },
             modalStyles: {
                 type: Object,
                 default: function () {
-                    return modalStyles;
+                    return modalStyles
                 }
             },
             modalHeaderStyles: {
                 type: Object,
                 default: function () {
-                    return modalHeaderStyles;
+                    return modalHeaderStyles
                 }
             },
             modalCloseButtonStyles: {
                 type: Object,
                 default: function () {
-                    return modalCloseButtonStyles;
+                    return modalCloseButtonStyles
                 }
             }
         },
@@ -251,31 +251,31 @@ export default storiesOf('Core|Modal', module)
             </div>
         `
     }))
-    .add("It trap's focus", () => ({
+    .add('It trap\'s focus', () => ({
         components: { Modal },
         props: {
             modalContainerStyles: {
                 type: Object,
                 default: function() {
-                    return modalContainerStyles;
+                    return modalContainerStyles
                 }
             },
             modalStyles: {
                 type: Object,
                 default: function () {
-                    return modalStyles;
+                    return modalStyles
                 }
             },
             modalHeaderStyles: {
                 type: Object,
                 default: function () {
-                    return modalHeaderStyles;
+                    return modalHeaderStyles
                 }
             },
             modalCloseButtonStyles: {
                 type: Object,
                 default: function () {
-                    return modalCloseButtonStyles;
+                    return modalCloseButtonStyles
                 }
             }
         },
@@ -324,31 +324,31 @@ export default storiesOf('Core|Modal', module)
             </div>
         `
     }))
-    .add("The toggle knows if the modal is open", () => ({
+    .add('The toggle knows if the modal is open', () => ({
         components: { Modal },
         props: {
             modalContainerStyles: {
                 type: Object,
                 default: function() {
-                    return modalContainerStyles;
+                    return modalContainerStyles
                 }
             },
             modalStyles: {
                 type: Object,
                 default: function () {
-                    return modalStyles;
+                    return modalStyles
                 }
             },
             modalHeaderStyles: {
                 type: Object,
                 default: function () {
-                    return modalHeaderStyles;
+                    return modalHeaderStyles
                 }
             },
             modalCloseButtonStyles: {
                 type: Object,
                 default: function () {
-                    return modalCloseButtonStyles;
+                    return modalCloseButtonStyles
                 }
             }
         },

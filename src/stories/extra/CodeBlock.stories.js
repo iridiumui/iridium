@@ -1,6 +1,6 @@
-import { storiesOf, addDecorator } from '@storybook/vue';
-import centered from '@storybook/addon-centered';
-import CodeBlock from '../../extra/CodeBlock';
+import { storiesOf } from '@storybook/vue'
+import centered from '@storybook/addon-centered'
+import CodeBlock from '../../extra/CodeBlock'
 
 export default storiesOf('Extra|Code Block', module)
     .addDecorator(centered)
@@ -60,7 +60,7 @@ export default storiesOf('Extra|Code Block', module)
         components: { CodeBlock },
         methods: {
             success() {
-                alert("The code has been copied to your clipboard");
+                alert('The code has been copied to your clipboard')
             }
         },
         template: `

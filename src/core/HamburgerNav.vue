@@ -28,7 +28,7 @@
         render() {
             return this.$slots.default[0]
         }
-    };
+    }
 
     export default {
         props: {

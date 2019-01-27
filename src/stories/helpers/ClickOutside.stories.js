@@ -1,6 +1,6 @@
-import { storiesOf, addDecorator } from '@storybook/vue'
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
-import centered from '@storybook/addon-centered';
+import { storiesOf } from '@storybook/vue'
+import { withKnobs, text, boolean } from '@storybook/addon-knobs'
+import centered from '@storybook/addon-centered'
 import ClickOutside from '../../helpers/ClickOutside'
 
 const defaultStyles = {
@@ -24,7 +24,7 @@ export default storiesOf('Helpers|Click Outside', module)
             },
             successText: {
                 type: String,
-                default: text('Success Text', "It is working")
+                default: text('Success Text', 'It is working')
             },
             styles: {
                 type: Object,
@@ -60,7 +60,7 @@ export default storiesOf('Helpers|Click Outside', module)
             },
             successText: {
                 type: String,
-                default: text('Success Text', "It is working")
+                default: text('Success Text', 'It is working')
             },
             styles: {
                 type: Object,
@@ -94,7 +94,7 @@ export default storiesOf('Helpers|Click Outside', module)
             },
             failureText: {
                 type: String,
-                default: text('Failure Text', "It is not working")
+                default: text('Failure Text', 'It is not working')
             },
             styles: {
                 type: Object,

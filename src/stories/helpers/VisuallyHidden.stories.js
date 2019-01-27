@@ -1,4 +1,4 @@
-import { storiesOf, addDecorator } from '@storybook/vue'
+import { storiesOf } from '@storybook/vue'
 import { withKnobs, text } from '@storybook/addon-knobs'
 import centered from '@storybook/addon-centered'
 import { checkA11y, configureA11y } from '@storybook/addon-a11y'
