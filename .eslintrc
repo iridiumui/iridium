@@ -27,11 +27,11 @@
         ],
         "quotes": [
             "error",
-            "single"
+            "double"
         ],
         "semi": [
             "error",
-            "never"
+            "always"
         ],
         "vue/script-indent": ["error", 4, {
             "baseIndent": 1
@@ -43,6 +43,12 @@
             "files": ["*.vue"],
             "rules": {
                 "indent": "off"
+            }
+        },
+        {
+            "files": ["*.stories.js"],
+            "rules": {
+                "vue/script-indent": "off"
             }
         }
     ]

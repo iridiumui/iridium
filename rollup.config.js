@@ -2,6 +2,7 @@ import resolve from "rollup-plugin-node-resolve";
 import babel from "rollup-plugin-babel";
 import commonjs from "rollup-plugin-commonjs";
 import VuePlugin from 'rollup-plugin-vue'
+import { eslint } from "rollup-plugin-eslint";
 
 const env = process.env.NODE_ENV;
 const pkg = require("./package.json");
@@ -19,11 +20,14 @@ export default {
     plugins: [
         resolve(),
         VuePlugin(),
+        eslint({
+            throwOnError: true
+        }),
         babel({
             exclude: "node_modules/**",
             plugins: ["@babel/external-helpers"],
             externalHelpers: true
         }),
-        commonjs(),
+        commonjs()
     ]
 };
