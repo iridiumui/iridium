@@ -13,8 +13,8 @@
         "watch:es": "NODE_ENV=es rollup -c -w",
         "watch:cjs": "NODE_ENV=cjs rollup -c -w",
         "test": "./node_modules/.bin/jest",
-        "style": "./node_modules/.bin/eslint .eslintrc --ext .js,.vue src tests",
-        "style:fix": "./node_modules/.bin/eslint .eslintrc --ext .js,.vue src tests --fix",
+        "style": "./node_modules/.bin/eslint .eslintrc --ext .js,.vue src",
+        "style:fix": "./node_modules/.bin/eslint .eslintrc --ext .js,.vue src --fix",
         "prepublish": "run-s style:fix && run-s test",
         "precommit": "run-s style:fix && run-s test",
         "storybook": "start-storybook -p 9001 -c .storybook"
