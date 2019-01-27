@@ -1,6 +1,7 @@
 import './core/HamburgerNav.stories'
 import './core/Modal.stories'
 
+import './extra/CodeBlock.stories'
 import './extra/CookieBanner.stories'
 
 import './helpers/Breakpoint.stories'
