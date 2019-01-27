@@ -35,8 +35,8 @@ import TransitionFadeSlideRight from "@/transitions/TransitionFadeSlideRight";
 import TransitionFadeSlideDown from "@/transitions/TransitionFadeSlideDown";
 import TransitionFadeSlideLeft from "@/transitions/TransitionFadeSlideLeft";
 
-import VisuallyHidden from "@/helpers/VisuallyHidden";
-import FocusTrap from "@/helpers/FocusTrap";
+import VisuallyHidden from "@/accessibility/VisuallyHidden";
+import FocusTrap from "@/accessibility/FocusTrap";
 
 import HamburgerNav from "@/core/HamburgerNav";
 import Modal from "@/core/Modal";
