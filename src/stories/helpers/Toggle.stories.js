@@ -22,7 +22,7 @@ export default storiesOf("Helpers|Toggle", module)
             </Toggle>
         `
     }))
-    .add("It can a default scoped slot", () => ({
+    .add("It can render a default scoped slot", () => ({
         components: { Toggle },
         template: `
             <Toggle>
