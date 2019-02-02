@@ -70,14 +70,14 @@ export default storiesOf("Core|Modal", module)
                     <button
                         type="button"
                         slot="toggle"
-                        slot-scope="{ openModal }"
-                        @click="openModal"
+                        slot-scope="{ toggle }"
+                        @click="toggle"
                     >
                         This is the toggle
                     </button>
                     <div
                         slot="content"
-                        slot-scope="{ open, closeModal }"
+                        slot-scope="{ open, toggle }"
                         v-show="open"
                         :style="modalContainerStyles"
                     >
@@ -86,7 +86,7 @@ export default storiesOf("Core|Modal", module)
                                 <h2>This is the content</h2>
                                 <button
                                     type="button"
-                                    @click="closeModal"
+                                    @click="toggle"
                                     :style="modalCloseButtonStyles"
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.971 47.971" width="2rem" height="2rem">
@@ -139,14 +139,14 @@ export default storiesOf("Core|Modal", module)
                     <button
                         type="button"
                         slot="toggle"
-                        slot-scope="{ openModal }"
-                        @click="openModal"
+                        slot-scope="{ toggle }"
+                        @click="toggle"
                     >
                         Render inside portal
                     </button>
                     <div
                         slot="content"
-                        slot-scope="{ open, closeModal }"
+                        slot-scope="{ open, toggle }"
                         v-show="open"
                         :style="modalContainerStyles"
                     >
@@ -155,7 +155,7 @@ export default storiesOf("Core|Modal", module)
                                 <h2>This is a rendered in a portal</h2>
                                 <button
                                     type="button"
-                                    @click="closeModal"
+                                    @click="toggle"
                                     :style="modalCloseButtonStyles"
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.971 47.971" width="2rem" height="2rem">
@@ -216,14 +216,14 @@ export default storiesOf("Core|Modal", module)
                     <button
                         type="button"
                         slot="toggle"
-                        slot-scope="{ openModal }"
-                        @click="openModal"
+                        slot-scope="{ toggle }"
+                        @click="toggle"
                     >
                         This will render the modal right here in the dom
                     </button>
                     <div
                         slot="content"
-                        slot-scope="{ open, closeModal }"
+                        slot-scope="{ open, toggle }"
                         v-show="open"
                         :style="modalContainerStyles"
                     >
@@ -232,7 +232,7 @@ export default storiesOf("Core|Modal", module)
                                 <h2>This is the modal</h2>
                                 <button
                                     type="button"
-                                    @click="closeModal"
+                                    @click="toggle"
                                     :style="modalCloseButtonStyles"
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.971 47.971" width="2rem" height="2rem">
@@ -285,14 +285,14 @@ export default storiesOf("Core|Modal", module)
                     <button
                         type="button"
                         slot="toggle"
-                        slot-scope="{ openModal }"
-                        @click="openModal"
+                        slot-scope="{ toggle }"
+                        @click="toggle"
                     >
                         The focus trap will be activated when the modal is opened
                     </button>
                     <div
                         slot="content"
-                        slot-scope="{ open, closeModal }"
+                        slot-scope="{ open, toggle }"
                         v-show="open"
                         :style="modalContainerStyles"
                     >
@@ -301,7 +301,7 @@ export default storiesOf("Core|Modal", module)
                                 <h2>Focus is trapped inside this modal</h2>
                                 <button
                                     type="button"
-                                    @click="closeModal"
+                                    @click="toggle"
                                     :style="modalCloseButtonStyles"
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.971 47.971" width="2rem" height="2rem">
@@ -358,15 +358,15 @@ export default storiesOf("Core|Modal", module)
                     <button
                         type="button"
                         slot="toggle"
-                        slot-scope="{ open, openModal }"
+                        slot-scope="{ open, toggle }"
                         :style="open ? 'background-color: red' : ''"
-                        @click="openModal"
+                        @click="toggle"
                     >
                         This will change color when it's open
                     </button>
                     <div
                         slot="content"
-                        slot-scope="{ open, closeModal }"
+                        slot-scope="{ open, toggle }"
                         v-show="open"
                         :style="modalContainerStyles"
                     >
@@ -375,7 +375,7 @@ export default storiesOf("Core|Modal", module)
                                 <h2>The have changed color</h2>
                                 <button
                                     type="button"
-                                    @click="closeModal"
+                                    @click="toggle"
                                     :style="modalCloseButtonStyles"
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.971 47.971" width="2rem" height="2rem">
