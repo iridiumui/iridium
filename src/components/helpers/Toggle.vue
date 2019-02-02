@@ -13,9 +13,16 @@
             };
         },
 
+        methods: {
+            toggle() {
+                this.open = !this.open;
+            }
+        },
+
         render(createElement) {
             const props = {
                 open: this.open,
+                toggle: this.toggle
             };
 
             /* eslint-disable */

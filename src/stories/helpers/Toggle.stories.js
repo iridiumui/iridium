@@ -148,4 +148,62 @@ export default storiesOf("Helpers|Toggle", module)
             </main>
         `
     }))
+    .add("The slots can toggle", () => ({
+        components: { Toggle },
+        template: `
+            <main>
+                <h2>Named scoped slots:</h2>
+                <Toggle>
+                    <button
+                        type="button"
+                        slot="button"
+                        slot-scope="{ open, toggle }"
+                        :disabled="open"
+                        @click="toggle"
+                    >
+                        Open Content
+                    </button>
+                    <div
+                        slot="content"
+                        slot-scope="{ open, toggle }"
+                        v-show="open"
+                    >
+                        <h2>Content</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, dicta similique dolorum itaque temporibus placeat doloremque sunt repellat molestiae sed repudiandae laudantium sapiente veniam accusamus. Quas repellat sapiente impedit tenetur!
+                        </p>
+                        <button
+                            type="button"
+                            @click="toggle"
+                        >
+                            Close Content
+                        </button>
+                    </div>
+                </Toggle>
+
+                <h2>Default scoped slot:</h2>
+                <Toggle>
+                    <div slot-scope="{ open, toggle }">
+                        <button
+                            type="button"
+                            @click="toggle"
+                        >
+                            Open Content
+                        </button>
+                        <div v-show="open">
+                            <h2>Content</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, dicta similique dolorum itaque temporibus placeat doloremque sunt repellat molestiae sed repudiandae laudantium sapiente veniam accusamus. Quas repellat sapiente impedit tenetur!
+                            </p>
+                            <button
+                                type="button"
+                                @click="toggle"
+                            >
+                                Close Content
+                            </button>
+                        </div>
+                    </div>
+                </Toggle>
+            </main>
+        `
     }));
