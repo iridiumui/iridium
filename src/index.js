@@ -22,6 +22,7 @@ import ScreenXL from "@/components/helpers/ScreenXL";
 import InView from "@/components/helpers/InView";
 import ScrollTo from "@/components/helpers/ScrollTo";
 import ClickOutside from "@/components/helpers/ClickOutside";
+import Toggle from "@/components/helpers/Toggle";
 
 import TransitionSlideUp from "@/components/transitions/TransitionSlideUp";
 import TransitionSlideDown from "@/components/transitions/TransitionSlideDown";
@@ -74,6 +75,7 @@ export default {
         Vue.component(`${prefix}in-view`, InView);
         Vue.component(`${prefix}scroll-to`, ScrollTo);
         Vue.component(`${prefix}click-outside`, ClickOutside);
+        Vue.component(`${prefix}toggle`, Toggle);
 
         Vue.component(`${prefix}transition-slide-up`, TransitionSlideUp);
         Vue.component(`${prefix}transition-slide-down`, TransitionSlideDown);
@@ -119,6 +121,7 @@ export {
     InView,
     ScrollTo,
     ClickOutside,
+    Toggle,
 
     TransitionSlideUp,
     TransitionSlideDown,
