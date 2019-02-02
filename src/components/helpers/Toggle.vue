@@ -1,8 +1,15 @@
 <script>
     export default {
+        props: {
+            openDefault: {
+                type: Boolean,
+                default: false
+            }
+        },
+
         data() {
             return {
-                open: false
+                open: this.openDefault
             };
         },
 
