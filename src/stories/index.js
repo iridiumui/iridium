@@ -11,6 +11,7 @@ import "@/stories/helpers/Fixed.stories";
 import "@/stories/helpers/FixedHelpers.stories";
 import "@/stories/helpers/InView.stories";
 import "@/stories/helpers/ScrollTo.stories";
+import "@/stories/helpers/Toggle.stories";
 
 import "@/stories/accessibility/FocusTrap.stories";
 import "@/stories/accessibility/VisuallyHidden.stories";
