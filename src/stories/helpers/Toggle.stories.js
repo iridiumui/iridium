@@ -22,3 +22,23 @@ export default storiesOf("Helpers|Toggle", module)
             </Toggle>
         `
     }))
+    .add("It can a default scoped slot", () => ({
+        components: { Toggle },
+        template: `
+            <Toggle>
+                <div
+                    slot-scope="props"
+                >
+                    <button type="button">
+                        Button
+                    </button>
+                    <div>
+                        <h2>Content</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, dicta similique dolorum itaque temporibus placeat doloremque sunt repellat molestiae sed repudiandae laudantium sapiente veniam accusamus. Quas repellat sapiente impedit tenetur!
+                        </p>
+                    </div>
+                </div>
+            </Toggle>
+        `
+    }));
