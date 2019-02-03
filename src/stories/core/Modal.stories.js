@@ -69,7 +69,7 @@ export default storiesOf("Core|Modal", module)
                 <Modal :use-portal="false">
                     <button
                         type="button"
-                        slot="toggle"
+                        slot="button"
                         slot-scope="{ toggle }"
                         @click="toggle"
                     >
@@ -138,7 +138,7 @@ export default storiesOf("Core|Modal", module)
                 <Modal :use-portal="true" portal-name="modal">
                     <button
                         type="button"
-                        slot="toggle"
+                        slot="button"
                         slot-scope="{ toggle }"
                         @click="toggle"
                     >
@@ -215,7 +215,7 @@ export default storiesOf("Core|Modal", module)
                 <Modal :use-portal="false">
                     <button
                         type="button"
-                        slot="toggle"
+                        slot="button"
                         slot-scope="{ toggle }"
                         @click="toggle"
                     >
@@ -284,7 +284,7 @@ export default storiesOf("Core|Modal", module)
                 <Modal :use-portal="false">
                     <button
                         type="button"
-                        slot="toggle"
+                        slot="button"
                         slot-scope="{ toggle }"
                         @click="toggle"
                     >
@@ -324,7 +324,7 @@ export default storiesOf("Core|Modal", module)
             </div>
         `
     }))
-    .add("The toggle knows if the modal is open", () => ({
+    .add("The button knows if the modal is open", () => ({
         components: { Modal },
         props: {
             modalContainerStyles: {
@@ -357,7 +357,7 @@ export default storiesOf("Core|Modal", module)
                 <Modal :use-portal="false">
                     <button
                         type="button"
-                        slot="toggle"
+                        slot="button"
                         slot-scope="{ open, toggle }"
                         :style="open ? 'background-color: red' : ''"
                         @click="toggle"

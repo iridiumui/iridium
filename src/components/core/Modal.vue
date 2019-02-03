@@ -2,7 +2,7 @@
     <toggle>
         <div slot-scope="toggleProps">
             <slot
-                name="toggle"
+                name="button"
                 :open="toggleProps.open"
                 :toggle="toggle(toggleProps)" />
 
