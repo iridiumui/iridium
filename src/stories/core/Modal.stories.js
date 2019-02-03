@@ -393,4 +393,73 @@ export default storiesOf("Core|Modal", module)
                 </Modal>
             </div>
         `
+    }))
+    .add("It can be open by default", () => ({
+        components: { Modal },
+        props: {
+            modalContainerStyles: {
+                type: Object,
+                default: function() {
+                    return modalContainerStyles;
+                }
+            },
+            modalStyles: {
+                type: Object,
+                default: function () {
+                    return modalStyles;
+                }
+            },
+            modalHeaderStyles: {
+                type: Object,
+                default: function () {
+                    return modalHeaderStyles;
+                }
+            },
+            modalCloseButtonStyles: {
+                type: Object,
+                default: function () {
+                    return modalCloseButtonStyles;
+                }
+            }
+        },
+        template: `
+            <div>
+                <Modal :use-portal="false" :open-default="true">
+                    <button
+                        type="button"
+                        slot="button"
+                        slot-scope="{ open, toggle }"
+                        @click="toggle"
+                    >
+                        Open Modal
+                    </button>
+                    <div
+                        slot="content"
+                        slot-scope="{ open, toggle }"
+                        v-show="open"
+                        :style="modalContainerStyles"
+                    >
+                        <div :style="modalStyles">
+                            <header :style="modalHeaderStyles">
+                                <h2>Modal Content</h2>
+                                <button
+                                    type="button"
+                                    @click="toggle"
+                                    :style="modalCloseButtonStyles"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.971 47.971" width="2rem" height="2rem">
+                                        <path d="M28.228 23.986L47.092 5.122a2.998 2.998 0 0 0 0-4.242 2.998 2.998 0 0 0-4.242 0L23.986 19.744 5.121.88a2.998 2.998 0 0 0-4.242 0 2.998 2.998 0 0 0 0 4.242l18.865 18.864L.879 42.85a2.998 2.998 0 1 0 4.242 4.241l18.865-18.864L42.85 47.091c.586.586 1.354.879 2.121.879s1.535-.293 2.121-.879a2.998 2.998 0 0 0 0-4.242L28.228 23.986z" fill="#cfcfcf"/>
+                                    </svg>
+                                </button>
+                            </header>
+                            <main>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis eveniet mollitia dolore animi necessitatibus illo temporibus distinctio molestias praesentium, dolor saepe consequuntur nihil reiciendis neque reprehenderit architecto doloremque sint veniam?
+                                </p>
+                            </main>
+                        </div>
+                    </div>
+                </Modal>
+            </div>
+        `
     }));

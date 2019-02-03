@@ -1,5 +1,5 @@
 <template>
-    <toggle>
+    <toggle v-bind="$attrs">
         <div slot-scope="toggleProps">
             <slot
                 name="button"
@@ -95,8 +95,10 @@
             returnFocus() {
                 this.$nextTick(() => {
                     setTimeout(() => {
-                        this.returnFocusTo.focus();
-                        this.returnFocusTo = null;
+                        if (this.returnFocusTo) {
+                            this.returnFocusTo.focus();
+                            this.returnFocusTo = null;
+                        }
                     }, 0);
                 });
             }
