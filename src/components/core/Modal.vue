@@ -70,26 +70,26 @@
         methods: {
             toggle(toggleProps) {
                 return () => {
-                    if (toggleProps.open) {
+                    this.escapeListener = event => {
+                        if (event.keyCode === 27) {
+                            toggleProps.toggle();
+                            document.removeEventListener("keyup", this.escapeListener);
+                        }
+                    };
+
+                    if (!toggleProps.open) {
                         this.returnFocusTo = document.activeElement;
+                        document.addEventListener("keyup", this.escapeListener);
                     }
 
-                    document.removeEventListener("keyup", this.escapeListener);
-
-                    this.toggleBodyScrolling();
+                    this.toggleBodyScrolling(toggleProps.open);
 
                     toggleProps.toggle();
                 };
             },
 
-            escapeListener(e) {
-                if (e.keyCode === 27) {
-                    this.closeModal();
-                }
-            },
-
-            toggleBodyScrolling() {
-                document.querySelector("body").style.overflow = this.open ? "hidden" : this.initialBodyOverflowValue;
+            toggleBodyScrolling(open) {
+                document.querySelector("body").style.overflow = open ? "hidden" : this.initialBodyOverflowValue;
             },
 
             returnFocus() {
