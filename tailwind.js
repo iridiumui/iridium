@@ -2,6 +2,7 @@
 let colors = {
   'transparent': 'transparent',
 
+  'black-transparent': 'rgba(0, 0, 0, 0.7)',
   'black': '#303030',
   'grey-darkest': '#505054',
   'grey-darker': '#6F7178',
@@ -187,6 +188,11 @@ module.exports = {
     '3xl': '80rem',
     '4xl': '90rem',
     '5xl': '100rem',
+    '1/4': '25%',
+    '1/3': '33.33%',
+    '1/2': '50%',
+    '2/3': '66.66%',
+    '3/4': '75%',
     'full': '100%',
   },
 
