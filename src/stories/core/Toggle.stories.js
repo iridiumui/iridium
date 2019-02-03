@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/vue";
-import Toggle from "@/components/helpers/Toggle";
+import Toggle from "@/components/core/Toggle";
 
 export default storiesOf("Helpers|Toggle", module)
     .add("It can render a button and some content", () => ({

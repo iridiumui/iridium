@@ -34,7 +34,7 @@
 
 <script>
     import FocusTrap from "@/components/accessibility/FocusTrap";
-    import Toggle from "@/components/helpers/Toggle";
+    import Toggle from "@/components/core/Toggle";
 
     export default {
         components: {

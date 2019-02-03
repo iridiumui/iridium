@@ -22,7 +22,6 @@ import ScreenXL from "@/components/helpers/ScreenXL";
 import InView from "@/components/helpers/InView";
 import ScrollTo from "@/components/helpers/ScrollTo";
 import ClickOutside from "@/components/helpers/ClickOutside";
-import Toggle from "@/components/helpers/Toggle";
 
 import TransitionSlideUp from "@/components/transitions/TransitionSlideUp";
 import TransitionSlideDown from "@/components/transitions/TransitionSlideDown";
@@ -39,8 +38,8 @@ import TransitionFadeSlideLeft from "@/components/transitions/TransitionFadeSlid
 import VisuallyHidden from "@/components/accessibility/VisuallyHidden";
 import FocusTrap from "@/components/accessibility/FocusTrap";
 
-import HamburgerNav from "@/components/core/HamburgerNav";
 import Modal from "@/components/core/Modal";
+import Toggle from "@/components/core/Toggle";
 
 import CodeBlock from "@/components/extra/CodeBlock";
 import CookieBanner from "@/components/extra/CookieBanner";
@@ -75,7 +74,6 @@ export default {
         Vue.component(`${prefix}in-view`, InView);
         Vue.component(`${prefix}scroll-to`, ScrollTo);
         Vue.component(`${prefix}click-outside`, ClickOutside);
-        Vue.component(`${prefix}toggle`, Toggle);
 
         Vue.component(`${prefix}transition-slide-up`, TransitionSlideUp);
         Vue.component(`${prefix}transition-slide-down`, TransitionSlideDown);
@@ -92,8 +90,8 @@ export default {
         Vue.component(`${prefix}visually-hidden`, VisuallyHidden);
         Vue.component(`${prefix}focus-trap`, FocusTrap);
 
-        Vue.component(`${prefix}hamburger-nav`, HamburgerNav);
         Vue.component(`${prefix}modal`, Modal);
+        Vue.component(`${prefix}toggle`, Toggle);
 
         Vue.component(`${prefix}code-block`, CodeBlock);
         Vue.component(`${prefix}cookie-banner`, CookieBanner);
@@ -121,7 +119,6 @@ export {
     InView,
     ScrollTo,
     ClickOutside,
-    Toggle,
 
     TransitionSlideUp,
     TransitionSlideDown,
@@ -138,7 +135,9 @@ export {
     VisuallyHidden,
     FocusTrap,
 
-    HamburgerNav,
+    Toggle,
+    Modal,
+
     CodeBlock,
     CookieBanner,
 };
