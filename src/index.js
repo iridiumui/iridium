@@ -38,8 +38,8 @@ import TransitionFadeSlideLeft from "@/components/transitions/TransitionFadeSlid
 import VisuallyHidden from "@/components/accessibility/VisuallyHidden";
 import FocusTrap from "@/components/accessibility/FocusTrap";
 
-import HamburgerNav from "@/components/core/HamburgerNav";
 import Modal from "@/components/core/Modal";
+import Toggle from "@/components/core/Toggle";
 
 import CodeBlock from "@/components/extra/CodeBlock";
 import CookieBanner from "@/components/extra/CookieBanner";
@@ -90,8 +90,8 @@ export default {
         Vue.component(`${prefix}visually-hidden`, VisuallyHidden);
         Vue.component(`${prefix}focus-trap`, FocusTrap);
 
-        Vue.component(`${prefix}hamburger-nav`, HamburgerNav);
         Vue.component(`${prefix}modal`, Modal);
+        Vue.component(`${prefix}toggle`, Toggle);
 
         Vue.component(`${prefix}code-block`, CodeBlock);
         Vue.component(`${prefix}cookie-banner`, CookieBanner);
@@ -135,7 +135,9 @@ export {
     VisuallyHidden,
     FocusTrap,
 
-    HamburgerNav,
+    Toggle,
+    Modal,
+
     CodeBlock,
     CookieBanner,
 };

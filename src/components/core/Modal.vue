@@ -1,41 +1,45 @@
 <template>
-    <div>
-        <slot
-            name="toggle"
-            :open="open"
-            :open-modal="openModal"/>
+    <toggle v-bind="$attrs">
+        <div slot-scope="toggleProps">
+            <slot
+                name="button"
+                :open="toggleProps.open"
+                :toggle="toggle(toggleProps)" />
 
-        <portal
-            :to="portalName"
-            v-if="usePortal">
+            <portal
+                v-if="usePortal"
+                :to="portalName">
+                <focus-trap
+                    :active="toggleProps.open"
+                    :options="{ onDeactivate: returnFocus }">
+                    <slot
+                        name="content"
+                        :open="toggleProps.open"
+                        :toggle="toggle(toggleProps)" />
+                </focus-trap>
+            </portal>
             <focus-trap
-                :active="open"
+                v-else
+                :active="toggleProps.open"
                 :options="{ onDeactivate: returnFocus }">
                 <slot
                     name="content"
-                    :open="open"
-                    :close-modal="closeModal"/>
+                    :open="toggleProps.open"
+                    :toggle="toggle(toggleProps)" />
             </focus-trap>
-        </portal>
-        <focus-trap
-            :active="open"
-            :options="{ onDeactivate: returnFocus }"
-            v-else>
-            <slot
-                name="content"
-                :open="open"
-                :close-modal="closeModal"/>
-        </focus-trap>
 
-    </div>
+        </div>
+    </toggle>
 </template>
 
 <script>
     import FocusTrap from "@/components/accessibility/FocusTrap";
+    import Toggle from "@/components/core/Toggle";
 
     export default {
         components: {
-            FocusTrap
+            FocusTrap,
+            Toggle
         },
 
         props: {
@@ -52,7 +56,6 @@
 
         data() {
             return {
-                open: false,
                 initialBodyOverflowValue: "",
                 returnFocusTo: null
             };
@@ -65,39 +68,37 @@
         },
 
         methods: {
-            closeModal() {
-                this.open = false;
+            toggle(toggleProps) {
+                return () => {
+                    this.escapeListener = event => {
+                        if (event.keyCode === 27) {
+                            toggleProps.toggle();
+                            document.removeEventListener("keyup", this.escapeListener);
+                        }
+                    };
 
-                document.removeEventListener("keyup", this.escapeListener);
+                    if (!toggleProps.open) {
+                        this.returnFocusTo = document.activeElement;
+                        document.addEventListener("keyup", this.escapeListener);
+                    }
 
-                this.toggleBodyScrolling();
+                    this.toggleBodyScrolling(toggleProps.open);
+
+                    toggleProps.toggle();
+                };
             },
 
-            openModal() {
-                this.returnFocusTo = document.activeElement;
-
-                this.open = true;
-
-                document.addEventListener("keyup", this.escapeListener);
-
-                this.toggleBodyScrolling();
-            },
-
-            escapeListener(e) {
-                if (e.keyCode === 27) {
-                    this.closeModal();
-                }
-            },
-
-            toggleBodyScrolling() {
-                document.querySelector("body").style.overflow = this.open ? "hidden" : this.initialBodyOverflowValue;
+            toggleBodyScrolling(open) {
+                document.querySelector("body").style.overflow = open ? "hidden" : this.initialBodyOverflowValue;
             },
 
             returnFocus() {
                 this.$nextTick(() => {
                     setTimeout(() => {
-                        this.returnFocusTo.focus();
-                        this.returnFocusTo = null;
+                        if (this.returnFocusTo) {
+                            this.returnFocusTo.focus();
+                            this.returnFocusTo = null;
+                        }
                     }, 0);
                 });
             }

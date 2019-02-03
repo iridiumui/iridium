@@ -1,5 +1,5 @@
-import "@/stories/core/HamburgerNav.stories";
 import "@/stories/core/Modal.stories";
+import "@/stories/core/Toggle.stories";
 
 import "@/stories/extra/CodeBlock.stories";
 import "@/stories/extra/CookieBanner.stories";
