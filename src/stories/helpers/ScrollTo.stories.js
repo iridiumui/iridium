@@ -9,6 +9,7 @@ export default storiesOf("Helpers|Scroll To", module)
                 <ScrollTo element=".headline">
                     <button
                         type="button"
+                        class="block button mx-auto my-4"
                         style="margin-bottom: 50vh;"
                         slot-scope="{ scroll }"
                         @click="scroll"
@@ -17,7 +18,7 @@ export default storiesOf("Helpers|Scroll To", module)
                     </button>
                 </ScrollTo>
                 <h2
-                    class="headline"
+                    class="headline text-center"
                     style="margin-bottom: 100vh;"
                 >
                     Heading 1
@@ -29,11 +30,12 @@ export default storiesOf("Helpers|Scroll To", module)
         components: { ScrollTo },
         template: `
             <div>
-                <h1 style="height: 100vh">Scroll down the page</h1>
+                <h1 style="height: 100vh" class="text-center py-4">Scroll down the page</h1>
                 <ScrollTo :top="0">
                     <button
                         type="button"
                         style="margin-bottom: 50vh;"
+                        class="block button mx-auto my-4"
                         slot-scope="{ scroll }"
                         @click="scroll"
                     >
@@ -51,6 +53,7 @@ export default storiesOf("Helpers|Scroll To", module)
                     <button
                         type="button"
                         style="margin-bottom: 50vh;"
+                        class="block button mx-auto my-4"
                         slot-scope="{ scroll }"
                         @click="scroll"
                     >
@@ -58,7 +61,7 @@ export default storiesOf("Helpers|Scroll To", module)
                     </button>
                 </ScrollTo>
                 <h2
-                    class="headline"
+                    class="headline text-center"
                     style="margin-bottom: 100vh;"
                 >
                     Heading 1
@@ -74,6 +77,7 @@ export default storiesOf("Helpers|Scroll To", module)
                     <button
                         type="button"
                         style="margin-bottom: 50vh;"
+                        class="block button mx-auto my-4"
                         slot-scope="{ scroll }"
                         @click="scroll"
                     >
@@ -81,7 +85,7 @@ export default storiesOf("Helpers|Scroll To", module)
                     </button>
                 </ScrollTo>
                 <h2
-                    class="headline"
+                    class="headline text-center"
                     style="margin-bottom: 100vh;"
                 >
                     Heading 1
