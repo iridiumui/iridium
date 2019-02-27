@@ -1,3 +1,5 @@
+import "~/.storybook/tailwind.css";
+
 import "@/stories/core/Modal.stories";
 import "@/stories/core/Toggle.stories";
 

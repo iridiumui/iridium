@@ -3,15 +3,6 @@ import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 import centered from "@storybook/addon-centered";
 import ClickOutside from "@/components/helpers/ClickOutside";
 
-const defaultStyles = {
-    width: "200px",
-    height: "200px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#FF5F7A"
-};
-
 export default storiesOf("Helpers|Click Outside", module)
     .addDecorator(withKnobs)
     .addDecorator(centered)
@@ -25,12 +16,6 @@ export default storiesOf("Helpers|Click Outside", module)
             successText: {
                 type: String,
                 default: text("Success Text", "It is working")
-            },
-            styles: {
-                type: Object,
-                default: function () {
-                    return defaultStyles;
-                }
             }
         },
         data() {
@@ -41,11 +26,11 @@ export default storiesOf("Helpers|Click Outside", module)
         template: `
             <div>
                 <ClickOutside @clickoutside="clicked = true">
-                    <div :style="styles">
+                    <div class="w-64 h-64 bg-pink flex justify-center items-center text-white">
                         {{ text }}
                     </div>
                 </ClickOutside>
-                <h2 v-if="clicked">
+                <h2 v-if="clicked" class="text-center">
                     {{ successText }}
                 </h2>
             </div>
@@ -61,12 +46,6 @@ export default storiesOf("Helpers|Click Outside", module)
             successText: {
                 type: String,
                 default: text("Success Text", "It is working")
-            },
-            styles: {
-                type: Object,
-                default: function () {
-                    return defaultStyles;
-                }
             }
         },
         data() {
@@ -77,7 +56,7 @@ export default storiesOf("Helpers|Click Outside", module)
         template: `
             <div>
                 <ClickOutside @clickinside="clicked = true">
-                    <div :style="styles">
+                    <div <div class="w-64 h-64 bg-pink flex justify-center items-center text-white">
                         <span v-if="!clicked">{{ text }}</span>
                         <span v-else>{{ successText }}</span>
                     </div>
@@ -96,12 +75,6 @@ export default storiesOf("Helpers|Click Outside", module)
                 type: String,
                 default: text("Failure Text", "It is not working")
             },
-            styles: {
-                type: Object,
-                default: function () {
-                    return defaultStyles;
-                }
-            },
             active: {
                 type: Boolean,
                 default: boolean("Active", false)
@@ -115,8 +88,8 @@ export default storiesOf("Helpers|Click Outside", module)
         template: `
             <div>
                 <ClickOutside :active="active" @clickinside="clicked = true">
-                    <div :style="styles">
-                        <span v-if="!clicked" style="text-align: center;">
+                    <div class="w-64 h-64 bg-pink flex justify-center items-center text-white">
+                        <span v-if="!clicked" class="text-center leading-normal">
                             {{ text }}
                         </span>
                         <span v-else>{{ failureText }}</span>

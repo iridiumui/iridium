@@ -2,38 +2,11 @@ import { storiesOf } from "@storybook/vue";
 import { withKnobs, text } from "@storybook/addon-knobs";
 import Fixed from "@/components/helpers/Fixed";
 
-const defaultStyles = {
-    backgroundColor: "#FF5F7A",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center"
-};
-
-const horizontalBox = Object.assign({
-    width: "100%",
-    height: "200px"
-}, defaultStyles);
-
-const verticalBox = Object.assign({
-    height: "100%",
-    width: "200px"
-}, defaultStyles);
-
-const box = Object.assign({
-    height: "200px",
-    width: "200px"
-}, defaultStyles);
-
 export default storiesOf("Helpers|Fixed", module)
     .addDecorator(withKnobs)
     .add("It attaches on the top", () => ({
         components: { Fixed },
         props: {
-            styles: {
-                type: Object,
-                default: horizontalBox
-            },
             edges: {
                 type: Array,
                 default: ["top"]
@@ -45,7 +18,7 @@ export default storiesOf("Helpers|Fixed", module)
         },
         template: `
             <Fixed :edges="edges">
-                <aside :style="styles">
+                <aside class="w-full bg-pink text-white text-center py-12">
                     {{ text }}
                 </aside>
             </Fixed>
@@ -54,10 +27,6 @@ export default storiesOf("Helpers|Fixed", module)
     .add("It attaches on the bottom", () => ({
         components: { Fixed },
         props: {
-            styles: {
-                type: Object,
-                default: horizontalBox
-            },
             edges: {
                 type: Array,
                 default: ["bottom"]
@@ -69,7 +38,7 @@ export default storiesOf("Helpers|Fixed", module)
         },
         template: `
             <Fixed :edges="edges">
-                <aside :style="styles">
+                <aside class="w-full bg-pink text-white text-center py-12">
                     {{ text }}
                 </aside>
             </Fixed>
@@ -78,10 +47,6 @@ export default storiesOf("Helpers|Fixed", module)
     .add("It attaches on the left", () => ({
         components: { Fixed },
         props: {
-            styles: {
-                type: Object,
-                default: verticalBox
-            },
             edges: {
                 type: Array,
                 default: ["left"]
@@ -93,7 +58,7 @@ export default storiesOf("Helpers|Fixed", module)
         },
         template: `
             <Fixed :edges="edges">
-                <aside :style="styles">
+                <aside class="h-full bg-pink text-white flex items-center justify-center px-8">
                     {{ text }}
                 </aside>
             </Fixed>
@@ -102,10 +67,6 @@ export default storiesOf("Helpers|Fixed", module)
     .add("It attaches on the right", () => ({
         components: { Fixed },
         props: {
-            styles: {
-                type: Object,
-                default: verticalBox
-            },
             edges: {
                 type: Array,
                 default: ["right"]
@@ -117,7 +78,7 @@ export default storiesOf("Helpers|Fixed", module)
         },
         template: `
             <Fixed :edges="edges">
-                <aside :style="styles">
+                <aside class="h-full bg-pink text-white flex items-center justify-center px-8">
                     {{ text }}
                 </aside>
             </Fixed>
@@ -126,10 +87,6 @@ export default storiesOf("Helpers|Fixed", module)
     .add("It attaches to multiple sides", () => ({
         components: { Fixed },
         props: {
-            styles: {
-                type: Object,
-                default: box
-            },
             edges: {
                 type: Array,
                 default: ["bottom", "right"]
@@ -137,7 +94,7 @@ export default storiesOf("Helpers|Fixed", module)
         },
         template: `
             <Fixed :edges="edges">
-                <aside :style="styles">
+                <aside class="w-64 h-64 bg-pink text-white flex items-center justify-center text-center">
                     <p>This is fixed on the bottom right of the page</p>
                 </aside>
             </Fixed>

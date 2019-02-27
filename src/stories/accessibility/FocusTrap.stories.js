@@ -9,21 +9,21 @@ export default storiesOf("Accessibility|Focus Trap", module)
     .add("Trap's focus", () => ({
         components: { FocusTrap },
         template: `
-            <div>
-                <section>
-                    <h2>Inside focus trap</h2>
-                    <FocusTrap>
-                        <form @submit.prevent="">
-                            <input type="email" placeholder="Email">
-                            <input type="password" placeholder="Password">
-                            <button>Log in</button>
+            <div class="bg-white p-4 shadow">
+                <section class="mb-8">
+                    <h2 class="mb-2">Inside focus trap</h2>
+                    <FocusTrap :active="true">
+                        <form @submit.prevent="" class="flex items-stretch">
+                            <input type="email" placeholder="Email" class="block mr-2 p-4 h-full bg-grey-lighter">
+                            <input type="password" placeholder="Password" class="block mr-2 p-4 h-full bg-grey-lighter">
+                            <button class="button">Log in</button>
                         </form>
                     </FocusTrap>
                 </section>
                 <section>
-                    <h2>Outside focus trap</h2>
-                    <button type="button">Button</button>
-                    <button type="button">Another button</button>
+                    <h2 class="mb-2">Outside focus trap</h2>
+                    <button type="button" class="button">Button</button>
+                    <button type="button" class="button">Another button</button>
                 </section>
             </div>
         `
@@ -37,21 +37,21 @@ export default storiesOf("Accessibility|Focus Trap", module)
             }
         },
         template: `
-            <div>
-                <section>
-                    <h2>Inside focus trap</h2>
+            <div class="bg-white p-4 shadow">
+                <section class="mb-8">
+                    <h2 class="mb-2">Inside focus trap</h2>
                     <FocusTrap :active="active">
-                        <form @submit.prevent="">
-                            <input type="email" placeholder="Email">
-                            <input type="password" placeholder="Password">
-                            <button>Log in</button>
+                        <form @submit.prevent="" class="flex items-stretch">
+                            <input type="email" placeholder="Email" class="block mr-2 p-4 h-full bg-grey-lighter">
+                            <input type="password" placeholder="Password" class="block mr-2 p-4 h-full bg-grey-lighter">
+                            <button class="button">Log in</button>
                         </form>
                     </FocusTrap>
                 </section>
                 <section>
-                    <h2>Outside focus trap</h2>
-                    <button type="button">Button</button>
-                    <button type="button">Another button</button>
+                    <h2 class="mb-2">Outside focus trap</h2>
+                    <button type="button" class="button">Button</button>
+                    <button type="button" class="button">Another button</button>
                 </section>
             </div>
         `
@@ -67,14 +67,14 @@ export default storiesOf("Accessibility|Focus Trap", module)
             }
         },
         template: `
-            <div>
-                <section>
-                    <h2>Inside focus trap</h2>
+            <div class="bg-white p-4 shadow">
+                <section class="mb-8">
+                    <h2 class="mb-2">Inside focus trap</h2>
                     <FocusTrap :active="true" :options="options">
-                        <form @submit.prevent="">
-                            <input type="email" placeholder="Email">
-                            <input type="password" placeholder="Password">
-                            <button>Log in</button>
+                        <form @submit.prevent="" class="flex items-stretch">
+                            <input type="email" placeholder="Email" class="block mr-2 p-4 h-full bg-grey-lighter">
+                            <input type="password" placeholder="Password" class="block mr-2 p-4 h-full bg-grey-lighter">
+                            <button class="button">Log in</button>
                         </form>
                     </FocusTrap>
                 </section>

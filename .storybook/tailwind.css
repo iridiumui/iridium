@@ -1,0 +1,11 @@
+@tailwind preflight;
+@tailwind components;
+@tailwind utilities;
+
+.button {
+    @apply bg-pink text-white p-4 text-xs font-bold uppercase tracking-wide shadow;
+}
+
+.button:disabled {
+    @apply bg-pink-light;
+}

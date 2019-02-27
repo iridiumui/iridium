@@ -1,14 +1,38 @@
 const path = require('path');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-module.exports = function (baseConfig, env, defaultConfig) {
-  defaultConfig.module.rules.push({
-    test: /\.stories\.jsx?$/,
-    loaders: [require.resolve('@storybook/addon-storysource/loader')],
-    enforce: 'pre',
-  });
+module.exports = {
+    resolve: {
+        alias: {
+            "@": path.resolve(__dirname, '../src'),
+            "~": path.resolve(__dirname, '../')
+        }
+    },
+    module: {
+        rules: [
+            {
+                test: /\.stories\.jsx?$/,
+                loaders: [require.resolve('@storybook/addon-storysource/loader')],
+                enforce: 'pre'
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
 
-  defaultConfig.resolve.alias['@'] = path.resolve(__dirname, '../src');
-  defaultConfig.resolve.alias['~'] = path.resolve(__dirname, '../');
-
-  return defaultConfig;
+                        }
+                    },
+                    "css-loader",
+                    "postcss-loader"
+                ]
+            }
+        ]
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            fileName: 'tailwind.css'
+        })
+    ]
 };

@@ -9,32 +9,32 @@ export default storiesOf("Helpers|Breakpoint", module)
         template: `
             <div>
                 <Breakpoint media-query="(max-width: 320px)">
-                    <p>
+                    <p class="p-2 mb-2">
                         This is only visible on extra small screens
                     </p>
                 </Breakpoint>
                 <Breakpoint media-query="(max-width: 375px)">
-                    <p>
+                    <p class="p-2 mb-2">
                         This is visible on all mobile devices
                     </p>
                 </Breakpoint>
                 <Breakpoint media-query="(max-width: 768px)">
-                    <p>
+                    <p class="p-2 mb-2">
                         This is visible on tablet and down
                     </p>
                 </Breakpoint>
                 <Breakpoint media-query="(max-width: 992px)">
-                    <p>
+                    <p class="p-2 mb-2">
                         This is visible on small desktop devices and down
                     </p>
                 </Breakpoint>
                 <Breakpoint media-query="(max-width: 1200px)">
-                    <p>
+                    <p class="p-2 mb-2">
                         This is visible on desktop devices and down
                     </p>
                 </Breakpoint>
                 <Breakpoint media-query="(min-width: 1201px)">
-                    <p>
+                    <p class="p-2 mb-2">
                         This is only visible on large desktop devices
                     </p>
                 </Breakpoint>

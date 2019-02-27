@@ -8,20 +8,21 @@ export default storiesOf("Extra|Code Block", module)
         components: { CodeBlock },
         template: `
             <div>
-                <CodeBlock>
-                    <pre slot="content" style="white-space: nowrap;">
-                        <code>
-                            .some-css-class {
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                            }
+                <CodeBlock class="bg-grey-lighter w-80 relative">
+                    <pre slot="content" class="inline-block w-80">
+                        <code class="block w-80">
+.some-css-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
                         </code>
                     </pre>
                     <button
                         type="button"
                         slot="button"
                         slot-scope="{ copy }"
+                        class="absolute pin-t pin-r text-sm bg-pink p-1 text-white font-bold uppercase"
                     >
                         Copy Button (not hooked up)
                     </button>
@@ -33,14 +34,14 @@ export default storiesOf("Extra|Code Block", module)
         components: { CodeBlock },
         template: `
             <div>
-                <CodeBlock>
-                    <pre slot="content" style="white-space: nowrap;">
-                        <code>
-                            .some-css-class {
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                            }
+                <CodeBlock class="bg-grey-lighter w-80 relative">
+                    <pre slot="content" class="inline-block w-80">
+                        <code class="block w-80">
+.some-css-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
                         </code>
                     </pre>
                     <button
@@ -48,11 +49,15 @@ export default storiesOf("Extra|Code Block", module)
                         slot="button"
                         slot-scope="{ copy }"
                         @click="copy"
+                        class="absolute pin-t pin-r text-sm bg-pink p-1 text-white font-bold uppercase"
                     >
                         Copy
                     </button>
                 </CodeBlock>
-                <textarea cols="30" rows="10" placeholder="Past the code here"></textarea>
+                <textarea
+                    placeholder="Past the code here"
+                    class="block w-80 h-48"
+                ></textarea>
             </div>
         `
     }))
@@ -65,14 +70,14 @@ export default storiesOf("Extra|Code Block", module)
         },
         template: `
             <div>
-                <CodeBlock :success-callback="success">
-                    <pre slot="content" style="white-space: nowrap;">
-                        <code>
-                            .some-css-class {
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                            }
+                <CodeBlock :success-callback="success" class="bg-grey-lighter w-80 relative">
+                    <pre slot="content" class="inline-block w-80">
+                        <code class="block w-80">
+.some-css-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
                         </code>
                     </pre>
                     <button
@@ -80,11 +85,15 @@ export default storiesOf("Extra|Code Block", module)
                         slot="button"
                         slot-scope="{ copy }"
                         @click="copy"
+                        class="absolute pin-t pin-r text-sm bg-pink p-1 text-white font-bold uppercase"
                     >
                         Copy
                     </button>
                 </CodeBlock>
-                <textarea cols="30" rows="10" placeholder="Past the code here"></textarea>
+                <textarea
+                    placeholder="Past the code here"
+                    class="block w-80 h-48"
+                ></textarea>
             </div>
         `
     }));

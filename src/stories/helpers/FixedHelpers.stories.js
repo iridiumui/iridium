@@ -12,38 +12,11 @@ import FixedBottomRight from "@/components/helpers/FixedBottomRight";
 import FixedLeft from "@/components/helpers/FixedLeft";
 import FixedRight from "@/components/helpers/FixedRight";
 
-const defaultStyles = {
-    backgroundColor: "#FF5F7A",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center"
-};
-
-const horizontalBox = Object.assign({
-    width: "100%",
-    height: "200px"
-}, defaultStyles);
-
-const verticalBox = Object.assign({
-    height: "100%",
-    width: "200px"
-}, defaultStyles);
-
-const box = Object.assign({
-    height: "200px",
-    width: "200px"
-}, defaultStyles);
-
 export default storiesOf("Helpers|Fixed/Helpers", module)
     .addDecorator(withKnobs)
     .add("Fixed Top", () => ({
         components: { FixedTop },
         props: {
-            styles: {
-                type: Object,
-                default: horizontalBox
-            },
             text: {
                 type: String,
                 default: text("Text", "This is fixed on the top of the page")
@@ -51,7 +24,7 @@ export default storiesOf("Helpers|Fixed/Helpers", module)
         },
         template: `
             <FixedTop>
-                <aside :style="styles">
+                <aside class="w-full bg-pink text-white flex items-center justify-center py-12">
                     {{ text }}
                 </aside>
             </FixedTop>
@@ -60,10 +33,6 @@ export default storiesOf("Helpers|Fixed/Helpers", module)
     .add("Fixed Bottom", () => ({
         components: { FixedBottom },
         props: {
-            styles: {
-                type: Object,
-                default: horizontalBox
-            },
             text: {
                 type: String,
                 default: text("Text", "This is fixed on the bottom of the page")
@@ -71,7 +40,7 @@ export default storiesOf("Helpers|Fixed/Helpers", module)
         },
         template: `
             <FixedBottom>
-                <aside :style="styles">
+                <aside class="w-full bg-pink text-white flex items-center justify-center py-12">
                     {{ text }}
                 </aside>
             </FixedBottom>
@@ -80,10 +49,6 @@ export default storiesOf("Helpers|Fixed/Helpers", module)
     .add("Fixed Left", () => ({
         components: { FixedLeft },
         props: {
-            styles: {
-                type: Object,
-                default: verticalBox
-            },
             text: {
                 type: String,
                 default: text("Text", "This is fixed on the left of the page")
@@ -91,7 +56,7 @@ export default storiesOf("Helpers|Fixed/Helpers", module)
         },
         template: `
             <FixedLeft>
-                <aside :style="styles">
+                <aside class="h-full bg-pink text-white flex items-center justify-center px-8">
                     {{ text }}
                 </aside>
             </FixedLeft>
@@ -100,10 +65,6 @@ export default storiesOf("Helpers|Fixed/Helpers", module)
     .add("Fixed Right", () => ({
         components: { FixedRight },
         props: {
-            styles: {
-                type: Object,
-                default: verticalBox
-            },
             text: {
                 type: String,
                 default: text("Text", "This is fixed on the right of the page")
@@ -111,7 +72,7 @@ export default storiesOf("Helpers|Fixed/Helpers", module)
         },
         template: `
             <FixedRight>
-                <aside :style="styles">
+                <aside class="h-full bg-pink text-white flex items-center justify-center px-8">
                     {{ text }}
                 </aside>
             </FixedRight>
@@ -120,10 +81,6 @@ export default storiesOf("Helpers|Fixed/Helpers", module)
     .add("Fixed Top Left", () => ({
         components: { FixedTopLeft },
         props: {
-            styles: {
-                type: Object,
-                default: box
-            },
             text: {
                 type: String,
                 default: text("Text", "This is fixed on the top left of the page")
@@ -131,7 +88,7 @@ export default storiesOf("Helpers|Fixed/Helpers", module)
         },
         template: `
             <FixedTopLeft>
-                <aside :style="styles">
+                <aside class="w-64 h-64 bg-pink text-white flex items-center justify-center text-center">
                     {{ text }}
                 </aside>
             </FixedTopLeft>
@@ -140,10 +97,6 @@ export default storiesOf("Helpers|Fixed/Helpers", module)
     .add("Fixed Top Right", () => ({
         components: { FixedTopRight },
         props: {
-            styles: {
-                type: Object,
-                default: box
-            },
             text: {
                 type: String,
                 default: text("Text", "This is fixed on the top right of the page")
@@ -151,7 +104,7 @@ export default storiesOf("Helpers|Fixed/Helpers", module)
         },
         template: `
             <FixedTopRight>
-                <aside :style="styles">
+                <aside class="w-64 h-64 bg-pink text-white flex items-center justify-center text-center">
                     {{ text }}
                 </aside>
             </FixedTopRight>
@@ -160,10 +113,6 @@ export default storiesOf("Helpers|Fixed/Helpers", module)
     .add("Fixed Bottom Left", () => ({
         components: { FixedBottomLeft },
         props: {
-            styles: {
-                type: Object,
-                default: box
-            },
             text: {
                 type: String,
                 default: text("Text", "This is fixed on the bottom left of the page")
@@ -171,7 +120,7 @@ export default storiesOf("Helpers|Fixed/Helpers", module)
         },
         template: `
             <FixedBottomLeft>
-                <aside :style="styles">
+                <aside class="w-64 h-64 bg-pink text-white flex items-center justify-center text-center">
                     {{ text }}
                 </aside>
             </FixedBottomLeft>
@@ -180,10 +129,6 @@ export default storiesOf("Helpers|Fixed/Helpers", module)
     .add("Fixed Bottom Right", () => ({
         components: { FixedBottomRight },
         props: {
-            styles: {
-                type: Object,
-                default: box
-            },
             text: {
                 type: String,
                 default: text("Text", "This is fixed on the bottom right of the page")
@@ -191,7 +136,7 @@ export default storiesOf("Helpers|Fixed/Helpers", module)
         },
         template: `
             <FixedBottomRight>
-                <aside :style="styles">
+                <aside class="w-64 h-64 bg-pink text-white flex items-center justify-center text-center">
                     {{ text }}
                 </aside>
             </FixedBottomRight>
