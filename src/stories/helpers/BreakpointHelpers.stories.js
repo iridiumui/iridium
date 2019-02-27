@@ -14,11 +14,11 @@ export default storiesOf("Helpers|Breakpoint/Helpers", module)
         template: `
             <div>
                 <ScreenXS>
-                    <p>
+                    <p class="p-2 mb-2">
                         This is only visible on screens smaller than 576px
                     </p>
                 </ScreenXS>
-                <p>
+                <p class="p-2 mb-2">
                     This is visible on all screen sizes
                 </p>
             </div>
@@ -29,12 +29,12 @@ export default storiesOf("Helpers|Breakpoint/Helpers", module)
         template: `
             <div>
                 <ScreenSM>
-                    <p>
+                    <p class="p-2 mb-2">
                         This is only visible on screens larger than 576px
                     </p>
                 </ScreenSM>
                 <ScreenSM direction="down">
-                    <p>
+                    <p class="p-2 mb-2">
                         This is only visible on screens smaller than 768px
                     </p>
                 </ScreenSM>
@@ -46,12 +46,12 @@ export default storiesOf("Helpers|Breakpoint/Helpers", module)
         template: `
             <div>
                 <ScreenMD>
-                    <p>
+                    <p class="p-2 mb-2">
                         This is only visible on screens larger than 768px
                     </p>
                 </ScreenMD>
                 <ScreenMD direction="down">
-                    <p>
+                    <p class="p-2 mb-2">
                         This is only visible on screens smaller than 992px
                     </p>
                 </ScreenMD>
@@ -63,12 +63,12 @@ export default storiesOf("Helpers|Breakpoint/Helpers", module)
         template: `
             <div>
                 <ScreenLG>
-                    <p>
+                    <p class="p-2 mb-2">
                         This is only visible on screens larger than 992px
                     </p>
                 </ScreenLG>
                 <ScreenLG direction="down">
-                    <p>
+                    <p class="p-2 mb-2">
                         This is only visible on screens smaller than 1200px
                     </p>
                 </ScreenLG>
@@ -80,11 +80,11 @@ export default storiesOf("Helpers|Breakpoint/Helpers", module)
         components: { ScreenXL },
         template: `
             <div>
-                <p>
+                <p class="p-2 mb-2">
                     This is visible on all screen sizes
                 </p>
                 <ScreenXL>
-                    <p>
+                    <p class="p-2 mb-2">
                         This is only visible on screens larger than 1200px
                     </p>
                 </ScreenXL>
