@@ -25,7 +25,7 @@
         },
 
         render() {
-            return this.$slots.default[0];
+            return this.$scopedSlots.default();
         }
     };
 
