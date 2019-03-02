@@ -23,7 +23,7 @@
         },
 
         render() {
-            return this.matches ? this.$slots.default[0] : null;
+            return this.matches ? this.$scopedSlots.default() : null;
         }
     };
 </script>
