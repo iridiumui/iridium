@@ -1,6 +1,6 @@
 {
     "name": "@iridiumui/vue",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "description": "A UI framework with no UI",
     "main": "dist/index.js",
     "module": "dist/index.es.js",
