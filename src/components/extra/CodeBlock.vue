@@ -65,7 +65,7 @@
 
         render(createElement) {
             return createElement("div", [
-                this.$slots.content[0],
+                this.$scopedSlots.content(),
                 this.$scopedSlots.button({
                     copy: this.copy,
                     copied: this.copied,

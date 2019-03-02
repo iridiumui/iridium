@@ -52,17 +52,13 @@
         watch: {
             inView(newValue) {
                 this.$emit("inView", newValue);
-            },
-
-            $route() {
-                this.setupObserver();
             }
         },
 
         render() {
-            return this.$scopedSlots.hasOwnProperty("default") ? this.$scopedSlots.default({
+            return this.$scopedSlots.default({
                 inView: this.inView
-            }) : this.$slots.default[0];
+            })
         }
     };
 </script>

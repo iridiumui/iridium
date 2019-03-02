@@ -7,11 +7,10 @@ export default storiesOf("Helpers|In View", module)
         template: `
             <div style="height: 200vh;">
                 <h1 class="heading py-4 text-center">Scroll down the page</h1>
-                <InView element=".heading">
+                <InView element=".heading" #default="{ inView }">
                     <button
                         type="button"
                         class="button fixed pin-b pin-r"
-                        slot-scope="{ inView }"
                         v-show="!inView"
                     >
                         Go to top
@@ -24,46 +23,40 @@ export default storiesOf("Helpers|In View", module)
         components: { InView },
         template: `
             <div>
-                <InView :threshold="0.5">
+                <InView :threshold="0.5" #default="{ inView }">
                     <section
-                        slot-scope="{ inView }"
                         style="height: 50vh; transition: all 500ms;"
                         :style="inView ? 'background-color: red;' : ''"
                     >
                         <h1 class="heading py-4 text-center">Scroll down the page</h1>
                     </section>
                 </InView>
-                <InView :threshold="0.5">
+                <InView :threshold="0.5" #default="{ inView }">
                     <section
-                        slot-scope="{ inView }"
                         style="height: 50vh; transition: all 500ms;"
                         :style="inView ? 'background-color: orange;' : ''"
                     ></section>
                 </InView>
-                <InView :threshold="0.5">
+                <InView :threshold="0.5" #default="{ inView }">
                     <section
-                        slot-scope="{ inView }"
                         style="height: 50vh; transition: all 500ms;"
                         :style="inView ? 'background-color: pink;' : ''"
                     ></section>
                 </InView>
-                <InView :threshold="0.5">
+                <InView :threshold="0.5" #default="{ inView }">
                     <section
-                        slot-scope="{ inView }"
                         style="height: 50vh; transition: all 500ms;"
                         :style="inView ? 'background-color: purple;' : ''"
                     ></section>
                 </InView>
-                <InView :threshold="0.5">
+                <InView :threshold="0.5" #default="{ inView }">
                     <section
-                        slot-scope="{ inView }"
                         style="height: 50vh; transition: all 500ms;"
                         :style="inView ? 'background-color: blue;' : ''"
                     ></section>
                 </InView>
-                <InView :threshold="0.5">
+                <InView :threshold="0.5" #default="{ inView }">
                     <section
-                        slot-scope="{ inView }"
                         style="height: 50vh; transition: all 500ms;"
                         :style="inView ? 'background-color: cyan;' : ''"
                     ></section>
@@ -99,9 +92,8 @@ export default storiesOf("Helpers|In View", module)
         template: `
             <div>
                 <h1 style="height: 100vh;" class="heading py-4 text-center">Scroll down the page</h1>
-                <InView :threshold="1">
+                <InView :threshold="1" #default="{ inView }">
                     <section
-                        slot-scope="{ inView }"
                         style="height: 50vh;"
                         :style="inView ? 'background-color: red;' : ''"
                         class="bg-grey flex justify-center items-center"
@@ -111,9 +103,8 @@ export default storiesOf("Helpers|In View", module)
                         </p>
                     </section>
                 </InView>
-                <InView :threshold="0.5">
+                <InView :threshold="0.5" #default="{ inView }">
                     <section
-                        slot-scope="{ inView }"
                         style="height: 50vh;"
                         :style="inView ? 'background-color: yellow;' : ''"
                         class="bg-grey flex justify-center items-center"
@@ -123,9 +114,8 @@ export default storiesOf("Helpers|In View", module)
                         </p>
                     </section>
                 </InView>
-                <InView :threshold="0">
+                <InView :threshold="0" #default="{ inView }">
                     <section
-                        slot-scope="{ inView }"
                         style="height: 50vh;"
                         :style="inView ? 'background-color: green;' : ''"
                         class="bg-grey flex justify-center items-center"
@@ -143,9 +133,8 @@ export default storiesOf("Helpers|In View", module)
         template: `
             <div>
                 <h1 style="height: 100vh;" class="heading py-4 text-center">Scroll down the page</h1>
-                <InView>
+                <InView #default="{ inView }">
                     <section
-                        slot-scope="{ inView }"
                         class="bg-grey flex justify-center items-center"
                         style="height: 50vh;"
                         :style="inView ? 'background-color: #FF5F7A;' : ''"
