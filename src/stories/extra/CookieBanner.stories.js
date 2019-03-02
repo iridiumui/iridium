@@ -5,9 +5,8 @@ export default storiesOf("Extra|Cookie Banner", module)
     .add("It renders a cookie banner", () => ({
         components: { CookieBanner },
         template: `
-            <CookieBanner>
+            <CookieBanner #default="{ accepted }">
                 <div
-                    slot-scope="{ accepted }"
                     v-if="!accepted"
                     class="fixed pin-b w-full bg-black py-4"
                 >
@@ -45,9 +44,8 @@ export default storiesOf("Extra|Cookie Banner", module)
                         (You need to reload after resetting)
                     </p>
                 </div>
-                <CookieBanner>
+                <CookieBanner #default="{ accept, accepted }">
                     <div
-                        slot-scope="{ accept, accepted }"
                         v-if="!accepted"
                         class="fixed pin-b w-full bg-black py-4"
                     >
@@ -87,9 +85,8 @@ export default storiesOf("Extra|Cookie Banner", module)
                         (Reload the page after clicking accept)
                     </p>
                 </div>
-                <CookieBanner>
+                <CookieBanner #default="{ accept, accepted }">
                     <div
-                        slot-scope="{ accept, accepted }"
                         v-if="!accepted"
                         class="fixed pin-b w-full bg-black py-4"
                     >
