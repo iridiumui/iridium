@@ -1,6 +1,6 @@
 <template>
-    <toggle v-bind="$attrs">
-        <div slot-scope="toggleProps">
+    <toggle v-bind="$attrs" #default="toggleProps">
+        <div>
             <slot
                 name="button"
                 :open="toggleProps.open"
